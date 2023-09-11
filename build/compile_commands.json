@@ -1,0 +1,122 @@
+[
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/main.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/main.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/main.cpp",
+  "output": "CMakeFiles/ooh.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Utils/Vector2.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Utils/Vector2.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Utils/Vector2.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Utils/Vector2.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Utils/Utils.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Utils/Utils.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Utils/Utils.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Utils/Utils.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Managers/GameManager.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/GameManager.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/GameManager.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Managers/GameManager.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Managers/AssetManager.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/AssetManager.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/AssetManager.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Managers/AssetManager.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Managers/EventManager.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/EventManager.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/EventManager.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Managers/EventManager.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/SceneManager.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/SceneManager.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Managers/EntityManager.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/EntityManager.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/EntityManager.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Managers/EntityManager.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Listeners/AudioListener.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Listeners/AudioListener.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Scenes/MenuScene.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/MenuScene.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/MenuScene.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Scenes/MenuScene.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Scenes/SettingScene.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/SettingScene.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/SettingScene.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Scenes/SettingScene.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Scenes/ShopScene.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/ShopScene.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/ShopScene.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Scenes/ShopScene.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Scenes/GameScene.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/GameScene.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/GameScene.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Scenes/GameScene.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Scenes/OverLoseScene.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/OverLoseScene.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/OverLoseScene.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Scenes/OverLoseScene.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Scenes/OverWinScene.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/OverWinScene.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/OverWinScene.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Scenes/OverWinScene.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Scenes/SecretScene.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/SecretScene.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Scenes/SecretScene.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Scenes/SecretScene.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/UI/Text.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/UI/Text.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/UI/Text.cpp",
+  "output": "CMakeFiles/ooh.dir/src/UI/Text.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/UI/Button.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/UI/Button.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/UI/Button.cpp",
+  "output": "CMakeFiles/ooh.dir/src/UI/Button.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Components/Transform.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/Transform.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/Transform.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Components/Transform.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Components/Sprite.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/Sprite.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/Sprite.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Components/Sprite.cpp.o"
+}
+]
