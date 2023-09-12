@@ -10,6 +10,7 @@
 #include <SDL2/SDL_mixer.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
+#include <box2d/box2d.h>
 
 #include <iostream>
 #include <string>
@@ -24,6 +25,10 @@ GameManager::GameManager()
   isRunning = true;
   lastFrame = 0.0f;
   deltaTime = 0.0f;
+
+  // Box2D init 
+  global::world = new b2World(b2Vec2(0.0f, 9.81f));
+  global::world->SetContinuousPhysics(true);
 
   // Managers init
   AssetManager::Get().LoadAssets(renderer);
@@ -47,6 +52,10 @@ GameManager::~GameManager()
   AssetManager::Get().UnloadAssets();
   EventManager::Get().UnloadEvents();
 
+  // Box2D de-init 
+  delete global::world;
+
+  // SDL de-init
   m_ShutdownSDLSystems();
 }
 
@@ -77,6 +86,10 @@ void GameManager::Update()
   deltaTime = (SDL_GetTicks() - lastFrame) / 1000.0;
   lastFrame = SDL_GetTicks();
 
+  // Box2D update
+  global::world->Step(deltaTime, global::VEL_ITER, global::POS_ITER);
+
+  // Scenes update
   m_scnMgr->Update(deltaTime);
 }
 

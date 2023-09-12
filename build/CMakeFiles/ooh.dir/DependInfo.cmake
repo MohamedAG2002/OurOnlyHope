@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/Sprite.cpp" "CMakeFiles/ooh.dir/src/Components/Sprite.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Components/Sprite.cpp.o.d"
   "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/Transform.cpp" "CMakeFiles/ooh.dir/src/Components/Transform.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Components/Transform.cpp.o.d"
+  "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Entity.cpp" "CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o.d"
+  "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Player.cpp" "CMakeFiles/ooh.dir/src/Entities/Player.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Entities/Player.cpp.o.d"
   "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Listeners/AudioListener.cpp" "CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o.d"
   "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/AssetManager.cpp" "CMakeFiles/ooh.dir/src/Managers/AssetManager.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Managers/AssetManager.cpp.o.d"
   "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/EntityManager.cpp" "CMakeFiles/ooh.dir/src/Managers/EntityManager.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Managers/EntityManager.cpp.o.d"

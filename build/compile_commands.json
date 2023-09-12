@@ -118,5 +118,17 @@
   "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Components/Sprite.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/Sprite.cpp",
   "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/Sprite.cpp",
   "output": "CMakeFiles/ooh.dir/src/Components/Sprite.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Entity.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Entity.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2 -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Entities/Player.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Player.cpp",
+  "file": "/home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Player.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Entities/Player.cpp.o"
 }
 ]

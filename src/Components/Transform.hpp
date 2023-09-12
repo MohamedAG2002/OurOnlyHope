@@ -5,8 +5,19 @@
 class Transform 
 {
   public:
-    Transform(Vector2 pos, Vector2 rotation = Vector2::ZERO, Vector2 scale = Vector2::ONE);
-    ~Transform();
+    // This CTOR should be used and prioritized over the default one
+    Transform(Vector2 pos, Vector2 rotation = Vector2::ZERO, Vector2 scale = Vector2::ONE)
+      :position(pos), rotation(rotation), scale(scale)
+    {}
+
+    // Default CTOR
+    Transform() 
+      :position(Vector2::ZERO), rotation(Vector2::ZERO), scale(Vector2::ONE)
+    {}
+    
+    // Destructor
+    ~Transform()
+    {}
 
   public:
     Vector2 position, rotation, scale;

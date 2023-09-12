@@ -383,6 +383,8 @@ CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o: \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Scenes/../Managers/EntityManager.hpp \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Scenes/../Managers/../Entities/Entity.hpp \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Scenes/../Managers/../Entities/../Components/Transform.hpp \
+ /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Scenes/../Managers/../Entities/Player.hpp \
+ /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Scenes/../Managers/../Entities/../Components/Sprite.hpp \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \

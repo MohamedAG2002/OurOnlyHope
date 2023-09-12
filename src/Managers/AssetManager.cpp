@@ -45,6 +45,7 @@ void AssetManager::LoadSprites(SDL_Renderer* renderer)
   };
 
   // Adding sprites
+  load("Player_Sprite", "assets/sprites/player.png");
 
   // Checking for errors
   for(auto[key, value] : m_sprites)
@@ -62,6 +63,9 @@ void AssetManager::LoadSounds()
 
   // Adding sounds
   load("Button_Click", "assets/audio/button_click.wav");
+  load("Sword_Swing", "assets/audio/sword_swing.wav");
+  load("Zombie_Death-1", "assets/audio/sword_kill_zombie-1.wav");
+  load("Zombie_Death-2", "assets/audio/sword_kill_zombie-2.wav");
 
   // Checking for errors
   for(auto[key, value] : m_sounds)

@@ -1,15 +1,18 @@
 # Engine
-- Put on github
-- Box2D/Physics
-- Have user data in box2d 
-- Contact Listener 
+- Physics:
+ - Box2D/Physics
+ - Colliders
+ - Have user data in box2d 
+ - Contact Listener 
 
 # Game
-- Player 
-- Sword
-- Zombie
-- Spawn manager
+- Basic sword
+- Basic zombie
+- Zombie manager
 - JoyStick controls
+- Better player 
+- Better sword 
+- Better zombie 
 - Fade in screen before the menu
 
 # Problems to fix later

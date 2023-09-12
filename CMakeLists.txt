@@ -49,6 +49,12 @@ set(SOURCES
   # Components
   src/Components/Transform.cpp
   src/Components/Sprite.cpp
+  src/Components/PhysicsBody.cpp
+  src/Components/Collider.cpp
+
+  # Entities
+  src/Entities/Entity.cpp
+  src/Entities/Player.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

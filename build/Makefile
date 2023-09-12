@@ -177,6 +177,54 @@ src/Components/Transform.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Components/Transform.cpp.s
 .PHONY : src/Components/Transform.cpp.s
 
+src/Entities/Entity.o: src/Entities/Entity.cpp.o
+.PHONY : src/Entities/Entity.o
+
+# target to build an object file
+src/Entities/Entity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o
+.PHONY : src/Entities/Entity.cpp.o
+
+src/Entities/Entity.i: src/Entities/Entity.cpp.i
+.PHONY : src/Entities/Entity.i
+
+# target to preprocess a source file
+src/Entities/Entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Entity.cpp.i
+.PHONY : src/Entities/Entity.cpp.i
+
+src/Entities/Entity.s: src/Entities/Entity.cpp.s
+.PHONY : src/Entities/Entity.s
+
+# target to generate assembly for a file
+src/Entities/Entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Entity.cpp.s
+.PHONY : src/Entities/Entity.cpp.s
+
+src/Entities/Player.o: src/Entities/Player.cpp.o
+.PHONY : src/Entities/Player.o
+
+# target to build an object file
+src/Entities/Player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Player.cpp.o
+.PHONY : src/Entities/Player.cpp.o
+
+src/Entities/Player.i: src/Entities/Player.cpp.i
+.PHONY : src/Entities/Player.i
+
+# target to preprocess a source file
+src/Entities/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Player.cpp.i
+.PHONY : src/Entities/Player.cpp.i
+
+src/Entities/Player.s: src/Entities/Player.cpp.s
+.PHONY : src/Entities/Player.s
+
+# target to generate assembly for a file
+src/Entities/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Player.cpp.s
+.PHONY : src/Entities/Player.cpp.s
+
 src/Listeners/AudioListener.o: src/Listeners/AudioListener.cpp.o
 .PHONY : src/Listeners/AudioListener.o
 
@@ -624,6 +672,12 @@ help:
 	@echo "... src/Components/Transform.o"
 	@echo "... src/Components/Transform.i"
 	@echo "... src/Components/Transform.s"
+	@echo "... src/Entities/Entity.o"
+	@echo "... src/Entities/Entity.i"
+	@echo "... src/Entities/Entity.s"
+	@echo "... src/Entities/Player.o"
+	@echo "... src/Entities/Player.i"
+	@echo "... src/Entities/Player.s"
 	@echo "... src/Listeners/AudioListener.o"
 	@echo "... src/Listeners/AudioListener.i"
 	@echo "... src/Listeners/AudioListener.s"
