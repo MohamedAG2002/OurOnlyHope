@@ -1,6 +1,7 @@
 #include "EntityManager.hpp"
 #include "../Entities/Entity.hpp"
 #include "../Entities/Player.hpp"
+#include "../Utils/Globals.hpp"
 
 #include <SDL2/SDL.h>
 
@@ -9,7 +10,7 @@
 
 EntityManager::EntityManager()
 {
-  player = std::make_unique<Player>(Vector2(300.0f, 200.0f));
+  player = std::make_unique<Player>(Vector2(global::SCREEN_WIDTH / 2.0f, 0.0f));
 }
 
 EntityManager::~EntityManager()

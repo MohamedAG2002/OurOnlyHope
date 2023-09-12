@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.27.0)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # For the LSP
-set(CMAKE_BUILD_TYPE Debug) # Remember to turn this off in release builds
+#set(CMAKE_BUILD_TYPE Debug) # Remember to turn this off in release builds
 
 project(ooh VERSION 1.0)
 
@@ -13,7 +13,7 @@ find_package(SDL2 REQUIRED)
 find_package(SDL2_ttf REQUIRED)
 find_package(SDL2_image REQUIRED)
 find_package(SDL2_mixer REQUIRED)
-find_package(box2d REQUIRED)
+find_library(box2d box2d REQUIRED)
 
 set(SOURCES
   # Base files
@@ -29,6 +29,7 @@ set(SOURCES
   src/Managers/EventManager.cpp
   src/Managers/SceneManager.cpp
   src/Managers/EntityManager.cpp
+  src/Managers/ZombieManager.cpp
   
   # Listeners
   src/Listeners/AudioListener.cpp
@@ -55,6 +56,7 @@ set(SOURCES
   # Entities
   src/Entities/Entity.cpp
   src/Entities/Player.cpp
+  src/Entities/Zombie.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
@@ -63,7 +65,7 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 # Adding the include for the above libraries
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/libs/include)
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/libs/include)
 
 # Adding the libraries to the project
 target_link_libraries(${PROJECT_NAME} 

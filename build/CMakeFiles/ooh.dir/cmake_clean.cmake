@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ooh.dir/src/Components/Collider.cpp.o"
+  "CMakeFiles/ooh.dir/src/Components/Collider.cpp.o.d"
+  "CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o"
+  "CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Components/Sprite.cpp.o"
   "CMakeFiles/ooh.dir/src/Components/Sprite.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Components/Transform.cpp.o"
@@ -7,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Entities/Player.cpp.o"
   "CMakeFiles/ooh.dir/src/Entities/Player.cpp.o.d"
+  "CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o"
+  "CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o"
   "CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Managers/AssetManager.cpp.o"

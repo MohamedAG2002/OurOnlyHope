@@ -266,6 +266,9 @@ ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
 //Path to a library.
 ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
 
+//Path to a library.
+box2d:FILEPATH=/home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/lib/libbox2d.a
+
 //The directory containing a CMake configuration file for box2d.
 box2d_DIR:PATH=/home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/lib/cmake/box2d
 

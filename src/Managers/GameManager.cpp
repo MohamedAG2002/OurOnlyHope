@@ -16,6 +16,9 @@
 #include <string>
 #include <memory>
 
+// Extern variables init 
+b2World* global::world = new b2World(b2Vec2(0.0f, 9.81f));
+
 GameManager::GameManager()
 {
   m_InitSDLSystems();
@@ -26,8 +29,7 @@ GameManager::GameManager()
   lastFrame = 0.0f;
   deltaTime = 0.0f;
 
-  // Box2D init 
-  global::world = new b2World(b2Vec2(0.0f, 9.81f));
+  // Box2D init
   global::world->SetContinuousPhysics(true);
 
   // Managers init
@@ -51,9 +53,6 @@ GameManager::~GameManager()
   // Managers de-init 
   AssetManager::Get().UnloadAssets();
   EventManager::Get().UnloadEvents();
-
-  // Box2D de-init 
-  delete global::world;
 
   // SDL de-init
   m_ShutdownSDLSystems();

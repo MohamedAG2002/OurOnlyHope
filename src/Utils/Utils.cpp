@@ -52,6 +52,9 @@ BodyType B2BodyTypeToBodyType(b2BodyType type)
     case b2_kinematicBody:
       return BodyType::KINEMATIC;
       break;
+    default:
+      return BodyType::STATIC;
+      break;
   }
 }
 
@@ -67,6 +70,9 @@ b2BodyType BodyTypeToB2BodyType(BodyType type)
       break;
     case BodyType::KINEMATIC:
       return b2_kinematicBody;
+      break;
+    default:
+      return b2_staticBody;
       break;
   }
 }

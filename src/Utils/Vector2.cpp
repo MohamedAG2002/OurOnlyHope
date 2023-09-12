@@ -1,11 +1,31 @@
 #include "Vector2.hpp"
 
+#include <math.h>
+
 // Static variables definitions
 ///////////////////////////////////////////////
 inline const Vector2 Vector2::ZERO(0.0f, 0.0f);
 inline const Vector2 Vector2::ONE(1.0f, 1.0f);
 ///////////////////////////////////////////////
+    
+// Mathematical functions
+///////////////////////////////////////////////
+void Vector2::Normalize()
+{
+  /* This code is "borrowed" from raylib. Thanks to Raymond! */
 
+  float length = sqrtf((x * x) + (y * y));
+
+  if(length > 0)
+  {
+    float iLength = 1.0f / length;
+    x *= iLength;
+    y *= iLength;
+  }
+}
+///////////////////////////////////////////////
+
+// Operator overloding
 ///////////////////////////////////////////////
 const Vector2& Vector2::operator=(const Vector2& other)
 {

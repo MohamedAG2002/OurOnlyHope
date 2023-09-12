@@ -6,11 +6,25 @@
 
 #include <box2d/box2d.h>
 
-PhysicsBody::PhysicsBody(b2World* world, const Vector2 pos, BodyType type)
+#include <cstdint>
+#include <string>
+
+PhysicsBody::PhysicsBody(std::string& id, const Vector2 pos, BodyType type)
 {
+  b2Vec2 meterPos = Vector2ToB2Vec2(pos);
+
+  m_bodyDef.position.Set(meterPos.x, meterPos.y);
   m_bodyDef.type = BodyTypeToB2BodyType(type);
-  m_bodyDef.position.Set(pos.x * global::METER_TO_PIXEL, pos.y * global::METER_TO_PIXEL);
-  m_body = world->CreateBody(&m_bodyDef);
+  m_bodyDef.userData.pointer = (uintptr_t)id.c_str(); 
+
+  m_body = global::world->CreateBody(&m_bodyDef);
+  m_body->SetFixedRotation(false);
+}
+
+PhysicsBody::PhysicsBody()
+{
+  m_bodyDef.position.Set(1.0f, 1.0f);
+  m_body = nullptr;
 }
 
 PhysicsBody::~PhysicsBody()
@@ -23,5 +37,11 @@ Vector2 PhysicsBody::GetBodyPosition()
 
 void PhysicsBody::ApplyForce(Vector2 force)
 {
-  m_body->ApplyForceToCenter(Vector2ToB2Vec2(force), true);
+  m_body->SetLinearVelocity(Vector2ToB2Vec2(force));
+  //m_body->ApplyForceToCenter(Vector2ToB2Vec2(force), true);
+}
+    
+void PhysicsBody::AttachCollider(const b2FixtureDef& collider)
+{
+  m_body->CreateFixture(&collider);
 }

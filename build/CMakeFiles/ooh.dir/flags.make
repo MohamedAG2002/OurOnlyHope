@@ -6,5 +6,5 @@ CXX_DEFINES = -DSDL_MAIN_HANDELED
 
 CXX_INCLUDES = -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include -isystem /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2
 
-CXX_FLAGS = -g -std=gnu++20
+CXX_FLAGS = -std=gnu++20
 

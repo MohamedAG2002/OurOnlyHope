@@ -60,8 +60,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/lib/cmake/SDL2_ttf/SDL2_ttf-shared-targets.cmake"
   "/home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/lib/cmake/SDL2_ttf/SDL2_ttfConfig.cmake"
   "/home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/lib/cmake/SDL2_ttf/SDL2_ttfConfigVersion.cmake"
-  "/home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/lib/cmake/box2d/box2dConfig.cmake"
-  "/home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/lib/cmake/box2d/box2dConfigVersion.cmake"
   )
 
 # The corresponding makefile is:

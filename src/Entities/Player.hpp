@@ -3,6 +3,8 @@
 #include "Entity.hpp"
 #include "../Utils/Vector2.hpp"
 #include "../Components/Sprite.hpp"
+#include "../Components/PhysicsBody.hpp"
+#include "../Components/Collider.hpp"
 
 #include <SDL2/SDL.h>
 
@@ -18,6 +20,8 @@ class Player : public Entity
   public:
     int health, maxHealth;
     Sprite sprite;
+    PhysicsBody body;
+    Collider collider;
     SDL_FRect rect;
 
   public:
@@ -31,5 +35,8 @@ class Player : public Entity
     Vector2 m_velocity;
 
   private:
+    void m_HandleHealth();
+    void m_HandleMovement();
+    void m_HandleSwing();
     void m_GetKeyInput();
 };

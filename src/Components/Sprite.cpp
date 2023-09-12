@@ -26,10 +26,12 @@ Sprite::~Sprite()
 
 void Sprite::Render(SDL_Renderer* renderer, Transform& transform)
 {
-  m_rect = SDL_FRect{transform.position.x, 
-                     transform.position.y, 
-                     size.x * transform.scale.x, 
-                     size.y * transform.scale.y};
+  Vector2 scaledSize = size * transform.scale;
+
+  m_rect = SDL_FRect{transform.position.x - scaledSize.x / 2.0f, 
+                     transform.position.y - scaledSize.y / 2.0f, 
+                     scaledSize.x, 
+                     scaledSize.y};
 
   SDL_RenderCopyF(renderer, m_texture, nullptr, &m_rect);
 }

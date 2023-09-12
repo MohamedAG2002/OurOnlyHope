@@ -349,10 +349,38 @@ CMakeFiles/ooh.dir/src/Components/Sprite.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ooh.dir/src/Components/Sprite.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/Sprite.cpp -o CMakeFiles/ooh.dir/src/Components/Sprite.cpp.s
 
+CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o: CMakeFiles/ooh.dir/flags.make
+CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o: /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/PhysicsBody.cpp
+CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o: CMakeFiles/ooh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mohamed/Dev/C++/SDL/OurOnlyHope/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o -MF CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o.d -o CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/PhysicsBody.cpp
+
+CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/PhysicsBody.cpp > CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.i
+
+CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/PhysicsBody.cpp -o CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.s
+
+CMakeFiles/ooh.dir/src/Components/Collider.cpp.o: CMakeFiles/ooh.dir/flags.make
+CMakeFiles/ooh.dir/src/Components/Collider.cpp.o: /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/Collider.cpp
+CMakeFiles/ooh.dir/src/Components/Collider.cpp.o: CMakeFiles/ooh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mohamed/Dev/C++/SDL/OurOnlyHope/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/ooh.dir/src/Components/Collider.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ooh.dir/src/Components/Collider.cpp.o -MF CMakeFiles/ooh.dir/src/Components/Collider.cpp.o.d -o CMakeFiles/ooh.dir/src/Components/Collider.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/Collider.cpp
+
+CMakeFiles/ooh.dir/src/Components/Collider.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ooh.dir/src/Components/Collider.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/Collider.cpp > CMakeFiles/ooh.dir/src/Components/Collider.cpp.i
+
+CMakeFiles/ooh.dir/src/Components/Collider.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ooh.dir/src/Components/Collider.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Components/Collider.cpp -o CMakeFiles/ooh.dir/src/Components/Collider.cpp.s
+
 CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o: CMakeFiles/ooh.dir/flags.make
 CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o: /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Entity.cpp
 CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o: CMakeFiles/ooh.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mohamed/Dev/C++/SDL/OurOnlyHope/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mohamed/Dev/C++/SDL/OurOnlyHope/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o -MF CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o.d -o CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Entity.cpp
 
 CMakeFiles/ooh.dir/src/Entities/Entity.cpp.i: cmake_force
@@ -366,7 +394,7 @@ CMakeFiles/ooh.dir/src/Entities/Entity.cpp.s: cmake_force
 CMakeFiles/ooh.dir/src/Entities/Player.cpp.o: CMakeFiles/ooh.dir/flags.make
 CMakeFiles/ooh.dir/src/Entities/Player.cpp.o: /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Player.cpp
 CMakeFiles/ooh.dir/src/Entities/Player.cpp.o: CMakeFiles/ooh.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mohamed/Dev/C++/SDL/OurOnlyHope/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/ooh.dir/src/Entities/Player.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mohamed/Dev/C++/SDL/OurOnlyHope/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/ooh.dir/src/Entities/Player.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ooh.dir/src/Entities/Player.cpp.o -MF CMakeFiles/ooh.dir/src/Entities/Player.cpp.o.d -o CMakeFiles/ooh.dir/src/Entities/Player.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Player.cpp
 
 CMakeFiles/ooh.dir/src/Entities/Player.cpp.i: cmake_force
@@ -376,6 +404,20 @@ CMakeFiles/ooh.dir/src/Entities/Player.cpp.i: cmake_force
 CMakeFiles/ooh.dir/src/Entities/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ooh.dir/src/Entities/Player.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Player.cpp -o CMakeFiles/ooh.dir/src/Entities/Player.cpp.s
+
+CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o: CMakeFiles/ooh.dir/flags.make
+CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o: /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Zombie.cpp
+CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o: CMakeFiles/ooh.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mohamed/Dev/C++/SDL/OurOnlyHope/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o -MF CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o.d -o CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o -c /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Zombie.cpp
+
+CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Zombie.cpp > CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.i
+
+CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Entities/Zombie.cpp -o CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.s
 
 # Object files for target ooh
 ooh_OBJECTS = \
@@ -399,8 +441,11 @@ ooh_OBJECTS = \
 "CMakeFiles/ooh.dir/src/UI/Button.cpp.o" \
 "CMakeFiles/ooh.dir/src/Components/Transform.cpp.o" \
 "CMakeFiles/ooh.dir/src/Components/Sprite.cpp.o" \
+"CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o" \
+"CMakeFiles/ooh.dir/src/Components/Collider.cpp.o" \
 "CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o" \
-"CMakeFiles/ooh.dir/src/Entities/Player.cpp.o"
+"CMakeFiles/ooh.dir/src/Entities/Player.cpp.o" \
+"CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o"
 
 # External object files for target ooh
 ooh_EXTERNAL_OBJECTS =
@@ -425,15 +470,19 @@ ooh: CMakeFiles/ooh.dir/src/UI/Text.cpp.o
 ooh: CMakeFiles/ooh.dir/src/UI/Button.cpp.o
 ooh: CMakeFiles/ooh.dir/src/Components/Transform.cpp.o
 ooh: CMakeFiles/ooh.dir/src/Components/Sprite.cpp.o
+ooh: CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o
+ooh: CMakeFiles/ooh.dir/src/Components/Collider.cpp.o
 ooh: CMakeFiles/ooh.dir/src/Entities/Entity.cpp.o
 ooh: CMakeFiles/ooh.dir/src/Entities/Player.cpp.o
+ooh: CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o
 ooh: CMakeFiles/ooh.dir/build.make
 ooh: /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/lib/libSDL2_image-2.0.so.0.600.3
 ooh: /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/lib/libSDL2_ttf-2.0.so.0.2000.2
 ooh: /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/lib/libSDL2_mixer-2.0.so.0.600.3
+ooh: /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/lib/libbox2d.a
 ooh: /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/lib/libSDL2-2.0.so.0.2800.1
 ooh: CMakeFiles/ooh.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mohamed/Dev/C++/SDL/OurOnlyHope/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable ooh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mohamed/Dev/C++/SDL/OurOnlyHope/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable ooh"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ooh.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

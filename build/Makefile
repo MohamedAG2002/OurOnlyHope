@@ -129,6 +129,54 @@ ooh/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/build
 .PHONY : ooh/fast
 
+src/Components/Collider.o: src/Components/Collider.cpp.o
+.PHONY : src/Components/Collider.o
+
+# target to build an object file
+src/Components/Collider.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Components/Collider.cpp.o
+.PHONY : src/Components/Collider.cpp.o
+
+src/Components/Collider.i: src/Components/Collider.cpp.i
+.PHONY : src/Components/Collider.i
+
+# target to preprocess a source file
+src/Components/Collider.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Components/Collider.cpp.i
+.PHONY : src/Components/Collider.cpp.i
+
+src/Components/Collider.s: src/Components/Collider.cpp.s
+.PHONY : src/Components/Collider.s
+
+# target to generate assembly for a file
+src/Components/Collider.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Components/Collider.cpp.s
+.PHONY : src/Components/Collider.cpp.s
+
+src/Components/PhysicsBody.o: src/Components/PhysicsBody.cpp.o
+.PHONY : src/Components/PhysicsBody.o
+
+# target to build an object file
+src/Components/PhysicsBody.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o
+.PHONY : src/Components/PhysicsBody.cpp.o
+
+src/Components/PhysicsBody.i: src/Components/PhysicsBody.cpp.i
+.PHONY : src/Components/PhysicsBody.i
+
+# target to preprocess a source file
+src/Components/PhysicsBody.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.i
+.PHONY : src/Components/PhysicsBody.cpp.i
+
+src/Components/PhysicsBody.s: src/Components/PhysicsBody.cpp.s
+.PHONY : src/Components/PhysicsBody.s
+
+# target to generate assembly for a file
+src/Components/PhysicsBody.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.s
+.PHONY : src/Components/PhysicsBody.cpp.s
+
 src/Components/Sprite.o: src/Components/Sprite.cpp.o
 .PHONY : src/Components/Sprite.o
 
@@ -224,6 +272,30 @@ src/Entities/Player.s: src/Entities/Player.cpp.s
 src/Entities/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Player.cpp.s
 .PHONY : src/Entities/Player.cpp.s
+
+src/Entities/Zombie.o: src/Entities/Zombie.cpp.o
+.PHONY : src/Entities/Zombie.o
+
+# target to build an object file
+src/Entities/Zombie.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o
+.PHONY : src/Entities/Zombie.cpp.o
+
+src/Entities/Zombie.i: src/Entities/Zombie.cpp.i
+.PHONY : src/Entities/Zombie.i
+
+# target to preprocess a source file
+src/Entities/Zombie.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.i
+.PHONY : src/Entities/Zombie.cpp.i
+
+src/Entities/Zombie.s: src/Entities/Zombie.cpp.s
+.PHONY : src/Entities/Zombie.s
+
+# target to generate assembly for a file
+src/Entities/Zombie.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.s
+.PHONY : src/Entities/Zombie.cpp.s
 
 src/Listeners/AudioListener.o: src/Listeners/AudioListener.cpp.o
 .PHONY : src/Listeners/AudioListener.o
@@ -666,6 +738,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ooh"
+	@echo "... src/Components/Collider.o"
+	@echo "... src/Components/Collider.i"
+	@echo "... src/Components/Collider.s"
+	@echo "... src/Components/PhysicsBody.o"
+	@echo "... src/Components/PhysicsBody.i"
+	@echo "... src/Components/PhysicsBody.s"
 	@echo "... src/Components/Sprite.o"
 	@echo "... src/Components/Sprite.i"
 	@echo "... src/Components/Sprite.s"
@@ -678,6 +756,9 @@ help:
 	@echo "... src/Entities/Player.o"
 	@echo "... src/Entities/Player.i"
 	@echo "... src/Entities/Player.s"
+	@echo "... src/Entities/Zombie.o"
+	@echo "... src/Entities/Zombie.i"
+	@echo "... src/Entities/Zombie.s"
 	@echo "... src/Listeners/AudioListener.o"
 	@echo "... src/Listeners/AudioListener.i"
 	@echo "... src/Listeners/AudioListener.s"
