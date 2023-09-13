@@ -2,6 +2,7 @@
 
 #include "../Entities/Entity.hpp"
 #include "../Entities/Player.hpp"
+#include "../Managers/ZombieManager.hpp"
 
 #include <SDL2/SDL.h>
 
@@ -16,6 +17,7 @@ class EntityManager
 
   public:
     std::unique_ptr<Player> player;
+    std::unique_ptr<ZombieManager> zmbMgr;
 
   public:
     void ProcessEvents(SDL_Event event);

@@ -374,6 +374,8 @@ CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o: \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Scenes/../UI/../Enums/Anchor.hpp \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Scenes/../UI/../Enums/TextType.hpp \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Scenes/../UI/../Utils/Vector2.hpp \
+ /usr/include/c++/11/iostream /usr/include/c++/11/istream \
+ /usr/include/c++/11/bits/istream.tcc \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2/SDL_ttf.h \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2/SDL.h \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Scenes/../UI/../Enums/ButtonState.hpp \
@@ -426,6 +428,8 @@ CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o: \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/box2d/b2_weld_joint.h \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/box2d/b2_wheel_joint.h \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Scenes/../Managers/../Entities/../Components/Collider.hpp \
+ /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Scenes/../Managers/../Managers/ZombieManager.hpp \
+ /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Scenes/../Managers/../Managers/../Entities/Zombie.hpp \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
@@ -437,6 +441,4 @@ CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o: \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/EventManager.hpp \
  /usr/include/c++/11/algorithm /usr/include/c++/11/bits/ranges_algo.h \
  /usr/include/c++/11/bits/ranges_util.h \
- /usr/include/c++/11/pstl/glue_algorithm_defs.h \
- /usr/include/c++/11/iostream /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h

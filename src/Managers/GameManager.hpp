@@ -2,6 +2,7 @@
 
 #include "SceneManager.hpp"
 #include "../Listeners/AudioListener.hpp"
+#include "../Utils/DebugDraw.hpp"
 
 #include <SDL2/SDL.h>
 
@@ -30,6 +31,8 @@ class GameManager
   private:
     std::unique_ptr<SceneManager> m_scnMgr;
     std::unique_ptr<AudioListener> m_audioListen;
+    std::unique_ptr<DebugDraw> m_debugDraw;
+    bool m_isDebugDraw;
 
   private:
     void m_InitSDLSystems();

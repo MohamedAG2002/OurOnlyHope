@@ -9,13 +9,13 @@
 #include <SDL2/SDL.h>
 
 // Consts 
-const float ZOMBIE_MOVE_SPEED = 350.0f;
+const float ZOMBIE_MOVE_SPEED = 200.0f;
 const float ZOMBIE_ROTATION_SPEED = 300.0f;
 
 class Zombie : public Entity 
 {
   public:
-    Zombie(Vector2* target);
+    Zombie(Vector2 startPos, Vector2* target);
     ~Zombie();
 
   public:

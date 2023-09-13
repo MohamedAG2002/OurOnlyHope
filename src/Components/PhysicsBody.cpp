@@ -18,7 +18,6 @@ PhysicsBody::PhysicsBody(std::string& id, const Vector2 pos, BodyType type)
   m_bodyDef.userData.pointer = (uintptr_t)id.c_str(); 
 
   m_body = global::world->CreateBody(&m_bodyDef);
-  m_body->SetFixedRotation(false);
 }
 
 PhysicsBody::PhysicsBody()

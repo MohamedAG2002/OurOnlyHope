@@ -7,6 +7,16 @@
 #include <SDL2/SDL_keyboard.h>
 #include <box2d/box2d.h>
 
+#include <random>
+
+int GetRandomInt(int min, int max)
+{
+  std::random_device randDevice;
+  std::default_random_engine engine(randDevice());
+  std::uniform_int_distribution<int> dist(min, max);
+  return dist(engine);
+}
+
 float Clamp(float value, float min, float max)
 {
   if(value < min)

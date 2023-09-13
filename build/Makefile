@@ -441,6 +441,30 @@ src/Managers/SceneManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.s
 .PHONY : src/Managers/SceneManager.cpp.s
 
+src/Managers/ZombieManager.o: src/Managers/ZombieManager.cpp.o
+.PHONY : src/Managers/ZombieManager.o
+
+# target to build an object file
+src/Managers/ZombieManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/ZombieManager.cpp.o
+.PHONY : src/Managers/ZombieManager.cpp.o
+
+src/Managers/ZombieManager.i: src/Managers/ZombieManager.cpp.i
+.PHONY : src/Managers/ZombieManager.i
+
+# target to preprocess a source file
+src/Managers/ZombieManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/ZombieManager.cpp.i
+.PHONY : src/Managers/ZombieManager.cpp.i
+
+src/Managers/ZombieManager.s: src/Managers/ZombieManager.cpp.s
+.PHONY : src/Managers/ZombieManager.s
+
+# target to generate assembly for a file
+src/Managers/ZombieManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/ZombieManager.cpp.s
+.PHONY : src/Managers/ZombieManager.cpp.s
+
 src/Scenes/GameScene.o: src/Scenes/GameScene.cpp.o
 .PHONY : src/Scenes/GameScene.o
 
@@ -657,6 +681,30 @@ src/UI/Text.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/Text.cpp.s
 .PHONY : src/UI/Text.cpp.s
 
+src/Utils/DebugDraw.o: src/Utils/DebugDraw.cpp.o
+.PHONY : src/Utils/DebugDraw.o
+
+# target to build an object file
+src/Utils/DebugDraw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Utils/DebugDraw.cpp.o
+.PHONY : src/Utils/DebugDraw.cpp.o
+
+src/Utils/DebugDraw.i: src/Utils/DebugDraw.cpp.i
+.PHONY : src/Utils/DebugDraw.i
+
+# target to preprocess a source file
+src/Utils/DebugDraw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Utils/DebugDraw.cpp.i
+.PHONY : src/Utils/DebugDraw.cpp.i
+
+src/Utils/DebugDraw.s: src/Utils/DebugDraw.cpp.s
+.PHONY : src/Utils/DebugDraw.s
+
+# target to generate assembly for a file
+src/Utils/DebugDraw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Utils/DebugDraw.cpp.s
+.PHONY : src/Utils/DebugDraw.cpp.s
+
 src/Utils/Utils.o: src/Utils/Utils.cpp.o
 .PHONY : src/Utils/Utils.o
 
@@ -777,6 +825,9 @@ help:
 	@echo "... src/Managers/SceneManager.o"
 	@echo "... src/Managers/SceneManager.i"
 	@echo "... src/Managers/SceneManager.s"
+	@echo "... src/Managers/ZombieManager.o"
+	@echo "... src/Managers/ZombieManager.i"
+	@echo "... src/Managers/ZombieManager.s"
 	@echo "... src/Scenes/GameScene.o"
 	@echo "... src/Scenes/GameScene.i"
 	@echo "... src/Scenes/GameScene.s"
@@ -804,6 +855,9 @@ help:
 	@echo "... src/UI/Text.o"
 	@echo "... src/UI/Text.i"
 	@echo "... src/UI/Text.s"
+	@echo "... src/Utils/DebugDraw.o"
+	@echo "... src/Utils/DebugDraw.i"
+	@echo "... src/Utils/DebugDraw.s"
 	@echo "... src/Utils/Utils.o"
 	@echo "... src/Utils/Utils.i"
 	@echo "... src/Utils/Utils.s"

@@ -370,8 +370,7 @@ CMakeFiles/ooh.dir/src/Managers/GameManager.cpp.o: \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Listeners/AudioListener.hpp \
- /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Utils/Globals.hpp \
- /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2/SDL_pixels.h \
+ /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Utils/DebugDraw.hpp \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/box2d/box2d.h \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/box2d/b2_settings.h \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/box2d/b2_types.h \
@@ -410,6 +409,9 @@ CMakeFiles/ooh.dir/src/Managers/GameManager.cpp.o: \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/box2d/b2_revolute_joint.h \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/box2d/b2_weld_joint.h \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/box2d/b2_wheel_joint.h \
+ /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/../Utils/Globals.hpp \
+ /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2/SDL_render.h \
+ /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2/SDL_pixels.h \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/src/Managers/AssetManager.hpp \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2/SDL_mixer.h \
  /home/mohamed/Dev/C++/SDL/OurOnlyHope/libs/include/SDL2/SDL_image.h \

@@ -1,6 +1,7 @@
 #include "Vector2.hpp"
 
 #include <math.h>
+#include <iostream>
 
 // Static variables definitions
 ///////////////////////////////////////////////
@@ -8,7 +9,7 @@ inline const Vector2 Vector2::ZERO(0.0f, 0.0f);
 inline const Vector2 Vector2::ONE(1.0f, 1.0f);
 ///////////////////////////////////////////////
     
-// Mathematical functions
+// Util functions
 ///////////////////////////////////////////////
 void Vector2::Normalize()
 {
@@ -22,6 +23,11 @@ void Vector2::Normalize()
     x *= iLength;
     y *= iLength;
   }
+}
+    
+void Vector2::ToString()
+{
+  std::cout << "X = " << x << " Y = " << y << '\n';
 }
 ///////////////////////////////////////////////
 
@@ -72,6 +78,34 @@ Vector2& Vector2::operator*=(float f)
 {
   this->x *= f;
   this->y *= f; 
+
+  return *this;
+}
+///////////////////////////////////////////////
+
+///////////////////////////////////////////////
+Vector2 Vector2::operator/(const Vector2& other)
+{
+  return Vector2(this->x / other.x, this->y / other.y);
+}
+
+Vector2 Vector2::operator/(const float f)
+{
+  return Vector2(this->x / f, this->y / f);
+}
+
+Vector2& Vector2::operator/=(Vector2 other)
+{
+  this->x /= other.x;
+  this->y /= other.y;
+
+  return *this;
+}
+
+Vector2& Vector2::operator/=(float f)
+{
+  this->x /= f;
+  this->y /= f; 
 
   return *this;
 }

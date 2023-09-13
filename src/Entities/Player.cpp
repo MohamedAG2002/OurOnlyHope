@@ -22,7 +22,7 @@ Player::Player(const Vector2 pos)
   health = maxHealth;
   sprite = Sprite("Player_Sprite", Vector2(64.0f, 64.0f));
   body = PhysicsBody(id, transform.position, BodyType::KINEMATIC);
-  collider = Collider(body, sprite.size, 1.0f);
+  collider = Collider(body, sprite.size / 2.0f, 1.0f);
   rect = SDL_FRect{transform.position.x, transform.position.y, sprite.size.x, sprite.size.y};
 
   m_canSwing = true;

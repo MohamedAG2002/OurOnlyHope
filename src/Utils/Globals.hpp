@@ -1,5 +1,6 @@
 #pragma once
 
+#include <SDL2/SDL_render.h>
 #include <SDL2/SDL_pixels.h>
 #include <box2d/box2d.h>
 

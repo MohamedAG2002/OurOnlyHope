@@ -1,5 +1,6 @@
 #include "GameManager.hpp"
 #include "../Utils/Globals.hpp"
+#include "../Utils/DebugDraw.hpp"
 #include "AssetManager.hpp"
 #include "../Events/EventFuncs.hpp"
 #include "EventManager.hpp"
@@ -17,7 +18,7 @@
 #include <memory>
 
 // Extern variables init 
-b2World* global::world = new b2World(b2Vec2(0.0f, 9.81f));
+b2World* global::world = new b2World(b2Vec2(0.0f, 0.0f));
 
 GameManager::GameManager()
 {
@@ -31,6 +32,9 @@ GameManager::GameManager()
 
   // Box2D init
   global::world->SetContinuousPhysics(true);
+  m_debugDraw = std::make_unique<DebugDraw>(renderer);
+  global::world->SetDebugDraw(m_debugDraw.get());
+  m_isDebugDraw = false;
 
   // Managers init
   AssetManager::Get().LoadAssets(renderer);
@@ -73,6 +77,8 @@ void GameManager::ProcessEvents()
     case SDL_KEYDOWN:
       if(event.key.keysym.sym == SDLK_ESCAPE)
         isRunning = false;
+      if(event.key.keysym.sym == SDLK_F2)
+        m_isDebugDraw = !m_isDebugDraw;
       break;
   }
 }
@@ -94,8 +100,11 @@ void GameManager::Update()
 
 void GameManager::Render()
 {
-  SDL_SetRenderDrawColor(renderer, 10, 10, 255, 255);
+  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
   SDL_RenderClear(renderer);
+
+  if(m_isDebugDraw)
+    global::world->DebugDraw();
 
   m_scnMgr->Render(renderer);
 

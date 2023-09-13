@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 class Vector2 
 {
   // CTORs
@@ -29,9 +31,10 @@ class Vector2
   ///////////////////////////////////////////////
 
   public:
-    // Mathematical functions
+    // Util functions
     ///////////////////////////////////////////////
     void Normalize(); 
+    void ToString();
     ///////////////////////////////////////////////
 
     // Operators overloading
@@ -49,6 +52,13 @@ class Vector2
     Vector2 operator*(const float f);
     Vector2& operator*=(Vector2 other);
     Vector2& operator*=(float f);
+    ///////////////////////////////////////////////
+    
+    ///////////////////////////////////////////////
+    Vector2 operator/(const Vector2& other);
+    Vector2 operator/(const float f);
+    Vector2& operator/=(Vector2 other);
+    Vector2& operator/=(float f);
     ///////////////////////////////////////////////
 
     ///////////////////////////////////////////////

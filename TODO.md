@@ -1,5 +1,6 @@
 # Engine
 - Physics:
+    - Fix the zombie's physics; it is COMPLETELY wrong!
     - Contact Listener 
 
 # Game

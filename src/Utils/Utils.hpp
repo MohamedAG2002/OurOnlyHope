@@ -8,6 +8,7 @@
 #include <box2d/b2_body.h>
 #include <box2d/b2_math.h>
 
+int GetRandomInt(int min, int max);
 float Clamp(float value, float min, float max);
 bool PointVSRect(SDL_FRect rect, Vector2 point);
 bool IsKeyDown(SDL_Scancode key);

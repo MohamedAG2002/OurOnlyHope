@@ -49,7 +49,7 @@ void AssetManager::LoadSprites(SDL_Renderer* renderer)
   load("Zombie_Sprite", "assets/sprites/zombie.png");
 
   // Checking for errors
-  for(auto[key, value] : m_sprites)
+  for(auto&[key, value] : m_sprites)
   {
     if(!value)
       std::cout << IMG_GetError() << std::endl;
@@ -70,7 +70,7 @@ void AssetManager::LoadSounds()
   load("Zombie_Grunt", "assets/audio/zombie_grunt.wav");
 
   // Checking for errors
-  for(auto[key, value] : m_sounds)
+  for(auto&[key, value] : m_sounds)
   {
     if(!value)
       std::cout << Mix_GetError() << std::endl;
@@ -87,7 +87,7 @@ void AssetManager::LoadMusic()
   load("Menu_Hymn", "assets/audio/menu_hymn.ogg");
   
   // Checking for errors
-  for(auto[key, value] : m_music)
+  for(auto&[key, value] : m_music)
   {
     if(!value)
       std::cout << Mix_GetError() << std::endl;
@@ -104,7 +104,7 @@ void AssetManager::UnloadAssets()
 
 void AssetManager::UnloadFont()
 {
-  for(auto[key, value] : m_fonts)
+  for(auto&[key, value] : m_fonts)
     TTF_CloseFont(value);
 
   m_fonts.clear();
@@ -112,7 +112,7 @@ void AssetManager::UnloadFont()
 
 void AssetManager::UnloadSprites()
 {
-  for(auto[key, value] : m_sprites)
+  for(auto&[key, value] : m_sprites)
     SDL_DestroyTexture(value);
   
   m_sprites.clear();
@@ -120,7 +120,7 @@ void AssetManager::UnloadSprites()
 
 void AssetManager::UnloadSounds()
 {
-  for(auto[key, value] : m_sounds)
+  for(auto&[key, value] : m_sounds)
     Mix_FreeChunk(value);
   
   m_sounds.clear();
@@ -128,7 +128,7 @@ void AssetManager::UnloadSounds()
 
 void AssetManager::UnloadMusic()
 {
-  for(auto[key, value] : m_music)
+  for(auto&[key, value] : m_music)
     Mix_FreeMusic(value);
   
   m_music.clear();

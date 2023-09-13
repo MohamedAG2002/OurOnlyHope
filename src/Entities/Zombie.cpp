@@ -13,9 +13,9 @@
 
 #include <math.h>
 
-Zombie::Zombie(Vector2* target)
+Zombie::Zombie(Vector2 startPos, Vector2* target)
 {
-  transform = Transform(Vector2(-4000.0f, -4000.0f));
+  transform = Transform(startPos);
   id = "Zombie";
   isActive = false;
 
@@ -24,8 +24,8 @@ Zombie::Zombie(Vector2* target)
   health = maxHealth; 
   damage = 0;
   sprite = Sprite("Zombie_Sprite", Vector2(64.0f, 64.0f));
-  body = PhysicsBody(id, transform.position, BodyType::KINEMATIC);
-  collider = Collider(body, sprite.size, 1.0f);
+  body = PhysicsBody(id, transform.position, BodyType::RIGID);
+  collider = Collider(body, sprite.size / 2.0f, 1.0f);
 
   m_attackTimer = 0.0f;
   m_attackCooldown = 100.0f;
@@ -45,6 +45,9 @@ void Zombie::ProcessEvents(SDL_Event event)
 
 void Zombie::Update(float dt)
 {
+  m_HandleHealth();
+  m_HandleDamage();
+  m_HandleMovement();
 }
 
 void Zombie::Render(SDL_Renderer* renderer) 
@@ -60,7 +63,7 @@ void Zombie::m_HandleHealth()
   // Kill the zombie and set him aside when low on health 
   if(health == 0)
   {
-    transform.position = Vector2(-4000.0f, -4000.0f);
+    transform.position = Vector2(0.0f, 0.0f);
     isActive = false;
   }
 }
@@ -82,12 +85,11 @@ void Zombie::m_HandleDamage()
   }
   else 
     damage = 0;
-
 }
 
 void Zombie::m_HandleMovement()
 {
-  Vector2 diff = transform.position - *m_target;
+  Vector2 diff = *m_target - transform.position;
   float angle = atan2f(diff.y * ZOMBIE_ROTATION_SPEED, diff.x * ZOMBIE_ROTATION_SPEED);
   diff.Normalize();
   // TODO: Set the rotation based on the angle
