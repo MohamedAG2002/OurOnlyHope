@@ -1,3 +1,0 @@
-/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build/CMakeFiles/ooh.dir
-/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build/CMakeFiles/edit_cache.dir
-/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build/CMakeFiles/rebuild_cache.dir
