@@ -1,6 +1,6 @@
 # Engine
-- Tiles
-- Camera 
+- Camera
+- Multiple tile managers = multiple layers?
 
 # Game
 - Set up the metadata for all of the shop items
@@ -9,9 +9,12 @@
 - Make the player die
 - Better player 
 - Better sword 
+- Get a better sprite for the wall and the houses
 - Fade in screen before the menu
 
 # Problems to fix later
+- The tiles are not supposed to be bodies. Or at least I think. The outer walls of the map need to be solid/rigid in order for the player and the zombies to stop when colliding with them. The houses need to be like that too. But the grass tiles need to kinematic/transperant since they are supposed to be invisible. Maybe make a better tile system. 
+
 - The rotations aren't great with joystick controls as the player does reset his rotations when the left analog has been let go. The player should instead remember his last rotaion and continue from there rather than resetting every time the player lets go of the analog, which can be annoying. 
 
 - The zombie sounds get sampled together which create an ear-raping symphony. FIX THAT!

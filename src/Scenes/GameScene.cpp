@@ -22,6 +22,8 @@ GameScene::GameScene()
   tileMgr = std::make_unique<TileManager>("Map");
   pausedText = std::make_unique<Text>("Paused", Anchor::CENTER, TextType::BIG, WHITE);
   menuButton = std::make_unique<Button>("Menu", Anchor::BOTTOM_LEFT, TextType::SMALL, GREEN, WHITE, Vector2{15.0f, 0.0f});
+  cam = Camera2D{Vector2{GetScreenWidth() / 2.0f, GetScreenHeight() / 2.0f}, enttMgr->player->transform.position, 0.0f, 1.0f}; 
+
   m_isPaused = false;
 }
 
@@ -42,12 +44,19 @@ void GameScene::Update(float dt)
     return;
 
   enttMgr->Update(dt);
+  
+  // Update the camera's position
+  cam.target = enttMgr->player->transform.position;
 }
 
 void GameScene::Render()
 {
+  BeginMode2D(cam);
+  
   tileMgr->Render();
   enttMgr->Render();
+
+  EndMode2D();
 
   if(!m_isPaused)
     return;

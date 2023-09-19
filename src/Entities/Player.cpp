@@ -137,13 +137,11 @@ void Player::m_HandleMovement(float dt)
   else 
     m_GetKeyInput();
 
-  // Apply force based on the current velocity and rotate the body based on the current rotation
+  // Apply force based on the current velocity
   body.ApplyForce(m_velocity);
-  body.SetBodyRotation(transform.rotation);
 
   // Update the pixel position and rotation(in degrees)
   transform.position = body.GetBodyPosition();
-  //transform.rotation = body.GetBodyRotation();
 }
 
 void Player::m_HandleCombat()
