@@ -249,6 +249,30 @@ src/Entities/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Player.cpp.s
 .PHONY : src/Entities/Player.cpp.s
 
+src/Entities/Tile.o: src/Entities/Tile.cpp.o
+.PHONY : src/Entities/Tile.o
+
+# target to build an object file
+src/Entities/Tile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Tile.cpp.o
+.PHONY : src/Entities/Tile.cpp.o
+
+src/Entities/Tile.i: src/Entities/Tile.cpp.i
+.PHONY : src/Entities/Tile.i
+
+# target to preprocess a source file
+src/Entities/Tile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Tile.cpp.i
+.PHONY : src/Entities/Tile.cpp.i
+
+src/Entities/Tile.s: src/Entities/Tile.cpp.s
+.PHONY : src/Entities/Tile.s
+
+# target to generate assembly for a file
+src/Entities/Tile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Tile.cpp.s
+.PHONY : src/Entities/Tile.cpp.s
+
 src/Entities/Zombie.o: src/Entities/Zombie.cpp.o
 .PHONY : src/Entities/Zombie.o
 
@@ -440,6 +464,30 @@ src/Managers/SceneManager.s: src/Managers/SceneManager.cpp.s
 src/Managers/SceneManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.s
 .PHONY : src/Managers/SceneManager.cpp.s
+
+src/Managers/TileManager.o: src/Managers/TileManager.cpp.o
+.PHONY : src/Managers/TileManager.o
+
+# target to build an object file
+src/Managers/TileManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/TileManager.cpp.o
+.PHONY : src/Managers/TileManager.cpp.o
+
+src/Managers/TileManager.i: src/Managers/TileManager.cpp.i
+.PHONY : src/Managers/TileManager.i
+
+# target to preprocess a source file
+src/Managers/TileManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/TileManager.cpp.i
+.PHONY : src/Managers/TileManager.cpp.i
+
+src/Managers/TileManager.s: src/Managers/TileManager.cpp.s
+.PHONY : src/Managers/TileManager.s
+
+# target to generate assembly for a file
+src/Managers/TileManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/TileManager.cpp.s
+.PHONY : src/Managers/TileManager.cpp.s
 
 src/Managers/ZombieManager.o: src/Managers/ZombieManager.cpp.o
 .PHONY : src/Managers/ZombieManager.o
@@ -777,6 +825,9 @@ help:
 	@echo "... src/Entities/Player.o"
 	@echo "... src/Entities/Player.i"
 	@echo "... src/Entities/Player.s"
+	@echo "... src/Entities/Tile.o"
+	@echo "... src/Entities/Tile.i"
+	@echo "... src/Entities/Tile.s"
 	@echo "... src/Entities/Zombie.o"
 	@echo "... src/Entities/Zombie.i"
 	@echo "... src/Entities/Zombie.s"
@@ -801,6 +852,9 @@ help:
 	@echo "... src/Managers/SceneManager.o"
 	@echo "... src/Managers/SceneManager.i"
 	@echo "... src/Managers/SceneManager.s"
+	@echo "... src/Managers/TileManager.o"
+	@echo "... src/Managers/TileManager.i"
+	@echo "... src/Managers/TileManager.s"
 	@echo "... src/Managers/ZombieManager.o"
 	@echo "... src/Managers/ZombieManager.i"
 	@echo "... src/Managers/ZombieManager.s"

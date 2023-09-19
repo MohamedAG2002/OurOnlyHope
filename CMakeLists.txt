@@ -27,6 +27,7 @@ set(SOURCES
   src/Managers/SceneManager.cpp
   src/Managers/EntityManager.cpp
   src/Managers/ZombieManager.cpp
+  src/Managers/TileManager.cpp
 
   # Listeners
   src/Listeners/AudioListener.cpp
@@ -54,6 +55,7 @@ set(SOURCES
   # Entities
   src/Entities/Player.cpp
   src/Entities/Zombie.cpp
+  src/Entities/Tile.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

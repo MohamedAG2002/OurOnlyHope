@@ -52,6 +52,13 @@ void AssetManager::LoadSprites()
   load("Medium_Sword", "assets/sprites/weapons/medium_sword.png");
   load("Heavy_Sword", "assets/sprites/weapons/heavy_sword.png");
   load("Spear", "assets/sprites/weapons/spear.png");
+
+  // Adding the tiles 
+  load("Grass_Tile", "assets/sprites/tiles/grass_tile.png"); 
+  load("Wall_Tile", "assets/sprites/tiles/wall_tile.png"); 
+
+  // Adding the map sprite 
+  load("Map", "assets/sprites/map.png");
 }
 
 void AssetManager::LoadSounds()

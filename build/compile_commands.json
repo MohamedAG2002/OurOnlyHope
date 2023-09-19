@@ -55,6 +55,12 @@
 },
 {
   "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Managers/TileManager.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/TileManager.cpp",
+  "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/TileManager.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Managers/TileManager.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
   "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Listeners/AudioListener.cpp",
   "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Listeners/AudioListener.cpp",
   "output": "CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o"
@@ -154,5 +160,11 @@
   "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Zombie.cpp",
   "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Zombie.cpp",
   "output": "CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Entities/Tile.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Tile.cpp",
+  "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Tile.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Entities/Tile.cpp.o"
 }
 ]

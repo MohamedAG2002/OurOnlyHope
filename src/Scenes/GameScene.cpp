@@ -3,6 +3,7 @@
 #include "../Events/EventFuncs.hpp"
 #include "../Managers/EventManager.hpp"
 #include "../Managers/EntityManager.hpp"
+#include "../Managers/TileManager.hpp"
 #include "../UI/Button.hpp"
 #include "../UI/Text.hpp"
 #include "../Enums/Anchor.hpp"
@@ -18,6 +19,7 @@ namespace ooh {
 GameScene::GameScene()
 {
   enttMgr = std::make_unique<EntityManager>();
+  tileMgr = std::make_unique<TileManager>("Map");
   pausedText = std::make_unique<Text>("Paused", Anchor::CENTER, TextType::BIG, WHITE);
   menuButton = std::make_unique<Button>("Menu", Anchor::BOTTOM_LEFT, TextType::SMALL, GREEN, WHITE, Vector2{15.0f, 0.0f});
   m_isPaused = false;
@@ -44,6 +46,7 @@ void GameScene::Update(float dt)
 
 void GameScene::Render()
 {
+  tileMgr->Render();
   enttMgr->Render();
 
   if(!m_isPaused)

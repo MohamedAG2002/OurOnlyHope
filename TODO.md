@@ -1,11 +1,12 @@
 # Engine
-- Contact Listener 
-- Camera 
 - Tiles
+- Camera 
 
 # Game
 - Set up the metadata for all of the shop items
 - Weapon functionality
+- Make the zombies die 
+- Make the player die
 - Better player 
 - Better sword 
 - Fade in screen before the menu

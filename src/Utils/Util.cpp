@@ -37,6 +37,12 @@ float GetAngle(Vector2 point1, Vector2 point2)
   return atan2f(diff.y, diff.x) * RAD2DEG;
 }
 
+bool IsColorEqual(Color c1, Color c2)
+{
+  return (c1.r == c2.r) && (c1.g == c2.g) && 
+         (c1.b == c2.b) && (c1.a == c2.a);
+}
+
 Vector2 B2Vec2ToVector2(b2Vec2 vec)
 {
   return Vector2(vec.x * global::METER_TO_PIXEL, vec.y * global::METER_TO_PIXEL);
