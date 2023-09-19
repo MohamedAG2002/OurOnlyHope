@@ -24,7 +24,9 @@ class EventManager
     {
       // Checking--at compile time--which type the given template is and passing the 
       // function pointer to the appropriate vector.
-      if constexpr (std::is_same<T, OnSceneChange>::value)
+      if constexpr (std::is_same<T, OnEntityCollision>::value)
+        m_collisionEvents.push_back(static_cast<OnEntityCollision>(func));
+      else if constexpr (std::is_same<T, OnSceneChange>::value)
         m_sceneEvents.push_back(static_cast<OnSceneChange>(func));
       else if constexpr (std::is_same<T, OnSoundPlay>::value)
         m_soundEvents.push_back(static_cast<OnSoundPlay>(func));
@@ -50,7 +52,9 @@ class EventManager
 
       // Checking the exact template type and calling the appropriate function 
       // pointer, giving it the given arguments.
-      if constexpr (std::is_same<T, OnSceneChange>::value)
+      if constexpr (std::is_same<T, OnEntityCollision>::value)
+        std::for_each(m_collisionEvents.begin(), m_collisionEvents.end(), callFn);
+      else if constexpr (std::is_same<T, OnSceneChange>::value)
         std::for_each(m_sceneEvents.begin(), m_sceneEvents.end(), callFn);
       else if constexpr (std::is_same<T, OnSoundPlay>::value)
         std::for_each(m_soundEvents.begin(), m_soundEvents.end(), callFn);
@@ -70,6 +74,7 @@ class EventManager
     void operator=(const EventManager&) = delete;
 
   private:
+    std::vector<OnEntityCollision> m_collisionEvents;
     std::vector<OnSceneChange> m_sceneEvents;
     std::vector<OnSoundPlay> m_soundEvents;
     std::vector<OnMusicPlay> m_musicPlayEvents;

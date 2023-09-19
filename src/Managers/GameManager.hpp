@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Listeners/AudioListener.hpp"
+#include "../Listeners/ContactListener.hpp"
 #include "SceneManager.hpp"
 #include "../Utils/DebugDraw.hpp"
 
@@ -24,6 +25,7 @@ class GameManager
     std::unique_ptr<AudioListener> m_audioListen;
     std::unique_ptr<SceneManager> m_scnMgr;
     std::unique_ptr<DebugDraw> m_debugDraw;
+    std::unique_ptr<ContactListener> m_contactListen;
 };
 
 }

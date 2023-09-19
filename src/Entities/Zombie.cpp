@@ -20,21 +20,32 @@ namespace ooh {
 Zombie::Zombie(Vector2 startPos, Vector2* target)
   :m_startPos(startPos), m_target(target)
 {
+  // Inherited variables init
   transform = Transform2D(startPos);
   id = "Zombie";
   isActive = false;
 
+  // Public variables init
   maxHealth = 100;
   maxDamage = 100;
   health = maxHealth; 
   damage = 0;
+
+  // Components init
   sprite = Sprite("Zombie_Sprite", Vector2(64.0f, 64.0f));
   body = PhysicsBody(id, transform.position, BodyType::RIGID, isActive);
   collider = Collider(body, sprite.size, 0.2f, false);
 
+  // Private variables init
   m_attackTimer = 0.0f;
   m_attackCooldown = 100.0f;
   m_velocity = Vector2{0.0f, 0.0f};
+
+  // Listen to events 
+  EventManager::Get().ListenToEvent<OnEntityCollision>([&](std::string& id1, std::string& id2){
+    if((id1 == "Weapon" && id2 == "Zombie") || (id1 == "Zombie" && id2 == "Weapon"))
+      std::cout << "ZOMBIE COLLISION\n";
+  });
 }
 
 Zombie::~Zombie()

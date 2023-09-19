@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o"
   "CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o.d"
+  "CMakeFiles/ooh.dir/src/Listeners/ContactListener.cpp.o"
+  "CMakeFiles/ooh.dir/src/Listeners/ContactListener.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Managers/AssetManager.cpp.o"
   "CMakeFiles/ooh.dir/src/Managers/AssetManager.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Managers/EntityManager.cpp.o"

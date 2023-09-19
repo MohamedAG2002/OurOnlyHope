@@ -61,6 +61,12 @@
 },
 {
   "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Listeners/ContactListener.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Listeners/ContactListener.cpp",
+  "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Listeners/ContactListener.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Listeners/ContactListener.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
   "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Scenes/MenuScene.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/MenuScene.cpp",
   "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/MenuScene.cpp",
   "output": "CMakeFiles/ooh.dir/src/Scenes/MenuScene.cpp.o"

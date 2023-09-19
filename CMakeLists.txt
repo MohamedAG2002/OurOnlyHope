@@ -30,6 +30,7 @@ set(SOURCES
 
   # Listeners
   src/Listeners/AudioListener.cpp
+  src/Listeners/ContactListener.cpp
 
   # Scenes 
   src/Scenes/MenuScene.cpp

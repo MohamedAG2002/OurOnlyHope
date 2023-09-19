@@ -12,6 +12,7 @@
 #include <raylib.h>
 
 #include <math.h>
+#include <iostream>
 
 namespace ooh {
  
@@ -36,6 +37,12 @@ Player::Player(const Vector2 startPos)
   m_attackCooldown = 50.0f;
   m_attackTimer = 0.0f;
   m_canAttack = false;
+
+  // Listen to events 
+  EventManager::Get().ListenToEvent<OnEntityCollision>([&](std::string& id1, std::string& id2){
+    if((id1 == "Player" && id2 == "Zombie") || (id1 == "Zombie" && id2 == "Player"))
+      std::cout << "PLAYER COLLISION\n";
+  });
 }
 
 Player::~Player()

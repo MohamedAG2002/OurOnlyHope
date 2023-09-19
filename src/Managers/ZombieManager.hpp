@@ -10,7 +10,7 @@
 namespace ooh {
 
 // Consts 
-const int MAX_ZOMBIES = 1;
+const int MAX_ZOMBIES = 50;
 
 class ZombieManager
 {

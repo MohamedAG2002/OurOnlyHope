@@ -4,6 +4,7 @@
 #include "SceneManager.hpp"
 #include "../Events/EventFuncs.hpp"
 #include "../Listeners/AudioListener.hpp"
+#include "../Listeners/ContactListener.hpp"
 #include "../Utils/Globals.hpp"
 
 #include <raylib.h>
@@ -26,8 +27,12 @@ GameManager::GameManager()
   
   // Box2D init
   global::world = new b2World(b2Vec2(0.0f, 0.0f));
+  
   m_debugDraw = std::make_unique<DebugDraw>();
   global::world->SetDebugDraw(m_debugDraw.get());
+  
+  m_contactListen = std::make_unique<ContactListener>();
+  global::world->SetContactListener(m_contactListen.get());
 
   // Singletons init 
   AssetManager::Get().LoadAssets();
@@ -51,6 +56,9 @@ GameManager::~GameManager()
   AssetManager::Get().UnloadAssets();
   EventManager::Get().UnloadEvents();
 
+  // Box2D de-init 
+  delete global::world;
+
   // Raylib de-init
   CloseAudioDevice();
   CloseWindow();
@@ -60,6 +68,7 @@ void GameManager::Update()
 {
   // Box2D update 
   global::world->Step(GetFrameTime(), global::VEL_ITER, global::POS_ITER);
+  m_contactListen->Update();
 
   // Turning debug draw on or off 
   if(IsKeyPressed(KEY_F2))

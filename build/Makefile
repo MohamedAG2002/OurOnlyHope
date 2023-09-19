@@ -297,6 +297,30 @@ src/Listeners/AudioListener.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.s
 .PHONY : src/Listeners/AudioListener.cpp.s
 
+src/Listeners/ContactListener.o: src/Listeners/ContactListener.cpp.o
+.PHONY : src/Listeners/ContactListener.o
+
+# target to build an object file
+src/Listeners/ContactListener.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Listeners/ContactListener.cpp.o
+.PHONY : src/Listeners/ContactListener.cpp.o
+
+src/Listeners/ContactListener.i: src/Listeners/ContactListener.cpp.i
+.PHONY : src/Listeners/ContactListener.i
+
+# target to preprocess a source file
+src/Listeners/ContactListener.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Listeners/ContactListener.cpp.i
+.PHONY : src/Listeners/ContactListener.cpp.i
+
+src/Listeners/ContactListener.s: src/Listeners/ContactListener.cpp.s
+.PHONY : src/Listeners/ContactListener.s
+
+# target to generate assembly for a file
+src/Listeners/ContactListener.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Listeners/ContactListener.cpp.s
+.PHONY : src/Listeners/ContactListener.cpp.s
+
 src/Managers/AssetManager.o: src/Managers/AssetManager.cpp.o
 .PHONY : src/Managers/AssetManager.o
 
@@ -759,6 +783,9 @@ help:
 	@echo "... src/Listeners/AudioListener.o"
 	@echo "... src/Listeners/AudioListener.i"
 	@echo "... src/Listeners/AudioListener.s"
+	@echo "... src/Listeners/ContactListener.o"
+	@echo "... src/Listeners/ContactListener.i"
+	@echo "... src/Listeners/ContactListener.s"
 	@echo "... src/Managers/AssetManager.o"
 	@echo "... src/Managers/AssetManager.i"
 	@echo "... src/Managers/AssetManager.s"
