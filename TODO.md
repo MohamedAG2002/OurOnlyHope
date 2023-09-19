@@ -1,7 +1,3 @@
-# Engine
-- Camera
-- Multiple tile managers = multiple layers?
-
 # Game
 - Set up the metadata for all of the shop items
 - Weapon functionality
@@ -10,6 +6,7 @@
 - Better player 
 - Better sword 
 - Get a better sprite for the wall and the houses
+- Better camera
 - Fade in screen before the menu
 
 # Problems to fix later
