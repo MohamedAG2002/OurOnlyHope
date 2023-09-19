@@ -25,6 +25,7 @@ set(SOURCES
   src/Managers/EventManager.cpp
   src/Managers/SceneManager.cpp
   src/Managers/EntityManager.cpp
+  src/Managers/ZombieManager.cpp
 
   # Listeners
   src/Listeners/AudioListener.cpp

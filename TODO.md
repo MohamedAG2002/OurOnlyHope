@@ -8,7 +8,6 @@
 # Game
 - Basic zombie
 - Zombie manager
-- JoyStick controls
 - Set up the metadata for all of the shop items
 - Weapon functionality
 - Better player 

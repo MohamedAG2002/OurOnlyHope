@@ -5,6 +5,8 @@
 #include <raylib.h>
 #include <box2d/box2d.h>
 
+#include <math.h>
+
 namespace ooh {
  
 namespace util {
@@ -27,6 +29,12 @@ int ClampI(int value, int min, int max)
     return max;
   else 
     return value;
+}
+
+float GetAngle(Vector2 point1, Vector2 point2)
+{
+  Vector2 diff = Vector2{point1.x - point2.x, point1.y - point2.y};
+  return atan2f(diff.y, diff.x) * RAD2DEG;
 }
 
 Vector2 B2Vec2ToVector2(b2Vec2 vec)

@@ -2,9 +2,9 @@
 
 #include "../Entities/Entity.hpp"
 #include "../Entities/Player.hpp"
+#include "../Managers/ZombieManager.hpp"
 /*
 #include "../Entities/Weapon.hpp"
-#include "../Managers/ZombieManager.hpp"
 */
 
 #include <raylib.h>
@@ -22,8 +22,8 @@ class EntityManager
 
   public:
     std::unique_ptr<Player> player;
-    /*
     std::unique_ptr<ZombieManager> zmbMgr;
+    /*
     std::unique_ptr<Weapon> weapon;
     */
 

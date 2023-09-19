@@ -417,6 +417,30 @@ src/Managers/SceneManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.s
 .PHONY : src/Managers/SceneManager.cpp.s
 
+src/Managers/ZombieManager.o: src/Managers/ZombieManager.cpp.o
+.PHONY : src/Managers/ZombieManager.o
+
+# target to build an object file
+src/Managers/ZombieManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/ZombieManager.cpp.o
+.PHONY : src/Managers/ZombieManager.cpp.o
+
+src/Managers/ZombieManager.i: src/Managers/ZombieManager.cpp.i
+.PHONY : src/Managers/ZombieManager.i
+
+# target to preprocess a source file
+src/Managers/ZombieManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/ZombieManager.cpp.i
+.PHONY : src/Managers/ZombieManager.cpp.i
+
+src/Managers/ZombieManager.s: src/Managers/ZombieManager.cpp.s
+.PHONY : src/Managers/ZombieManager.s
+
+# target to generate assembly for a file
+src/Managers/ZombieManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/ZombieManager.cpp.s
+.PHONY : src/Managers/ZombieManager.cpp.s
+
 src/Scenes/GameScene.o: src/Scenes/GameScene.cpp.o
 .PHONY : src/Scenes/GameScene.o
 
@@ -726,6 +750,9 @@ help:
 	@echo "... src/Managers/SceneManager.o"
 	@echo "... src/Managers/SceneManager.i"
 	@echo "... src/Managers/SceneManager.s"
+	@echo "... src/Managers/ZombieManager.o"
+	@echo "... src/Managers/ZombieManager.i"
+	@echo "... src/Managers/ZombieManager.s"
 	@echo "... src/Scenes/GameScene.o"
 	@echo "... src/Scenes/GameScene.i"
 	@echo "... src/Scenes/GameScene.s"

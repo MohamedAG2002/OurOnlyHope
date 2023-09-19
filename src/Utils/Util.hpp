@@ -13,6 +13,9 @@ namespace util {
 float ClampF(float value, float min, float max);
 int ClampI(int value, int min, int max);
 
+// Get the angle between two points in degrees
+float GetAngle(Vector2 point1, Vector2 point2);
+
 // Box2D utilties
 Vector2 B2Vec2ToVector2(b2Vec2 vec);
 b2Vec2 Vector2ToB2Vec2(Vector2 vec);

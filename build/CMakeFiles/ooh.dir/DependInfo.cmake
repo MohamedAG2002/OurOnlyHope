@@ -20,6 +20,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/EventManager.cpp" "CMakeFiles/ooh.dir/src/Managers/EventManager.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Managers/EventManager.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/GameManager.cpp" "CMakeFiles/ooh.dir/src/Managers/GameManager.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Managers/GameManager.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/SceneManager.cpp" "CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o.d"
+  "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/ZombieManager.cpp" "CMakeFiles/ooh.dir/src/Managers/ZombieManager.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Managers/ZombieManager.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/GameScene.cpp" "CMakeFiles/ooh.dir/src/Scenes/GameScene.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Scenes/GameScene.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/MenuScene.cpp" "CMakeFiles/ooh.dir/src/Scenes/MenuScene.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Scenes/MenuScene.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/OverLoseScene.cpp" "CMakeFiles/ooh.dir/src/Scenes/OverLoseScene.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Scenes/OverLoseScene.cpp.o.d"

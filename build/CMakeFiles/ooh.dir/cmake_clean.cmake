@@ -23,6 +23,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ooh.dir/src/Managers/GameManager.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o"
   "CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o.d"
+  "CMakeFiles/ooh.dir/src/Managers/ZombieManager.cpp.o"
+  "CMakeFiles/ooh.dir/src/Managers/ZombieManager.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Scenes/GameScene.cpp.o"
   "CMakeFiles/ooh.dir/src/Scenes/GameScene.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Scenes/MenuScene.cpp.o"
