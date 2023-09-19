@@ -14,6 +14,7 @@
 namespace ooh {
 
 b2World* global::world;
+bool global::isDebugDraw;
 
 GameManager::GameManager()
   :m_isRunning(true)
@@ -25,6 +26,8 @@ GameManager::GameManager()
   
   // Box2D init
   global::world = new b2World(b2Vec2(0.0f, 0.0f));
+  m_debugDraw = std::make_unique<DebugDraw>();
+  global::world->SetDebugDraw(m_debugDraw.get());
 
   // Singletons init 
   AssetManager::Get().LoadAssets();
@@ -32,6 +35,9 @@ GameManager::GameManager()
   // Managers/Listeners init 
   m_audioListen = std::make_unique<AudioListener>();
   m_scnMgr = std::make_unique<SceneManager>(); 
+
+  // Other globals init 
+  global::isDebugDraw = false;
 
   // Listen to events 
   EventManager::Get().ListenToEvent<OnQuit>([&](){
@@ -55,6 +61,10 @@ void GameManager::Update()
   // Box2D update 
   global::world->Step(GetFrameTime(), global::VEL_ITER, global::POS_ITER);
 
+  // Turning debug draw on or off 
+  if(IsKeyPressed(KEY_F2))
+    global::isDebugDraw = !global::isDebugDraw;
+
   m_scnMgr->Update(GetFrameTime());
 }
 
@@ -62,6 +72,9 @@ void GameManager::Render()
 {
   BeginDrawing();
   ClearBackground(BLACK);
+
+  if(global::isDebugDraw)
+    global::world->DebugDraw();
 
   m_scnMgr->Render();
 

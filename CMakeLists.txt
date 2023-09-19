@@ -18,6 +18,7 @@ set(SOURCES
   
   # Utils
   src/Utils/Util.cpp
+  src/Utils/DebugDraw.cpp
 
   # Managers
   src/Managers/GameManager.cpp

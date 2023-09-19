@@ -657,6 +657,30 @@ src/UI/Text.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/Text.cpp.s
 .PHONY : src/UI/Text.cpp.s
 
+src/Utils/DebugDraw.o: src/Utils/DebugDraw.cpp.o
+.PHONY : src/Utils/DebugDraw.o
+
+# target to build an object file
+src/Utils/DebugDraw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Utils/DebugDraw.cpp.o
+.PHONY : src/Utils/DebugDraw.cpp.o
+
+src/Utils/DebugDraw.i: src/Utils/DebugDraw.cpp.i
+.PHONY : src/Utils/DebugDraw.i
+
+# target to preprocess a source file
+src/Utils/DebugDraw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Utils/DebugDraw.cpp.i
+.PHONY : src/Utils/DebugDraw.cpp.i
+
+src/Utils/DebugDraw.s: src/Utils/DebugDraw.cpp.s
+.PHONY : src/Utils/DebugDraw.s
+
+# target to generate assembly for a file
+src/Utils/DebugDraw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Utils/DebugDraw.cpp.s
+.PHONY : src/Utils/DebugDraw.cpp.s
+
 src/Utils/Util.o: src/Utils/Util.cpp.o
 .PHONY : src/Utils/Util.o
 
@@ -780,6 +804,9 @@ help:
 	@echo "... src/UI/Text.o"
 	@echo "... src/UI/Text.i"
 	@echo "... src/UI/Text.s"
+	@echo "... src/Utils/DebugDraw.o"
+	@echo "... src/Utils/DebugDraw.i"
+	@echo "... src/Utils/DebugDraw.s"
 	@echo "... src/Utils/Util.o"
 	@echo "... src/Utils/Util.i"
 	@echo "... src/Utils/Util.s"

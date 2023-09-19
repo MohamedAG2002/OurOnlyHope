@@ -9,7 +9,8 @@ namespace ooh {
 
 Collider::Collider(PhysicsBody& body, Vector2 size, float density, bool sensor)
 {
-  b2Vec2 halfSize = util::Vector2ToB2Vec2(Vector2(size.x / 2.0f, size.y / 2.0f));
+  // @NOTE: Deviding the size by 4 works better than deviding it by 2 for some reason
+  b2Vec2 halfSize = util::Vector2ToB2Vec2(Vector2(size.x / 4.0f, size.y / 4.0f));
 
   m_shape.SetAsBox(halfSize.x, halfSize.y);
   m_fixtureDef.shape = &m_shape;

@@ -17,6 +17,7 @@ const float PIXEL_TO_METER = 1.0f / METER_TO_PIXEL;
 
 // GLOBAL VARIABLES??!! YUCK!!!!!!
 extern b2World* world; // Everything with the box2d world is handled in the GameManager.cpp
+extern bool isDebugDraw;
 
 }
 

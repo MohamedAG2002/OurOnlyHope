@@ -76,7 +76,7 @@ void Player::m_GetKeyInput()
   
   // Rotate the player based on where the mouse is relative to the screen
   float angle = util::GetAngle(transform.position, GetMousePosition());
-  transform.rotation = angle;
+  transform.rotation = angle > 0 || angle < 0 ? angle : transform.rotation; // Never set the rotation to 0
 
   // Attacking 
   if(m_canAttack && IsKeyDown(KEY_SPACE))
@@ -98,8 +98,8 @@ void Player::m_GetJoystickInput()
   m_velocity.y =  leftAnalogValue.y * PLAYER_MOVE_SPEED;
 
   // Rotations
-  float angle = atan2f(rightAnalogValue.y * PLAYER_ROTATION_SPEED, rightAnalogValue.x * PLAYER_ROTATION_SPEED); 
-  transform.rotation = angle * RAD2DEG;
+  float angle = atan2f(-rightAnalogValue.y, -rightAnalogValue.x) * RAD2DEG; 
+  transform.rotation = angle > 0 || angle < 0 ? angle : transform.rotation;
 
   // Attacking(when pressing R2 on a Dualshock or RT on an xbox controller)
   if(m_canAttack && IsGamepadButtonDown(global::CURRENT_GAMEPAD, GAMEPAD_BUTTON_RIGHT_TRIGGER_2))
