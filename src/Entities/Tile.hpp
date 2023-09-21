@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Entity.hpp"
-#include "../Components/Sprite.hpp"
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
 #include "../Enums/BodyType.hpp"
@@ -16,11 +15,10 @@ const int TILE_SIZE = 32;
 class Tile : public Entity 
 {
   public:
-    Tile(const std::string& tileID, const Vector2 pos, const BodyType type);
+    Tile(const std::string& tileID, const Vector2 pos, const Vector2 size);
     ~Tile();
 
   public:
-    Sprite sprite;
     PhysicsBody body;
     Collider collider;
 

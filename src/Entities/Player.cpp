@@ -81,9 +81,9 @@ void Player::m_GetKeyInput()
   else  
     m_velocity.y = 0.0f; 
   
-  // Rotate the player based on where the mouse is relative to the screen
+  // Rotate the player based on where the mouse is relative to the screen 
   float angle = util::GetAngle(transform.position, GetMousePosition());
-  transform.rotation = angle > 0 || angle < 0 ? angle : transform.rotation; // Never set the rotation to 0
+  transform.rotation = angle; // Never set the rotation to 0
 
   // Attacking 
   if(m_canAttack && IsKeyDown(KEY_SPACE))

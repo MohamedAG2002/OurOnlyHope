@@ -1110,8 +1110,13 @@ CMakeFiles/ooh.dir/src/Entities/Tile.cpp.o: /home/mohamed/Dev/C++/Raylib/OurOnly
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/BodyType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Collider.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/PhysicsBody.hpp \
+<<<<<<< HEAD
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Sprite.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Transform2D.hpp \
+=======
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Transform2D.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
+>>>>>>> 4cf870a (FUK GIT)
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Entity.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Tile.hpp \
   /usr/include/alloca.h \
@@ -1910,6 +1915,10 @@ CMakeFiles/ooh.dir/src/Listeners/ContactListener.cpp.o: /home/mohamed/Dev/C++/Ra
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/box2d/b2_world.h \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/box2d/b2_world_callbacks.h \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/box2d/box2d.h \
+<<<<<<< HEAD
+=======
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/raylib.h \
+>>>>>>> 4cf870a (FUK GIT)
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/SceneType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Events/EventFuncs.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/EventManager.hpp \
@@ -3670,10 +3679,17 @@ CMakeFiles/ooh.dir/src/Managers/TileManager.cpp.o: /home/mohamed/Dev/C++/Raylib/
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/BodyType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Collider.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/PhysicsBody.hpp \
+<<<<<<< HEAD
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Sprite.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Transform2D.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Entity.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Tile.hpp \
+=======
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Transform2D.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Entity.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Tile.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
+>>>>>>> 4cf870a (FUK GIT)
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Util.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/AssetManager.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/TileManager.hpp \

@@ -21,7 +21,11 @@ GameManager::GameManager()
   :m_isRunning(true)
 {
   // Raylib init
+<<<<<<< HEAD
   InitWindow(640, 480, "Our Only Hope");
+=======
+  InitWindow(800, 600, "Our Only Hope");
+>>>>>>> 4cf870a (FUK GIT)
   SetTargetFPS(60);
   InitAudioDevice();
   

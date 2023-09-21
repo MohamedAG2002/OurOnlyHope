@@ -20,8 +20,8 @@ class TileManager
     void Render();
 
   private:
-    Image m_srcImg;
-    std::vector<std::shared_ptr<Tile>> m_tiles;
+    Texture2D m_tileMap;
+    std::vector<std::unique_ptr<Tile>> m_tiles;
 };
   
 }
