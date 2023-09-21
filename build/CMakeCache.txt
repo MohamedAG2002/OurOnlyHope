@@ -242,12 +242,6 @@ ooh_SOURCE_DIR:STATIC=/home/mohamed/Dev/C++/Raylib/OurOnlyHope
 //Path to a library.
 raylib:FILEPATH=/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/lib/libraylib.so
 
-<<<<<<< HEAD
-=======
-//Path to a library.
-tmxparser:FILEPATH=/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/lib/libtmxparser.so
-
->>>>>>> 4cf870a (FUK GIT)
 
 ########################
 # INTERNAL cache entries

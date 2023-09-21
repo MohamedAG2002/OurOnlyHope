@@ -24,6 +24,8 @@ MenuScene::MenuScene()
   playButton = std::make_unique<Button>("Play", Anchor::CENTER, TextType::MEDIUM, GREEN, WHITE, Vector2(0, -50.0f));
   settingsButton = std::make_unique<Button>("Settings", Anchor::CENTER, TextType::MEDIUM, GREEN, WHITE);
   quitButton = std::make_unique<Button>("Quit", Anchor::CENTER, TextType::MEDIUM, GREEN, WHITE, Vector2(0.0f, 50.0f));
+
+  EventManager::Get().DispatchEvent<OnMusicPlay>("Menu_Hymn");
 }
 
 MenuScene::~MenuScene()

@@ -273,6 +273,30 @@ src/Entities/Tile.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Tile.cpp.s
 .PHONY : src/Entities/Tile.cpp.s
 
+src/Entities/Weapon.o: src/Entities/Weapon.cpp.o
+.PHONY : src/Entities/Weapon.o
+
+# target to build an object file
+src/Entities/Weapon.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Weapon.cpp.o
+.PHONY : src/Entities/Weapon.cpp.o
+
+src/Entities/Weapon.i: src/Entities/Weapon.cpp.i
+.PHONY : src/Entities/Weapon.i
+
+# target to preprocess a source file
+src/Entities/Weapon.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Weapon.cpp.i
+.PHONY : src/Entities/Weapon.cpp.i
+
+src/Entities/Weapon.s: src/Entities/Weapon.cpp.s
+.PHONY : src/Entities/Weapon.s
+
+# target to generate assembly for a file
+src/Entities/Weapon.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Weapon.cpp.s
+.PHONY : src/Entities/Weapon.cpp.s
+
 src/Entities/Zombie.o: src/Entities/Zombie.cpp.o
 .PHONY : src/Entities/Zombie.o
 
@@ -828,6 +852,9 @@ help:
 	@echo "... src/Entities/Tile.o"
 	@echo "... src/Entities/Tile.i"
 	@echo "... src/Entities/Tile.s"
+	@echo "... src/Entities/Weapon.o"
+	@echo "... src/Entities/Weapon.i"
+	@echo "... src/Entities/Weapon.s"
 	@echo "... src/Entities/Zombie.o"
 	@echo "... src/Entities/Zombie.i"
 	@echo "... src/Entities/Zombie.s"

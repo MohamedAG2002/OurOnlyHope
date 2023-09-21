@@ -1,14 +1,17 @@
 #include "Player.hpp"
 #include "Entity.hpp"
+#include "Weapon.hpp"
 #include "../Components/Sprite.hpp"
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
 #include "../Enums/BodyType.hpp"
+#include "../Enums/WeaponType.hpp"
 #include "../Utils/Util.hpp"
 #include "../Utils/Globals.hpp"
 #include "../Managers/EventManager.hpp"
 #include "../Events/EventFuncs.hpp"
 
+#include <memory>
 #include <raylib.h>
 
 #include <math.h>
@@ -38,9 +41,17 @@ Player::Player(const Vector2 startPos)
   m_attackTimer = 0.0f;
   m_canAttack = false;
 
+  // Metadata init 
+  weaponMD = WeaponMetadata{"Shiv", 1, WeaponType::LIGHT, 10, 50, 35.2f, 50.0f, 1000.0f};
+  armorMD = ArmorMetadata{};
+  potionMD = PotionMetadata{};
+
+  // Weapon init 
+  m_weapon = std::make_unique<Weapon>(&transform.position, weaponMD); 
+
   // Listen to events 
   EventManager::Get().ListenToEvent<OnEntityCollision>([&](std::string& id1, std::string& id2){
-    if((id1 == "Player" && id2 == "Zombie") || (id1 == "Zombie" && id2 == "Player"))
+    if((id1 == id && id2 == "Zombie") || (id1 == "Zombie" && id2 == id))
       std::cout << "PLAYER COLLISION\n";
   });
 }
@@ -54,6 +65,9 @@ void Player::Update(float dt)
 
   if(!isActive)
     return;
+
+  if(m_weapon->isActive)
+    m_weapon->Update(dt);
 
   m_HandleMovement(dt);
   m_HandleCombat();
@@ -83,7 +97,7 @@ void Player::m_GetKeyInput()
   
   // Rotate the player based on where the mouse is relative to the screen 
   float angle = util::GetAngle(transform.position, GetMousePosition());
-  transform.rotation = angle; // Never set the rotation to 0
+  transform.rotation = angle;
 
   // Attacking 
   if(m_canAttack && IsKeyDown(KEY_SPACE))
@@ -115,7 +129,12 @@ void Player::m_GetJoystickInput()
     
 void Player::m_Attack()
 {
-  // TODO: Add attack functionality
+  // Enabling the weapon to attack depending on the type 
+  // (i.e it will attack in a different pattern if it was a spear or a sword).
+  m_weapon->transform.rotation = transform.rotation;
+  m_weapon->rotationDest = (transform.rotation - 180.0f);
+  m_weapon->isActive = true;
+
   m_canAttack = false;
   EventManager::Get().DispatchEvent<OnSoundPlay>("Sword_Swing");
 }
@@ -156,6 +175,21 @@ void Player::m_HandleCombat()
     m_canAttack = true;
     m_attackTimer = 0.0f;
   }
+}
+    
+void Player::m_ApplyWeapon()
+{
+
+}
+
+void Player::m_ApplyArmor()
+{
+
+}
+
+void Player::m_ApplyPotion()
+{
+
 }
 
 }

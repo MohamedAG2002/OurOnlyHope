@@ -43,8 +43,7 @@ Zombie::Zombie(Vector2 startPos, Vector2* target)
 
   // Listen to events 
   EventManager::Get().ListenToEvent<OnEntityCollision>([&](std::string& id1, std::string& id2){
-    if((id1 == "Weapon" && id2 == "Zombie") || (id1 == "Zombie" && id2 == "Weapon"))
-      std::cout << "ZOMBIE COLLISION\n";
+    // Do nothing for now... 
   });
 }
 

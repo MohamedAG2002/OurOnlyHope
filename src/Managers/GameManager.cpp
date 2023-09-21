@@ -21,11 +21,7 @@ GameManager::GameManager()
   :m_isRunning(true)
 {
   // Raylib init
-<<<<<<< HEAD
-  InitWindow(640, 480, "Our Only Hope");
-=======
   InitWindow(800, 600, "Our Only Hope");
->>>>>>> 4cf870a (FUK GIT)
   SetTargetFPS(60);
   InitAudioDevice();
   
@@ -86,10 +82,10 @@ void GameManager::Render()
   BeginDrawing();
   ClearBackground(BLACK);
 
+  m_scnMgr->Render();
+  
   if(global::isDebugDraw)
     global::world->DebugDraw();
-
-  m_scnMgr->Render();
 
   DrawFPS(10, 10);
   EndDrawing();

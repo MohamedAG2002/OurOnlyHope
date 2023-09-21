@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ooh.dir/src/Entities/Player.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Entities/Tile.cpp.o"
   "CMakeFiles/ooh.dir/src/Entities/Tile.cpp.o.d"
+  "CMakeFiles/ooh.dir/src/Entities/Weapon.cpp.o"
+  "CMakeFiles/ooh.dir/src/Entities/Weapon.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o"
   "CMakeFiles/ooh.dir/src/Entities/Zombie.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o"

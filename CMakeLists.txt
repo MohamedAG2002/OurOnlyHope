@@ -55,6 +55,7 @@ set(SOURCES
   # Entities
   src/Entities/Player.cpp
   src/Entities/Zombie.cpp
+  src/Entities/Weapon.cpp
   src/Entities/Tile.cpp
 )
 
