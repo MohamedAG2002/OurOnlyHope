@@ -1,5 +1,7 @@
 #include "WaveManager.hpp"
 #include "../Utils/Util.hpp"
+#include "../Events/EventFuncs.hpp"
+#include "../Managers/EventManager.hpp"
 
 #include <cstdint>
 
@@ -10,6 +12,11 @@ WaveManager::WaveManager()
 {
   waveCounter = 0;
   highestWave = 0;
+
+  // Listen to events 
+  EventManager::Get().ListenToEvent<OnWaveEnd>([&](void){
+    waveCounter++;
+  });
 }
     
 WaveManager::~WaveManager()

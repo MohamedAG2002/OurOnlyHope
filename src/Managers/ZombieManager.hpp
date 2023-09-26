@@ -28,9 +28,11 @@ class ZombieManager
   private:
     float m_spawnCooldown, m_spawnTimer;
     std::array<Vector2, 4> m_spawnPoints;
+    bool m_hasStarted;
 
   private:
     void m_SpawnZombie();
+    int m_CountActiveZombies();
 };
   
 }

@@ -51,7 +51,7 @@ class EventManager
       // function pointer is valid and calls it if it is.
       auto callFn = [&](const T& fn) {
         if(fn)
-          fn(std::forward<Args>(args)...);
+          fn(args...);
       };
 
       // Checking the exact template type and calling the appropriate function 

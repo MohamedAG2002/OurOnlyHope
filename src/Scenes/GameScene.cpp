@@ -25,9 +25,9 @@ GameScene::GameScene()
   tileMgr = std::make_unique<TileManager>("Map");
   
   pausedText = std::make_unique<Text>("Paused", Anchor::CENTER, TextType::BIG, WHITE);
-  healthText = std::make_unique<Text>("HP: ", Anchor::TOP_CENTER, TextType::LETTER, WHITE);
-  bloodText = std::make_unique<Text>("BLOOD: ", Anchor::TOP_LEFT, TextType::LETTER, WHITE);
-  waveText = std::make_unique<Text>("WAVE: ", Anchor::TOP_RIGHT, TextType::LETTER, WHITE);
+  healthText = std::make_unique<Text>("HP: ", Anchor::TOP_LEFT, TextType::LETTER, GREEN);
+  bloodText = std::make_unique<Text>("BLOOD: ", Anchor::TOP_LEFT, TextType::LETTER, RED, Vector2{0.0f, 20.0f});
+  waveText = std::make_unique<Text>("", Anchor::TOP_CENTER, TextType::SMALL, WHITE);
   menuButton = std::make_unique<Button>("Menu", Anchor::BOTTOM_LEFT, TextType::SMALL, GREEN, WHITE, Vector2{15.0f, 0.0f});
 
   m_isPaused = false;
@@ -52,7 +52,7 @@ void GameScene::Update(float dt)
   // Updating the health text, blood text, and wave text 
   healthText->ChangeText("HP: " + std::to_string(enttMgr->player->health));
   bloodText->ChangeText("BLOOD: " + std::to_string(bldMgr.blood));
-  waveText->ChangeText("WAVE: " + std::to_string(wvMgr.waveCounter));
+  waveText->ChangeText(std::to_string(wvMgr.waveCounter));
   
 
   enttMgr->Update(dt);

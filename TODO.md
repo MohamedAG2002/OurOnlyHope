@@ -2,10 +2,12 @@
 - Animation
 - Particle sytem 
 - Serialization
+- Make UI buttons work with joystick controls
 
 # Game
 - Blood
 - Wave system
+- Make the zombie spawns better
 - Shop...!!!
 - Make the player equip different types of armor, weapons, and potions
 - Implement the spear
@@ -15,8 +17,7 @@
 - Easter Egg
 
 # Problems to fix 
-- Make the blood gained during gameplay add up to a total pool instead of recording the highest value it reached 
 - Find a better scene reset system
 - The zombies' grunts sample together and it sounds like a demon orgy
-- Rotations with the joystick are not good.
+- The player still goes out of bounds
 - Make the ESC the pause key instead of P?

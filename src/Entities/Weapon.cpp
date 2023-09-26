@@ -51,7 +51,7 @@ void Weapon::Update(float dt)
   body.SetBodyPosition(transform.position); 
   transform.position = body.GetBodyPosition();
 
-  // Decrease the rotation("attack") when active
+  // Decrease the rotation ("attack") when active
   transform.rotation -= metadata.speed * dt;
   body.SetBodyRotation(transform.rotation);
 
@@ -65,9 +65,7 @@ void Weapon::Update(float dt)
 
 void Weapon::Render() 
 {
-  // @FIX: Remove this. Only here for debugging purposes
-  Rectangle rec = {transform.position.x, transform.position.y, 32.0f, 128.0f};
-  DrawRectanglePro(rec, Vector2{16.0f, 64.0f}, transform.rotation, GRAY);
+  // Does nothing here...
 }
 
 }
