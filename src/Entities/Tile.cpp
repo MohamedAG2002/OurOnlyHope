@@ -4,6 +4,8 @@
 #include "../Components/Collider.hpp"
 #include "../Enums/BodyType.hpp"
 #include "../Utils/Globals.hpp"
+#include "../Utils/Util.hpp"
+#include "../Metadata/BodyMetadata.hpp"
 
 #include <raylib.h>
 
@@ -13,11 +15,14 @@ Tile::Tile(const std::string& tileID, const Vector2 pos, const Vector2 size)
 {
   // Inherited variables init 
   transform = Transform2D(pos);
-  id = tileID;
+  UUID = util::GetRandomNumber<uint64_t>();
   isActive = true;
 
+  // Public variables init 
+  bodyMetadata = BodyMetadata{"Tile", UUID, 0};
+
   // Components init 
-  body = PhysicsBody(id, pos, BodyType::RIGID, isActive);
+  body = PhysicsBody(&bodyMetadata, pos, BodyType::RIGID, isActive);
   collider = Collider(body, size, 0.0f, false);
 }
 

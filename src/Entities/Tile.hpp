@@ -4,6 +4,7 @@
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
 #include "../Enums/BodyType.hpp"
+#include "../Metadata/BodyMetadata.hpp"
 
 #include <raylib.h>
 
@@ -19,6 +20,7 @@ class Tile : public Entity
     ~Tile();
 
   public:
+    BodyMetadata bodyMetadata;
     PhysicsBody body;
     Collider collider;
 

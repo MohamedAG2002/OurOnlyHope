@@ -2,10 +2,10 @@
 #include "../Events/EventFuncs.hpp"
 #include "../Managers/EventManager.hpp"
 #include "../Utils/Globals.hpp"
+#include "../Metadata/BodyMetadata.hpp"
 
 #include <box2d/box2d.h>
 
-#include <string>
 #include <iostream>
 
 namespace ooh {
@@ -50,10 +50,10 @@ void ContactListener::BeginContact(b2Contact* contact)
   b2Body* bodyA = contact->GetFixtureA()->GetBody();
   b2Body* bodyB = contact->GetFixtureB()->GetBody();
 
-  std::string id1 = (const char*)bodyA->GetUserData().pointer;
-  std::string id2 = (const char*)bodyB->GetUserData().pointer;
+  BodyMetadata* bodyMD1 = (BodyMetadata*)bodyA->GetUserData().pointer;
+  BodyMetadata* bodyMD2 = (BodyMetadata*)bodyB->GetUserData().pointer;
 
-  EventManager::Get().DispatchEvent<OnEntityCollision>(id1, id2);
+  EventManager::Get().DispatchEvent<OnEntityCollision>(*bodyMD1, *bodyMD2);
 }
 
 void ContactListener::EndContact(b2Contact* contact) 

@@ -15,11 +15,11 @@ ZombieManager::ZombieManager(Vector2* playerPos)
   m_spawnCooldown = 50.0f;
   m_spawnTimer = 0.0f;
 
-  Vector2 screenSize = Vector2{GetScreenWidth() / 1.0f, GetScreenHeight() / 1.0f};
-  m_spawnPoints[0] = Vector2(screenSize.x / 2.0f, 10.0f);
+  Vector2 screenSize = Vector2{GetScreenWidth() - 64.0f, GetScreenHeight() - 64.0f};
+  m_spawnPoints[0] = Vector2(screenSize.x / 2.0f, 64.0f);
   m_spawnPoints[1] = Vector2(screenSize.x, screenSize.y / 2.0f);
   m_spawnPoints[2] = Vector2(screenSize.x / 2.0f, screenSize.y);
-  m_spawnPoints[3] = Vector2(10.0f, screenSize.y / 2.0f);
+  m_spawnPoints[3] = Vector2(64.0f, screenSize.y / 2.0f);
   
   // Zombie default init 
   for(int i = 0; i < zombies.size(); i++)
@@ -67,6 +67,7 @@ void ZombieManager::m_SpawnZombie()
     if(zombie->isActive)
       continue;
 
+    zombie->health = zombie->maxHealth;
     zombie->isActive = true;
 
     break; // We only want one zombie

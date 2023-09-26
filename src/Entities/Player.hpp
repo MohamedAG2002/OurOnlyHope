@@ -6,6 +6,7 @@
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
 #include "../Metadata/ShopItemsMetadata.hpp"
+#include "../Metadata/BodyMetadata.hpp"
 
 #include <raylib.h>
 
@@ -24,6 +25,11 @@ class Player : public Entity
     ~Player();
 
   public:
+    BodyMetadata bodyMetadata;
+    WeaponMetadata weaponMD;
+    ArmorMetadata armorMD;
+    PotionMetadata potionMD;
+    
     int health, maxHealth;
     Sprite sprite;
     PhysicsBody body;
@@ -34,9 +40,6 @@ class Player : public Entity
     void Render() override;
 
   private:
-    WeaponMetadata weaponMD;
-    ArmorMetadata armorMD;
-    PotionMetadata potionMD;
     std::unique_ptr<Weapon> m_weapon;
     Vector2 m_velocity;
     float m_attackCooldown, m_attackTimer;

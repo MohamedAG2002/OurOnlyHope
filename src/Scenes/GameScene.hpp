@@ -21,7 +21,7 @@ class GameScene : public Scene
   public:
     std::unique_ptr<EntityManager> enttMgr;
     std::unique_ptr<TileManager> tileMgr;
-    std::unique_ptr<Text> pausedText;
+    std::unique_ptr<Text> pausedText, healthText;
     std::unique_ptr<Button> menuButton;
 
   public:

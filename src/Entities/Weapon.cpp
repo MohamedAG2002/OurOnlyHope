@@ -7,6 +7,8 @@
 #include "../Enums/BodyType.hpp"
 #include "../Events/EventFuncs.hpp"
 #include "../Managers/EventManager.hpp"
+#include "../Utils/Util.hpp"
+#include "../Metadata/BodyMetadata.hpp"
 
 #include <iostream>
 #include <raylib.h>
@@ -18,22 +20,20 @@ Weapon::Weapon(Vector2* holderPos, WeaponMetadata& metadata)
 {
   // Inherited variables init
   transform = Transform2D(*m_holderPos);
-  id = "Weapon";
+  UUID = util::GetRandomNumber<uint64_t>();
   isActive = false;
-
-  // Components init 
-  body = PhysicsBody(id, *m_holderPos, BodyType::KINEMATIC, isActive);
-  collider = Collider(body, Vector2{32.0f, 128.0f}, 0.0f, false);
 
   // Public variables init 
   rotationDest = 0.0f;
+  bodyMetadata = BodyMetadata{"Weapon", UUID, metadata.damage};
+
+  // Components init 
+  body = PhysicsBody(&bodyMetadata, *m_holderPos, BodyType::KINEMATIC, isActive);
+  collider = Collider(body, Vector2{32.0f, 128.0f}, 0.0f, true);
 
   // Listen to events 
-  EventManager::Get().ListenToEvent<OnEntityCollision>([&](std::string& id1, std::string& id2){
-    // Weapon VS. Zombie
-    if((id1 == id && id2 == "Zombie") || (id1 == "Zombie" && id2 == id))
-      std::cout << "WEAPON COLLISION\n";
-  });
+  //EventManager::Get().ListenToEvent<OnEntityCollision>([&](BodyMetadata& bodyMD1, BodyMetadata& bodyMD2){
+  //});
 }
 
 Weapon::~Weapon()

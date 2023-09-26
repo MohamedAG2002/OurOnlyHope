@@ -2,15 +2,13 @@
 
 #include "../Components/Transform2D.hpp"
 
-#include <iostream>
-
 namespace ooh {
 
 class Entity 
 {
   public:
     Transform2D transform;
-    std::string id;
+    int UUID;
     bool isActive;
 
   public:

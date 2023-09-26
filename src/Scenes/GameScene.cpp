@@ -13,6 +13,7 @@
 #include <raylib.h>
 
 #include <memory>
+#include <string>
 
 namespace ooh {
 
@@ -20,7 +21,9 @@ GameScene::GameScene()
 {
   enttMgr = std::make_unique<EntityManager>();
   tileMgr = std::make_unique<TileManager>("Map");
+  
   pausedText = std::make_unique<Text>("Paused", Anchor::CENTER, TextType::BIG, WHITE);
+  healthText = std::make_unique<Text>("Health: ", Anchor::TOP_CENTER, TextType::LETTER, WHITE);
   menuButton = std::make_unique<Button>("Menu", Anchor::BOTTOM_LEFT, TextType::SMALL, GREEN, WHITE, Vector2{15.0f, 0.0f});
 
   m_isPaused = false;
@@ -42,13 +45,17 @@ void GameScene::Update(float dt)
   if(m_isPaused)
     return;
 
+  // Updating the health text
+  healthText->str = "HEALTH: " + std::to_string(enttMgr->player->health);
+
   enttMgr->Update(dt);
 }
 
 void GameScene::Render()
 {
-  tileMgr->Render();
+  //tileMgr->Render();
   enttMgr->Render();
+  healthText->Render();
 
   if(!m_isPaused)
     return;

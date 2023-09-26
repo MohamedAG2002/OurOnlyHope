@@ -4,6 +4,7 @@
 #include "../Components/Sprite.hpp"
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
+#include "../Metadata/BodyMetadata.hpp"
 
 #include <raylib.h>
 
@@ -21,6 +22,7 @@ class Zombie : public Entity
 
   public:
     int maxHealth, maxDamage, health, damage;
+    BodyMetadata bodyMetadata;
     Sprite sprite;
     PhysicsBody body;
     Collider collider;

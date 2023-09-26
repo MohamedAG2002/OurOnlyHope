@@ -9,10 +9,12 @@
 #include "../Enums/BodyType.hpp"
 #include "../Events/EventFuncs.hpp"
 #include "../Managers/EventManager.hpp"
+#include "../Metadata/BodyMetadata.hpp"
 
 #include <raylib.h>
 #include <raymath.h>
 
+#include <iostream>
 #include <math.h>
 
 namespace ooh {
@@ -22,28 +24,42 @@ Zombie::Zombie(Vector2 startPos, Vector2* target)
 {
   // Inherited variables init
   transform = Transform2D(startPos);
-  id = "Zombie";
+  UUID = util::GetRandomNumber<uint64_t>();
   isActive = false;
 
   // Public variables init
   maxHealth = 100;
-  maxDamage = 100;
+  maxDamage = 10;
   health = maxHealth; 
   damage = 0;
+  bodyMetadata = BodyMetadata{"Zombie", UUID, damage};
 
   // Components init
   sprite = Sprite("Zombie_Sprite", Vector2(64.0f, 64.0f));
-  body = PhysicsBody(id, transform.position, BodyType::RIGID, isActive);
-  collider = Collider(body, sprite.size, 0.2f, false);
+  body = PhysicsBody(&bodyMetadata, transform.position, BodyType::RIGID, isActive);
+  collider = Collider(body, sprite.size, 1.0f, false);
 
   // Private variables init
   m_attackTimer = 0.0f;
-  m_attackCooldown = 100.0f;
+  m_attackCooldown = 7.0f;
   m_velocity = Vector2{0.0f, 0.0f};
 
   // Listen to events 
-  EventManager::Get().ListenToEvent<OnEntityCollision>([&](std::string& id1, std::string& id2){
-    // Do nothing for now... 
+  EventManager::Get().ListenToEvent<OnEntityCollision>([&](BodyMetadata& bodyMD1, BodyMetadata& bodyMD2){
+    // Some util variables for better visualization
+    std::string enttType1 = bodyMD1.entityType;
+    std::string enttType2 = bodyMD2.entityType;
+
+    // Zombie VS. Weapon 
+    // If the type of the entities are not "Zombie" and "Weapon" then the zombie will not care.
+    if(util::CheckEntityType(enttType1, enttType2, "Zombie") && util::CheckEntityType(enttType1, enttType2, "Weapon"))
+    {
+      // Go check the CTOR of the Player class to know more...
+      if(bodyMD1.entityUUID == UUID) 
+        health -= bodyMD2.entityDamage; 
+      else if(bodyMD2.entityUUID == UUID)
+        health -= bodyMD1.entityDamage; 
+    }
   });
 }
 
@@ -98,6 +114,9 @@ void Zombie::m_HandleDamage()
   }
   else 
     damage = 0;
+
+  // Update the body metadata and tell it what the new damage is 
+  bodyMetadata.entityDamage = damage;
 }
 
 void Zombie::m_HandleMovement()

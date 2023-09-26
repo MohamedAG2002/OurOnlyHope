@@ -6,6 +6,7 @@
 #include <box2d/box2d.h>
 
 #include <math.h>
+#include <string>
 
 namespace ooh {
  
@@ -41,6 +42,11 @@ bool IsColorEqual(Color c1, Color c2)
 {
   return (c1.r == c2.r) && (c1.g == c2.g) && 
          (c1.b == c2.b) && (c1.a == c2.a);
+}
+
+bool CheckEntityType(std::string& type1, std::string& type2, std::string&& desired)
+{
+  return (type1 == desired) || (type2 == desired);
 }
 
 Vector2 B2Vec2ToVector2(b2Vec2 vec)

@@ -10,6 +10,7 @@
 #include "../Utils/Globals.hpp"
 #include "../Managers/EventManager.hpp"
 #include "../Events/EventFuncs.hpp"
+#include "../Metadata/BodyMetadata.hpp"
 
 #include <memory>
 #include <raylib.h>
@@ -23,36 +24,52 @@ Player::Player(const Vector2 startPos)
 {
   // Entity inherited variables init
   transform = Transform2D(startPos);
-  id = "Player";
+  UUID = util::GetRandomNumber<uint64_t>();
   isActive = true;
 
   // Public varaibles init 
   maxHealth = 100;
   health = maxHealth;
+  
+  // Metadata init 
+  weaponMD = WeaponMetadata{"Light Sword", 1, WeaponType::LIGHT, 10, 50, 35.2f, 50.0f, 1000.0f};
+  armorMD = ArmorMetadata{};
+  potionMD = PotionMetadata{};
+  bodyMetadata = BodyMetadata{"Player", UUID, weaponMD.damage};
 
   // Components init
   sprite = Sprite("Player_Sprite", Vector2{64.0f, 64.0f});
-  body = PhysicsBody(id, transform.position, BodyType::KINEMATIC, isActive);
+  body = PhysicsBody(&bodyMetadata, transform.position, BodyType::KINEMATIC, isActive);
   collider = Collider(body, sprite.size, 1.0f, false);
 
   // Private variables init
   m_velocity = Vector2{0.0f, 0.0f};
-  m_attackCooldown = 50.0f;
+  m_attackCooldown = 20.0f;
   m_attackTimer = 0.0f;
   m_canAttack = false;
-
-  // Metadata init 
-  weaponMD = WeaponMetadata{"Shiv", 1, WeaponType::LIGHT, 10, 50, 35.2f, 50.0f, 1000.0f};
-  armorMD = ArmorMetadata{};
-  potionMD = PotionMetadata{};
 
   // Weapon init 
   m_weapon = std::make_unique<Weapon>(&transform.position, weaponMD); 
 
   // Listen to events 
-  EventManager::Get().ListenToEvent<OnEntityCollision>([&](std::string& id1, std::string& id2){
-    if((id1 == id && id2 == "Zombie") || (id1 == "Zombie" && id2 == id))
-      std::cout << "PLAYER COLLISION\n";
+  EventManager::Get().ListenToEvent<OnEntityCollision>([&](BodyMetadata& bodyMD1, BodyMetadata& bodyMD2){
+    // Some util variables for better visualization
+    std::string enttType1 = bodyMD1.entityType;
+    std::string enttType2 = bodyMD2.entityType;
+
+    // Player VS. Zombie 
+    // If the type of the entities are not "Player" and "Zombie" then the player will not care.
+    if(util::CheckEntityType(enttType1, enttType2, "Player") && util::CheckEntityType(enttType1, enttType2, "Zombie"))
+    {
+      // If the player is the first body, it means the zombie is the second body, therefore, 
+      // apply the damage of the second body to the player.
+      if(bodyMD1.entityUUID == UUID) 
+        health -= bodyMD2.entityDamage; 
+      // Vice versa.
+      else if(bodyMD2.entityUUID == UUID)
+        health -= bodyMD1.entityDamage; 
+    }
+
   });
 }
 

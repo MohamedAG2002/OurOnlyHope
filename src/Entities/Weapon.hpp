@@ -4,6 +4,7 @@
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
 #include "../Metadata/ShopItemsMetadata.hpp"
+#include "../Metadata/BodyMetadata.hpp"
 
 #include <raylib.h>
 
@@ -17,6 +18,7 @@ class Weapon : public Entity
 
   public:
     WeaponMetadata metadata;
+    BodyMetadata bodyMetadata;
     float rotationDest;
     PhysicsBody body;
     Collider collider;

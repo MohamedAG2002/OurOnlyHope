@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Enums/BodyType.hpp"
+#include "../Metadata/BodyMetadata.hpp"
 
 #include <raylib.h>
 #include <box2d/box2d.h>
@@ -12,7 +13,7 @@ namespace ooh {
 class PhysicsBody
 {
   public:
-    PhysicsBody(std::string& id, const Vector2 pos, BodyType type, bool active);
+    PhysicsBody(BodyMetadata* bodyMD, const Vector2 pos, BodyType type, bool active);
     PhysicsBody();
     ~PhysicsBody();
 

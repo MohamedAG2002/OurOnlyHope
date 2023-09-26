@@ -2,6 +2,7 @@
 #include "../Utils/Util.hpp"
 #include "../Utils/Globals.hpp"
 #include "../Enums/BodyType.hpp"
+#include "../Metadata/BodyMetadata.hpp"
 
 #include <raylib.h>
 #include <box2d/box2d.h>
@@ -11,13 +12,13 @@
 
 namespace ooh {
 
-PhysicsBody::PhysicsBody(std::string& id, const Vector2 pos, BodyType type, bool active)
+PhysicsBody::PhysicsBody(BodyMetadata* bodyMD, const Vector2 pos, BodyType type, bool active)
 {
   b2Vec2 meterPos = util::Vector2ToB2Vec2(pos);
 
   m_bodyDef.position.Set(meterPos.x, meterPos.y);
   m_bodyDef.type = util::BodyTypeToB2BodyType(type);
-  m_bodyDef.userData.pointer = (uintptr_t)id.c_str(); 
+  m_bodyDef.userData.pointer = (uintptr_t)bodyMD; 
 
   m_body = global::world->CreateBody(&m_bodyDef);
   m_body->SetEnabled(active);
