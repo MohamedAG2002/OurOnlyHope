@@ -6,6 +6,7 @@
 
 #include <raylib.h>
 
+#include <cstdint>
 #include <memory>
 
 namespace ooh {
@@ -17,13 +18,16 @@ class ShopScene : public Scene
     ~ShopScene();
 
   public:
-    std::unique_ptr<Text> title;
+    std::unique_ptr<Text> title, bloodText;
     std::unique_ptr<Button> startButton;
 
   public:
     void Update(float dt) override;
     void Render() override;
     void Reset() override;
+
+  private:
+    uint32_t m_blood;
 };
 
 }

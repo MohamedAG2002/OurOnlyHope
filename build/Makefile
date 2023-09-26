@@ -393,6 +393,30 @@ src/Managers/AssetManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/AssetManager.cpp.s
 .PHONY : src/Managers/AssetManager.cpp.s
 
+src/Managers/BloodManager.o: src/Managers/BloodManager.cpp.o
+.PHONY : src/Managers/BloodManager.o
+
+# target to build an object file
+src/Managers/BloodManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.o
+.PHONY : src/Managers/BloodManager.cpp.o
+
+src/Managers/BloodManager.i: src/Managers/BloodManager.cpp.i
+.PHONY : src/Managers/BloodManager.i
+
+# target to preprocess a source file
+src/Managers/BloodManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.i
+.PHONY : src/Managers/BloodManager.cpp.i
+
+src/Managers/BloodManager.s: src/Managers/BloodManager.cpp.s
+.PHONY : src/Managers/BloodManager.s
+
+# target to generate assembly for a file
+src/Managers/BloodManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.s
+.PHONY : src/Managers/BloodManager.cpp.s
+
 src/Managers/EntityManager.o: src/Managers/EntityManager.cpp.o
 .PHONY : src/Managers/EntityManager.o
 
@@ -512,6 +536,30 @@ src/Managers/TileManager.s: src/Managers/TileManager.cpp.s
 src/Managers/TileManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/TileManager.cpp.s
 .PHONY : src/Managers/TileManager.cpp.s
+
+src/Managers/WaveManager.o: src/Managers/WaveManager.cpp.o
+.PHONY : src/Managers/WaveManager.o
+
+# target to build an object file
+src/Managers/WaveManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/WaveManager.cpp.o
+.PHONY : src/Managers/WaveManager.cpp.o
+
+src/Managers/WaveManager.i: src/Managers/WaveManager.cpp.i
+.PHONY : src/Managers/WaveManager.i
+
+# target to preprocess a source file
+src/Managers/WaveManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/WaveManager.cpp.i
+.PHONY : src/Managers/WaveManager.cpp.i
+
+src/Managers/WaveManager.s: src/Managers/WaveManager.cpp.s
+.PHONY : src/Managers/WaveManager.s
+
+# target to generate assembly for a file
+src/Managers/WaveManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/WaveManager.cpp.s
+.PHONY : src/Managers/WaveManager.cpp.s
 
 src/Managers/ZombieManager.o: src/Managers/ZombieManager.cpp.o
 .PHONY : src/Managers/ZombieManager.o
@@ -867,6 +915,9 @@ help:
 	@echo "... src/Managers/AssetManager.o"
 	@echo "... src/Managers/AssetManager.i"
 	@echo "... src/Managers/AssetManager.s"
+	@echo "... src/Managers/BloodManager.o"
+	@echo "... src/Managers/BloodManager.i"
+	@echo "... src/Managers/BloodManager.s"
 	@echo "... src/Managers/EntityManager.o"
 	@echo "... src/Managers/EntityManager.i"
 	@echo "... src/Managers/EntityManager.s"
@@ -882,6 +933,9 @@ help:
 	@echo "... src/Managers/TileManager.o"
 	@echo "... src/Managers/TileManager.i"
 	@echo "... src/Managers/TileManager.s"
+	@echo "... src/Managers/WaveManager.o"
+	@echo "... src/Managers/WaveManager.i"
+	@echo "... src/Managers/WaveManager.s"
 	@echo "... src/Managers/ZombieManager.o"
 	@echo "... src/Managers/ZombieManager.i"
 	@echo "... src/Managers/ZombieManager.s"

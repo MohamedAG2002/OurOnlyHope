@@ -7,16 +7,23 @@
 #include "../Enums/Anchor.hpp"
 #include "../Enums/TextType.hpp"
 #include "../Utils/Globals.hpp"
+#include "../Utils/Util.hpp"
 
 #include <raylib.h>
 
+#include <cstdint>
 #include <memory>
+#include <string>
 
 namespace ooh {
 
 ShopScene::ShopScene()
 {
+  m_blood = util::GetDataFromFile<uint32_t>("data/bld.dat");
+
   title = std::make_unique<Text>("Make Your Choice...", Anchor::TOP_CENTER, TextType::BIG, WHITE);
+  bloodText = std::make_unique<Text>("BLOOD: " + std::to_string(m_blood), Anchor::BOTTOM_LEFT, TextType::SMALL, RED);
+  
   startButton = std::make_unique<Button>("Start", Anchor::BOTTOM_RIGHT, TextType::SMALL, GREEN, WHITE, Vector2{-15.0f, 0.0f});
 }
 
@@ -34,7 +41,9 @@ void ShopScene::Update(float dt)
 void ShopScene::Render()
 {
   startButton->Render();
+  
   title->Render();
+  bloodText->Render();
 }
 
 void ShopScene::Reset()

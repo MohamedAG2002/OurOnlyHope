@@ -87,7 +87,6 @@ void GameManager::Render()
   if(global::isDebugDraw)
     global::world->DebugDraw();
 
-  DrawFPS(10, 10);
   EndDrawing();
 }
 

@@ -26,6 +26,10 @@ class EventManager
       // function pointer to the appropriate vector.
       if constexpr (std::is_same<T, OnEntityCollision>::value)
         m_collisionEvents.push_back(static_cast<OnEntityCollision>(func));
+      else if constexpr (std::is_same<T, OnBloodInc>::value)
+        m_bloodEvents.push_back(static_cast<OnBloodInc>(func));
+      else if constexpr (std::is_same<T, OnWaveEnd>::value)
+        m_waveEvents.push_back(static_cast<OnWaveEnd>(func));
       else if constexpr (std::is_same<T, OnSceneChange>::value)
         m_sceneEvents.push_back(static_cast<OnSceneChange>(func));
       else if constexpr (std::is_same<T, OnSoundPlay>::value)
@@ -54,6 +58,10 @@ class EventManager
       // pointer, giving it the given arguments.
       if constexpr (std::is_same<T, OnEntityCollision>::value)
         std::for_each(m_collisionEvents.begin(), m_collisionEvents.end(), callFn);
+      else if constexpr (std::is_same<T, OnBloodInc>::value)
+        std::for_each(m_bloodEvents.begin(), m_bloodEvents.end(), callFn);
+      else if constexpr (std::is_same<T, OnWaveEnd>::value)
+        std::for_each(m_waveEvents.begin(), m_waveEvents.end(), callFn);
       else if constexpr (std::is_same<T, OnSceneChange>::value)
         std::for_each(m_sceneEvents.begin(), m_sceneEvents.end(), callFn);
       else if constexpr (std::is_same<T, OnSoundPlay>::value)
@@ -75,6 +83,9 @@ class EventManager
 
   private:
     std::vector<OnEntityCollision> m_collisionEvents;
+    std::vector<OnBloodInc> m_bloodEvents;
+    std::vector<OnWaveEnd> m_waveEvents;
+    
     std::vector<OnSceneChange> m_sceneEvents;
     std::vector<OnSoundPlay> m_soundEvents;
     std::vector<OnMusicPlay> m_musicPlayEvents;

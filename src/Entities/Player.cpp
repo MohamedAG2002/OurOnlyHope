@@ -32,7 +32,7 @@ Player::Player(const Vector2 startPos)
   health = maxHealth;
   
   // Metadata init 
-  weaponMD = WeaponMetadata{"Light Sword", 1, WeaponType::LIGHT, 10, 50, 35.2f, 50.0f, 1000.0f};
+  weaponMD = WeaponMetadata{"Light Sword", 1, WeaponType::LIGHT, 100, 50, 35.2f, 50.0f, 1000.0f};
   armorMD = ArmorMetadata{};
   potionMD = PotionMetadata{};
   bodyMetadata = BodyMetadata{"Player", UUID, weaponMD.damage};
@@ -63,11 +63,13 @@ Player::Player(const Vector2 startPos)
     {
       // If the player is the first body, it means the zombie is the second body, therefore, 
       // apply the damage of the second body to the player.
+      /* 
       if(bodyMD1.entityUUID == UUID) 
         health -= bodyMD2.entityDamage; 
       // Vice versa.
       else if(bodyMD2.entityUUID == UUID)
         health -= bodyMD1.entityDamage; 
+      */
     }
 
   });

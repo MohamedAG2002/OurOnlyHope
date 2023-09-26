@@ -28,6 +28,8 @@ set(SOURCES
   src/Managers/EntityManager.cpp
   src/Managers/ZombieManager.cpp
   src/Managers/TileManager.cpp
+  src/Managers/BloodManager.cpp
+  src/Managers/WaveManager.cpp
 
   # Listeners
   src/Listeners/AudioListener.cpp
@@ -61,8 +63,9 @@ set(SOURCES
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-# Copying the assets folder to the binary
+# Copying the assets and data folders to the binary
 file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY data DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 # Adding the include for the above libraries
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/libs/include)

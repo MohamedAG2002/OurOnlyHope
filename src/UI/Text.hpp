@@ -24,6 +24,7 @@ class Text
 
   public:
     void Render();
+    void ChangeText(const std::string&& newStr);
 
   private:
     int m_fontSize;

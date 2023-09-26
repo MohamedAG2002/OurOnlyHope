@@ -2,7 +2,7 @@
 Kill waves and waves of zombies with medieval "tech".
 
 # Gameplay
-The player will have to fight through waves and waves of zombies. Every wave, the player will be prompted with three choices to make. These choices will define the play style of the next wave. If the player likes that play style they may use it for the rest of the game if they so wish. There are upgrades that can apply to those choices, making them better and stronger. However, these upgrades require the player to use those items and have a certain amount of blood (the coin in the game). The player will have to buy those upgrades and choices every wave. If the player does not have enough blood, then they will have to use some choice that is either free or low of cost. Also, when the player dies, their level will be reset back to 0 and a huge amount of blood will be taken from them. The wave counter will also reset back to 1. Essentially, the player will have to restart from scratch but with enough blood to keep them going.  
+The player will have to fight through waves and waves of zombies. Every wave, the player will be prompted with three choices to make. These choices will define the play style of the next wave. If the player likes that play style they may use it for the rest of the game if they so wish. There are upgrades that can apply to those choices, making them better and stronger. However, these upgrades require the player to use those items and have a certain amount of blood (the coin in the game). The player will have to buy those upgrades and choices every wave. If the player does not have enough blood, then they will have to use some choice that is either free or low of cost. Also, when the player dies, they will lose a huge amount of blood and the wave counter will also reset back to 1. Essentially, the player will have to restart from scratch but with enough blood to keep them going.  
 
 ## The Blood
 Blood is the coin in this game. You gain it by killing zombies, of course. The use of the blood is to buy items at the choice screen after every wave. If the player wants to requip an item for the next wave to change it with something different, then blood is what's going to allow them to do that. Blood cannot be purchased or given to the player at any point. The only way to gain blood is by killing the zombies. Blood will max out at 2.4B obviously since it's an int. Just a small note, the game does start with two free choices in the beginning of game: the short sword and the naked armor. So the player can start with something simple and then continue playing the game, getting more blood and obtaining better gear.
@@ -46,10 +46,6 @@ There's a small chance that a zombie will drop a health bonus when killed or a d
 
 # Story
 The main idea for the story and the gameplay... the emotion the game is supposed to carry, surrounding the gameplay, the feel, the style, and the story is waiting. Constantly, after every wave, there is going to be some dialogue that will tell the player to keep going. The fight is not over yet. It will end soon. Just not now. You need to keep fighting.
-
-# Technoligies required
-- Camera follow mechanic
-- Particle system
 
 # The Easter Egg
 - Step 1: Kill 8 zombies in a row with one spear throw. 

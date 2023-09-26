@@ -3,6 +3,8 @@
 #include "Scene.hpp"
 #include "../Managers/EntityManager.hpp"
 #include "../Managers/TileManager.hpp"
+#include "../Managers/BloodManager.hpp"
+#include "../Managers/WaveManager.hpp"
 #include "../UI/Button.hpp"
 #include "../UI/Text.hpp"
 
@@ -21,8 +23,10 @@ class GameScene : public Scene
   public:
     std::unique_ptr<EntityManager> enttMgr;
     std::unique_ptr<TileManager> tileMgr;
-    std::unique_ptr<Text> pausedText, healthText;
+    std::unique_ptr<Text> pausedText, healthText, bloodText, waveText;
     std::unique_ptr<Button> menuButton;
+    BloodManager bldMgr;
+    WaveManager wvMgr;
 
   public:
     void Update(float dt) override;

@@ -61,6 +61,18 @@
 },
 {
   "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/BloodManager.cpp",
+  "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/BloodManager.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Managers/WaveManager.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/WaveManager.cpp",
+  "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/WaveManager.cpp",
+  "output": "CMakeFiles/ooh.dir/src/Managers/WaveManager.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
   "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Listeners/AudioListener.cpp",
   "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Listeners/AudioListener.cpp",
   "output": "CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o"

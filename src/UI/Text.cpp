@@ -27,6 +27,13 @@ void Text::Render()
 {
   DrawTextPro(GetFontDefault(), str.c_str(), position, origin, 0.0f, m_fontSize, 1.0f, color);
 }
+    
+void Text::ChangeText(const std::string&& newStr)
+{
+  str = newStr;
+  size = MeasureTextEx(GetFontDefault(), str.c_str(), m_fontSize, 1.0f);
+  position = m_SetPositionByAnchor();
+}
 
 Vector2 Text::m_SetPositionByAnchor()
 {
