@@ -59,10 +59,6 @@ Zombie::Zombie(Vector2 startPos, Vector2* target)
         health -= bodyMD2.entityDamage; 
       else if(bodyMD2.entityUUID == UUID)
         health -= bodyMD1.entityDamage;
-
-      // Increase the blood count since the zombie died 
-      if(health <= 0)
-        EventManager::Get().DispatchEvent<OnBloodInc>(GetRandomValue(8, 32));
     }
   });
 }
@@ -106,6 +102,7 @@ void Zombie::m_HandleHealth()
     body.SetBodyPosition(m_startPos);
     transform.position = body.GetBodyPosition();
     isActive = false;
+    EventManager::Get().DispatchEvent<OnBloodInc>(GetRandomValue(8, 16)); 
   }
 }
 

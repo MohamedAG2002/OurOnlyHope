@@ -28,6 +28,8 @@ GameScene::GameScene()
   healthText = std::make_unique<Text>("HP: ", Anchor::TOP_LEFT, TextType::LETTER, GREEN);
   bloodText = std::make_unique<Text>("BLOOD: ", Anchor::TOP_LEFT, TextType::LETTER, RED, Vector2{0.0f, 20.0f});
   waveText = std::make_unique<Text>(std::to_string(wvMgr.waveCounter), Anchor::TOP_CENTER, TextType::SMALL, WHITE);
+  zombieCountText = std::make_unique<Text>("Zombies Left: " + std::to_string(enttMgr->zmbMgr->spawnedZombies), Anchor::TOP_RIGHT, TextType::LETTER, BROWN);
+  
   menuButton = std::make_unique<Button>("Menu", Anchor::BOTTOM_LEFT, TextType::SMALL, GREEN, WHITE, Vector2{15.0f, 0.0f});
 
   m_isPaused = false;
@@ -39,9 +41,7 @@ GameScene::GameScene()
 }
 
 GameScene::~GameScene()
-{
-
-}
+{}
 
 void GameScene::Update(float dt)
 {
@@ -58,6 +58,7 @@ void GameScene::Update(float dt)
   healthText->ChangeText("HP: " + std::to_string(enttMgr->player->health));
   bloodText->ChangeText("BLOOD: " + std::to_string(bldMgr.blood));
   waveText->ChangeText(std::to_string(wvMgr.waveCounter));
+  zombieCountText->ChangeText("Zombies Left: " + std::to_string(enttMgr->zmbMgr->spawnedZombies));
   
   enttMgr->Update(dt);
   wvMgr.Update();
@@ -74,6 +75,7 @@ void GameScene::Render()
   healthText->Render();
   bloodText->Render();
   waveText->Render();
+  zombieCountText->Render();
 
   if(!m_isPaused)
     return;

@@ -6,7 +6,6 @@
 
 # Game
 - Shop...!!!
-- Better wave system/change the zombie spawn rate every wave
 - Make the player equip different types of armor, weapons, and potions
 - Reset all of the entities
 - Implement the spear

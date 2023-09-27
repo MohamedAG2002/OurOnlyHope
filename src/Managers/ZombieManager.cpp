@@ -7,7 +7,6 @@
 
 #include <raylib.h>
 
-#include <algorithm>
 #include <array>
 #include <memory>
 
@@ -15,16 +14,19 @@ namespace ooh {
 
 ZombieManager::ZombieManager(Vector2* playerPos)
 {
-  m_spawnCooldown = 50.0f;
+  spawnedZombies = 0;
+ 
+  m_spawnCooldown = 10.0f;
   m_spawnTimer = 0.0f;
+  m_zombieSpawnLimit = 50;
+  m_zombiesKilled = 0;
+  m_hasStarted = false;
 
   Vector2 screenSize = Vector2{GetScreenWidth() - 32.0f, GetScreenHeight() - 32.0f};
   m_spawnPoints[0] = Vector2(screenSize.x / 2.0f, 32.0f);
   m_spawnPoints[1] = Vector2(screenSize.x, screenSize.y / 2.0f);
   m_spawnPoints[2] = Vector2(screenSize.x / 2.0f, screenSize.y);
   m_spawnPoints[3] = Vector2(32.0f, screenSize.y / 2.0f);
-
-  m_hasStarted = false;
 
   // Zombie default init 
   for(int i = 0; i < zombies.size(); i++)
@@ -33,6 +35,12 @@ ZombieManager::ZombieManager(Vector2* playerPos)
   // Listen to events 
   EventManager::Get().ListenToEvent<OnWaveEnd>([&](void){
     m_BuffZombies();
+    m_zombieSpawnLimit += 10; // Increase the amount of zombies that spawn each wave
+  });
+
+  EventManager::Get().ListenToEvent<OnBloodInc>([&](int value){
+    m_zombiesKilled++;
+    spawnedZombies--;
   });
 }
 
@@ -58,7 +66,7 @@ void ZombieManager::Update(float dt)
   // Once the first zombie spawned, it's safe to assume that the game started up and we can 
   // ignore this check later on. This "m_hasStarted" flag will get reset every time the zombie manager 
   // get reset.
-  if((!m_hasStarted) && m_CountActiveZombies() > 0)
+  if((!m_hasStarted) && spawnedZombies > 0)
     m_hasStarted = true;
 
   // This is here to help skip the initial start of the game. If this check wasn't here, as soon the 
@@ -69,7 +77,7 @@ void ZombieManager::Update(float dt)
     return;
 
   // End the wave when there's no zombies left 
-  if(m_CountActiveZombies() == 0)
+  if(m_zombiesKilled >= m_zombieSpawnLimit)
     EventManager::Get().DispatchEvent<OnWaveEnd>();
 }
 
@@ -87,37 +95,34 @@ void ZombieManager::Reset()
   for(auto& zombie : zombies)
     zombie->Reset();
 
+  spawnedZombies = 0;
   m_spawnTimer = 0.0f;
   m_hasStarted = false;
+  m_zombiesKilled = 0;
 }
 
 void ZombieManager::m_SpawnZombie()
 {
-  // Go through all of the zombies and spawn only the active ones that have 
-  // full health (or at least more than 0). Make sure to spawn only ONE zombie per 
+  // We want a limit on the amount of zombies that spawn each wave. 
+  // This number can increase after each wave ends. If the spawn limit on a 
+  // wave is 20, then there can't be more than 20 zombies on that wave.
+  if(spawnedZombies >= (m_zombieSpawnLimit - m_zombiesKilled))
+    return;
+  
+  // Go through all of the zombies and spawn only the active ones, reactivating them and 
+  // giving them full health. Make sure to spawn only ONE zombie per 
   // function call.
   for(auto& zombie : zombies)
   {
-    if(zombie->isActive || zombie->health <= 0)
+    if(zombie->isActive)
       continue;
-  
+
+    zombie->health = zombie->maxHealth;
     zombie->isActive = true;
+    spawnedZombies++;
 
     break; // We only want one zombie
   }
-}
-    
-int ZombieManager::m_CountActiveZombies()
-{
-  int count = 0;
-
-  for(auto& zombie : zombies)
-  {
-    if(zombie->isActive)
-      count++;
-  }
-
-  return count;
 }
     
 void ZombieManager::m_BuffZombies()

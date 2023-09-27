@@ -10,7 +10,7 @@
 namespace ooh {
 
 // Consts 
-const int MAX_ZOMBIES = 1;
+const int MAX_ZOMBIES = 50;
 
 class ZombieManager
 {
@@ -20,6 +20,7 @@ class ZombieManager
 
   public:
     std::array<std::shared_ptr<Zombie>, MAX_ZOMBIES> zombies;
+    int spawnedZombies;
 
   public:
     void Update(float dt);
@@ -28,8 +29,9 @@ class ZombieManager
 
   private:
     float m_spawnCooldown, m_spawnTimer;
-    std::array<Vector2, 4> m_spawnPoints;
+    int m_zombieSpawnLimit, m_zombiesKilled;
     bool m_hasStarted;
+    std::array<Vector2, 4> m_spawnPoints;
 
   private:
     void m_SpawnZombie();

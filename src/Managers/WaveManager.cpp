@@ -10,7 +10,7 @@ namespace ooh {
 
 WaveManager::WaveManager()
 {
-  waveCounter = 0;
+  waveCounter = 1;
   highestWave = util::GetDataFromFile<uint32_t>("data/wv.dat");
 
   // Listen to events 
