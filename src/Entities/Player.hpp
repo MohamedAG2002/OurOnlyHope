@@ -38,6 +38,7 @@ class Player : public Entity
   public:
     void Update(float dt) override;
     void Render() override;
+    void Reset() override;
 
   private:
     std::unique_ptr<Weapon> m_weapon;

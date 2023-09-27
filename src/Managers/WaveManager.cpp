@@ -11,7 +11,7 @@ namespace ooh {
 WaveManager::WaveManager()
 {
   waveCounter = 0;
-  highestWave = 0;
+  highestWave = util::GetDataFromFile<uint32_t>("data/wv.dat");
 
   // Listen to events 
   EventManager::Get().ListenToEvent<OnWaveEnd>([&](){
@@ -30,6 +30,11 @@ void WaveManager::Update()
     highestWave = waveCounter;
     util::SaveDataToFile<uint32_t>("data/wv.dat", highestWave);
   }
+}
+
+void WaveManager::Reset()
+{
+  waveCounter = 0;  
 }
 
 }

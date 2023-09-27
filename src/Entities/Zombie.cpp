@@ -87,6 +87,14 @@ void Zombie::Render()
   sprite.Render(transform);
 }
     
+void Zombie::Reset() 
+{
+  transform.position = m_startPos;
+  isActive = false;
+  health = maxHealth;
+  damage = 0;
+}
+    
 void Zombie::m_HandleHealth()
 {
   // Clamp the zombie's health from the 0 to the maximum 

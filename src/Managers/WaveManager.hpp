@@ -15,6 +15,7 @@ class WaveManager
 
   public:
     void Update();
+    void Reset();
 };
 
 }

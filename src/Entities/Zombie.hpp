@@ -30,6 +30,7 @@ class Zombie : public Entity
   public:
     void Update(float dt) override;
     void Render() override;
+    void Reset() override;
 
   private:
     float m_attackCooldown, m_attackTimer;

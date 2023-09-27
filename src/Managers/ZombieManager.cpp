@@ -81,6 +81,14 @@ void ZombieManager::Render()
       zombie->Render();
   }
 }
+    
+void ZombieManager::Reset()
+{
+  for(auto& zombie : zombies)
+    zombie->Reset();
+
+  m_spawnTimer = 0.0f;
+}
 
 void ZombieManager::m_SpawnZombie()
 {

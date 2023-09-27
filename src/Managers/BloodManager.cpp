@@ -27,5 +27,10 @@ BloodManager::BloodManager()
 
 BloodManager::~BloodManager()
 {}
+    
+void BloodManager::Reset()
+{
+  blood = 0;
+}
 
 }

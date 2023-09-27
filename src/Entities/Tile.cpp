@@ -27,9 +27,7 @@ Tile::Tile(const std::string& tileID, const Vector2 pos, const Vector2 size)
 }
 
 Tile::~Tile()
-{
-
-}
+{}
 
 void Tile::Update(float dt)
 {
@@ -37,6 +35,11 @@ void Tile::Update(float dt)
 }
 
 void Tile::Render()
+{
+  // Does nothing here...
+}
+    
+void Tile::Reset()
 {
   // Does nothing here...
 }

@@ -96,6 +96,17 @@ void Player::Render()
 {
   sprite.Render(transform);
 }
+    
+void Player::Reset()
+{
+  health = maxHealth;
+  isActive = true;
+  transform.position = Vector2{GetScreenWidth() / 2.0f, GetScreenHeight() / 2.0f};
+
+  // @TODO: Reload all of the metadata
+
+  m_weapon->Reset();
+}
 
 void Player::m_GetKeyInput()
 {

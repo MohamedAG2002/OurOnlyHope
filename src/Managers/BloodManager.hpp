@@ -12,6 +12,9 @@ class BloodManager
 
   public:
     uint32_t blood, totalBlood;
+
+  public:
+    void Reset();
 };
 
 }

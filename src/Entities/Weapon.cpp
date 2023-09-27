@@ -67,5 +67,10 @@ void Weapon::Render()
 {
   // Does nothing here...
 }
+    
+void Weapon::Reset()
+{
+  // @TODO: Reset the weapon
+}
 
 }

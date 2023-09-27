@@ -31,6 +31,11 @@ GameScene::GameScene()
   menuButton = std::make_unique<Button>("Menu", Anchor::BOTTOM_LEFT, TextType::SMALL, GREEN, WHITE, Vector2{15.0f, 0.0f});
 
   m_isPaused = false;
+
+  // Listen to events 
+  EventManager::Get().ListenToEvent<OnWaveEnd>([&](){
+    EventManager::Get().DispatchEvent<OnSceneChange>(SceneType::SHOP); 
+  });
 }
 
 GameScene::~GameScene()
@@ -54,7 +59,6 @@ void GameScene::Update(float dt)
   bloodText->ChangeText("BLOOD: " + std::to_string(bldMgr.blood));
   waveText->ChangeText(std::to_string(wvMgr.waveCounter));
   
-
   enttMgr->Update(dt);
   wvMgr.Update();
 
@@ -81,7 +85,9 @@ void GameScene::Render()
 void GameScene::Reset()
 {
   enttMgr->Reset();
-  menuButton->Reset();
+  bldMgr.Reset();
+  wvMgr.Reset();
+
   m_isPaused = false;
 }
   
