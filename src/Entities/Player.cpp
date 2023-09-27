@@ -16,7 +16,6 @@
 #include <raylib.h>
 
 #include <math.h>
-#include <iostream>
 
 namespace ooh {
  
@@ -101,7 +100,11 @@ void Player::Reset()
 {
   health = maxHealth;
   isActive = true;
+  
+  // Resetting the player's position and updating the body's position as well
   transform.position = Vector2{GetScreenWidth() / 2.0f, GetScreenHeight() / 2.0f};
+  body.SetBodyPosition(transform.position);
+  transform.position = body.GetBodyPosition();
 
   // @TODO: Reload all of the metadata
 

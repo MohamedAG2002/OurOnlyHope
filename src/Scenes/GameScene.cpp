@@ -86,7 +86,6 @@ void GameScene::Reset()
 {
   enttMgr->Reset();
   bldMgr.Reset();
-  wvMgr.Reset();
 
   m_isPaused = false;
 }

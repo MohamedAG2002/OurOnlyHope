@@ -56,13 +56,13 @@ void ZombieManager::Update(float dt)
   }
 
   // Once the first zombie spawned, it's safe to assume that the game started up and we can 
-  // ignore this check later on. This flag gets to true it never gets set to false again ever 
-  // in the game unless the player closes the game and reopens it again.
+  // ignore this check later on. This "m_hasStarted" flag will get reset every time the zombie manager 
+  // get reset.
   if((!m_hasStarted) && m_CountActiveZombies() > 0)
     m_hasStarted = true;
 
   // This is here to help skip the initial start of the game. If this check wasn't here, as soon the 
-  // player starts up the game for the first time he, the event below will fire which is obviously not 
+  // player starts up the game, the event below will fire which is obviously not 
   // what we want. So, in order to skip the initial start of the game, this check is here. Perhaps not 
   // the best of solutions but it works. 
   if(!m_hasStarted)
@@ -88,6 +88,7 @@ void ZombieManager::Reset()
     zombie->Reset();
 
   m_spawnTimer = 0.0f;
+  m_hasStarted = false;
 }
 
 void ZombieManager::m_SpawnZombie()

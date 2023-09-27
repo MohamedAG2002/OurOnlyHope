@@ -34,7 +34,6 @@ void WaveManager::Update()
 
 void WaveManager::Reset()
 {
-  waveCounter = 0;  
 }
 
 }
