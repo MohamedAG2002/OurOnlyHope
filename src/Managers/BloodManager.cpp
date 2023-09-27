@@ -19,7 +19,7 @@ BloodManager::BloodManager()
     blood += value;
   });
 
-  EventManager::Get().ListenToEvent<OnWaveEnd>([&](void){
+  EventManager::Get().ListenToEvent<OnWaveEnd>([&](){
     totalBlood += blood;
     util::SaveDataToFile<uint32_t>("data/bld.dat", totalBlood);
   });

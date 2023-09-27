@@ -18,6 +18,6 @@ using OnSceneChange = std::function<void(SceneType)>;
 using OnSoundPlay = std::function<void(std::string&&)>;
 using OnMusicPlay = std::function<void(std::string&&)>;
 using OnMusicStop = std::function<void(std::string&)>;
-using OnQuit = std::function<void(void)>;
+using OnQuit = std::function<void(bool)>;
 
 }

@@ -45,8 +45,8 @@ GameManager::GameManager()
   global::isDebugDraw = false;
 
   // Listen to events 
-  EventManager::Get().ListenToEvent<OnQuit>([&](){
-    m_isRunning = false;
+  EventManager::Get().ListenToEvent<OnQuit>([&](bool running){
+    m_isRunning = running;
   });
 }
 

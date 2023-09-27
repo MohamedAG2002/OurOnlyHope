@@ -14,7 +14,7 @@ WaveManager::WaveManager()
   highestWave = 0;
 
   // Listen to events 
-  EventManager::Get().ListenToEvent<OnWaveEnd>([&](void){
+  EventManager::Get().ListenToEvent<OnWaveEnd>([&](){
     waveCounter++;
   });
 }

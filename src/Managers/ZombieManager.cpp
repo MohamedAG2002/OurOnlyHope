@@ -7,6 +7,7 @@
 
 #include <raylib.h>
 
+#include <algorithm>
 #include <array>
 #include <memory>
 
@@ -28,6 +29,11 @@ ZombieManager::ZombieManager(Vector2* playerPos)
   // Zombie default init 
   for(int i = 0; i < zombies.size(); i++)
     zombies[i] = std::make_shared<Zombie>(m_spawnPoints[GetRandomValue(0, 3)], playerPos);
+
+  // Listen to events 
+  EventManager::Get().ListenToEvent<OnWaveEnd>([&](void){
+    m_BuffZombies();
+  });
 }
 
 ZombieManager::~ZombieManager()
@@ -52,7 +58,7 @@ void ZombieManager::Update(float dt)
   // Once the first zombie spawned, it's safe to assume that the game started up and we can 
   // ignore this check later on. This flag gets to true it never gets set to false again ever 
   // in the game unless the player closes the game and reopens it again.
-  if(m_CountActiveZombies() > 0)
+  if((!m_hasStarted) && m_CountActiveZombies() > 0)
     m_hasStarted = true;
 
   // This is here to help skip the initial start of the game. If this check wasn't here, as soon the 
@@ -103,6 +109,12 @@ int ZombieManager::m_CountActiveZombies()
   }
 
   return count;
+}
+    
+void ZombieManager::m_BuffZombies()
+{
+  for(auto& zombie : zombies)
+    zombie->maxHealth += 10;
 }
   
 }

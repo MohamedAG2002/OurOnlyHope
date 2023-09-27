@@ -40,7 +40,7 @@ void MenuScene::Update(float dt)
   if(settingsButton->OnPressed())
     EventManager::Get().DispatchEvent<OnSceneChange>(SceneType::SETTINGS);
   if(quitButton->OnPressed())
-    EventManager::Get().DispatchEvent<OnQuit>();
+    EventManager::Get().DispatchEvent<OnQuit>(false);
 }
 
 void MenuScene::Render()
