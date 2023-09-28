@@ -1,7 +1,7 @@
 # Engine
 - Animation
 - Particle sytem 
-- Serialization
+- Binary serialization
 - Make UI buttons work with joystick controls
 
 # Game
@@ -17,6 +17,7 @@
 - Easter Egg
 
 # Problems to fix 
+- The file system just reads garbage instead of actual data
 - Only reset the wave counter when the player dies or quits the game.
 - The zombies' grunts sample together and it sounds like a demon orgy
 - The player still goes out of bounds

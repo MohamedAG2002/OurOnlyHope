@@ -1,5 +1,6 @@
 #include "BloodManager.hpp"
 #include "EventManager.hpp"
+#include "../Enums/DataPosition.hpp"
 #include "../Events/EventFuncs.hpp"
 #include "../Utils/Util.hpp"
 
@@ -12,7 +13,7 @@ namespace ooh {
 BloodManager::BloodManager()
 {
   blood = 0;
-  totalBlood = util::GetDataFromFile<uint32_t>("data/bld.dat"); 
+  totalBlood = util::GetDataFromFile<uint32_t>("data/dat.bin", DATPOS_BLOOD); 
 
   // Listen to events 
   EventManager::Get().ListenToEvent<OnBloodInc>([&](int value){
@@ -21,7 +22,7 @@ BloodManager::BloodManager()
 
   EventManager::Get().ListenToEvent<OnWaveEnd>([&](){
     totalBlood += blood;
-    util::SaveDataToFile<uint32_t>("data/bld.dat", totalBlood);
+    util::SaveDataToFile<uint32_t>("data/dat.bin", totalBlood, DATPOS_BLOOD);
   });
 }
 

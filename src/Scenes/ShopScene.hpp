@@ -18,7 +18,7 @@ class ShopScene : public Scene
     ~ShopScene();
 
   public:
-    std::unique_ptr<Text> title, bloodText;
+    std::unique_ptr<Text> title, bloodText, waveText;
     std::unique_ptr<Button> startButton;
 
   public:
@@ -27,7 +27,7 @@ class ShopScene : public Scene
     void Reset() override;
 
   private:
-    uint32_t m_blood;
+    uint32_t m_blood, m_wave;
 };
 
 }
