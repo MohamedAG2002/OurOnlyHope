@@ -17,7 +17,7 @@ Checkbox::Checkbox(Anchor anc, Color color, Vector2 offset)
   position = util::SetPositionByAnchor(anc, size, offset);
   outlineRec = Rectangle{position.x - origin.x, position.y - origin.y, size.x, size.y};
   boxRec = Rectangle{(position.x - origin.x) + 5.0f, (position.y - origin.y) + 5.0f, size.x - 10.0f, size.y - 10.0f};
-  isChecked = false;
+  isChecked = true;
 }
 
 Checkbox::~Checkbox()

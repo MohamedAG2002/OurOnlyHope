@@ -21,8 +21,9 @@ GameManager::GameManager()
   :m_isRunning(true)
 {
   // Raylib init
-  InitWindow(800, 600, "Our Only Hope");
+  InitWindow(1270, 720, "Our Only Hope");
   SetTargetFPS(60);
+  ToggleFullscreen(); 
   InitAudioDevice();
   
   // Box2D init
