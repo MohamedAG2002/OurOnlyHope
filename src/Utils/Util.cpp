@@ -93,7 +93,6 @@ Vector2 SetPositionByAnchor(Anchor anc, Vector2 size, Vector2 offset)
   }
 
   return result;
-
 }
 
 Vector2 B2Vec2ToVector2(b2Vec2 vec)

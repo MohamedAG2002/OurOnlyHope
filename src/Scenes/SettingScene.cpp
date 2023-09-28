@@ -8,6 +8,7 @@
 #include "../Enums/Anchor.hpp"
 #include "../Enums/TextType.hpp"
 #include "../Utils/Globals.hpp"
+#include "../Utils/Globals.hpp"
 
 #include <raylib.h>
 
