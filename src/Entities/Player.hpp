@@ -31,6 +31,8 @@ class Player : public Entity
     PotionMetadata potionMD;
     
     int health, maxHealth;
+    Vector2 velocity;
+    
     Sprite sprite;
     PhysicsBody body;
     Collider collider;
@@ -42,7 +44,6 @@ class Player : public Entity
 
   private:
     std::unique_ptr<Weapon> m_weapon;
-    Vector2 m_velocity;
     float m_attackCooldown, m_attackTimer;
     bool m_canAttack;
 

@@ -35,8 +35,8 @@ SceneManager::SceneManager()
 
   // Listen to scene change event
   EventManager::Get().ListenToEvent<OnSceneChange>([&](SceneType st){
-    m_scenes[st]->Reset();
     m_currentScene = m_scenes[st];
+    m_scenes[st]->Reset();
   });
 }
 

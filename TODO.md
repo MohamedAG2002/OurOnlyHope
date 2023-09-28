@@ -5,9 +5,11 @@
 - Make UI buttons work with joystick controls
 
 # Game
+- Fullscreen
 - Shop...!!!
 - Make the player equip different types of armor, weapons, and potions
 - Reset all of the entities
+- Better weapons
 - Implement the spear
 - Get better assets i.e sprites, sounds, tiles
 - Polish up the killing of the zombies

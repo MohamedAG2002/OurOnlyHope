@@ -3,6 +3,7 @@
 #include "Scene.hpp"
 #include "../UI/Button.hpp"
 #include "../UI/Text.hpp"
+#include "../UI/Checkbox.hpp"
 
 #include <raylib.h>
 
@@ -17,8 +18,9 @@ class SettingScene : public Scene
     ~SettingScene();
 
   public:
-    std::unique_ptr<Text> title;
+    std::unique_ptr<Text> title, fullScreenText;
     std::unique_ptr<Button> menuButton;
+    std::unique_ptr<Checkbox> fullScreenCheckBox;
 
   public:
     void Update(float dt) override;

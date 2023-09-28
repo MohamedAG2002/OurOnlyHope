@@ -45,12 +45,25 @@ GameScene::~GameScene()
 
 void GameScene::Update(float dt)
 {
-  if(IsKeyPressed(KEY_P))
+  // Pause/unpause game
+  if(IsKeyPressed(KEY_P) || IsGamepadButtonPressed(0, GAMEPAD_BUTTON_MIDDLE_RIGHT))
+  {
     m_isPaused = !m_isPaused;
 
-  if(menuButton->OnPressed())
+    // Have to pause the zombies and the player otherwise 
+    // they will move despite the game being paused. Box2D, man.
+    enttMgr->PauseEntities(m_isPaused);
+  }
+
+  // Turn on/off debug draw 
+  if(IsKeyPressed(KEY_F2))
+    global::isDebugDraw = !global::isDebugDraw;
+
+  // Go to the menu (only possible if paused).
+  if(menuButton->OnPressed() && m_isPaused)
     EventManager::Get().DispatchEvent<OnSceneChange>(SceneType::MENU);
-  
+ 
+  // Don't update if the game is paused
   if(m_isPaused)
     return;
 

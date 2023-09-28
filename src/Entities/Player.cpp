@@ -29,6 +29,7 @@ Player::Player(const Vector2 startPos)
   // Public varaibles init 
   maxHealth = 100;
   health = maxHealth;
+  velocity = Vector2{0.0f, 0.0f};
   
   // Metadata init 
   weaponMD = WeaponMetadata{"Light Sword", 1, WeaponType::LIGHT, 100, 50, 35.2f, 50.0f, 1000.0f};
@@ -42,7 +43,6 @@ Player::Player(const Vector2 startPos)
   collider = Collider(body, sprite.size, 1.0f, false);
 
   // Private variables init
-  m_velocity = Vector2{0.0f, 0.0f};
   m_attackCooldown = 20.0f;
   m_attackTimer = 0.0f;
   m_canAttack = false;
@@ -107,7 +107,7 @@ void Player::Reset()
   transform.position = body.GetBodyPosition();
 
   // @TODO: Reload all of the metadata
-
+  
   m_weapon->Reset();
 }
 
@@ -115,18 +115,18 @@ void Player::m_GetKeyInput()
 {
   // Move horizontally 
   if(IsKeyDown(KEY_A))
-    m_velocity.x = -PLAYER_MOVE_SPEED; 
+    velocity.x = -PLAYER_MOVE_SPEED; 
   else if(IsKeyDown(KEY_D))
-    m_velocity.x = PLAYER_MOVE_SPEED; 
+    velocity.x = PLAYER_MOVE_SPEED; 
   else  
-    m_velocity.x = 0.0f; 
+    velocity.x = 0.0f; 
   // Move vertically 
   if(IsKeyDown(KEY_W))
-    m_velocity.y = -PLAYER_MOVE_SPEED; 
+    velocity.y = -PLAYER_MOVE_SPEED; 
   else if(IsKeyDown(KEY_S))
-    m_velocity.y = PLAYER_MOVE_SPEED; 
+    velocity.y = PLAYER_MOVE_SPEED; 
   else  
-    m_velocity.y = 0.0f; 
+    velocity.y = 0.0f; 
   
   // Rotate the player based on where the mouse is relative to the screen 
   float angle = util::GetAngle(transform.position, GetMousePosition());
@@ -148,8 +148,8 @@ void Player::m_GetJoystickInput()
                                      GetGamepadAxisMovement(global::CURRENT_GAMEPAD, 3)};
 
   // Movements
-  m_velocity.x = leftAnalogValue.x * PLAYER_MOVE_SPEED;
-  m_velocity.y =  leftAnalogValue.y * PLAYER_MOVE_SPEED;
+  velocity.x = leftAnalogValue.x * PLAYER_MOVE_SPEED;
+  velocity.y =  leftAnalogValue.y * PLAYER_MOVE_SPEED;
 
   // Rotations
   float angle = atan2f(-rightAnalogValue.y, -rightAnalogValue.x) * RAD2DEG; 
@@ -190,7 +190,7 @@ void Player::m_HandleMovement(float dt)
     m_GetKeyInput();
 
   // Apply force based on the current velocity
-  body.ApplyForce(m_velocity);
+  body.ApplyForce(velocity);
 
   // Update the pixel position and rotation(in degrees)
   transform.position = body.GetBodyPosition();

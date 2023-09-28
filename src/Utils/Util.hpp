@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Enums/BodyType.hpp"
+#include "../Enums/Anchor.hpp"
 
 #include <raylib.h>
 #include <box2d/box2d.h>
@@ -22,6 +23,9 @@ bool IsColorEqual(Color c1, Color c2);
 
 // Will check if the given "desired" is equal to either "type1" or "type2"
 bool CheckEntityType(std::string& type1, std::string& type2, std::string&& desired);
+
+// Return a specific position based on the given Anchor
+Vector2 SetPositionByAnchor(Anchor anc, Vector2 size, Vector2 offset);
 
 template<typename T>
 T GetRandomNumber()

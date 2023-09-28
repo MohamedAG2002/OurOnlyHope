@@ -25,6 +25,7 @@ class EntityManager
     void Update(float dt);
     void Render();
     void Reset(); 
+    void PauseEntities(bool paused);
 };
   
 }

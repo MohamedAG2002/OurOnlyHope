@@ -34,6 +34,11 @@ set(SOURCES
   # Listeners
   src/Listeners/AudioListener.cpp
   src/Listeners/ContactListener.cpp
+  
+  # UI
+  src/UI/Text.cpp
+  src/UI/Button.cpp
+  src/UI/Checkbox.cpp
 
   # Scenes 
   src/Scenes/MenuScene.cpp
@@ -43,10 +48,6 @@ set(SOURCES
   src/Scenes/OverWinScene.cpp
   src/Scenes/OverLoseScene.cpp
   src/Scenes/SecretScene.cpp
-
-  # UI
-  src/UI/Text.cpp
-  src/UI/Button.cpp
 
   # Components
   src/Components/Transform2D.cpp

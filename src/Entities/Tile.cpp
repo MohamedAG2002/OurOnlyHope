@@ -22,8 +22,8 @@ Tile::Tile(const std::string& tileID, const Vector2 pos, const Vector2 size)
   bodyMetadata = BodyMetadata{"Tile", UUID, 0};
 
   // Components init 
-  body = PhysicsBody(&bodyMetadata, pos, BodyType::RIGID, isActive);
-  collider = Collider(body, size, 0.0f, false);
+  body = PhysicsBody(&bodyMetadata, pos, BodyType::STATIC, isActive);
+  collider = Collider(body, size, 1.0f, false);
 }
 
 Tile::~Tile()

@@ -26,6 +26,7 @@ class ZombieManager
     void Update(float dt);
     void Render();
     void Reset();
+    void PauseZombies(bool paused);
 
   private:
     float m_spawnCooldown, m_spawnTimer;

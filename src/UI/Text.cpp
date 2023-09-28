@@ -2,6 +2,7 @@
 #include "../Enums/Anchor.hpp"
 #include "../Enums/TextType.hpp"
 #include "../Utils/Globals.hpp"
+#include "../Utils/Util.hpp"
 #include "../Managers/AssetManager.hpp"
 
 #include <raylib.h>
@@ -16,7 +17,7 @@ Text::Text(const std::string& str, Anchor anc, TextType type, Color color, Vecto
   m_SetFontByType();
   size = MeasureTextEx(GetFontDefault(), str.c_str(), m_fontSize, 1.0f);
   origin = Vector2{size.x / 2.0f, size.y / 2.0f};
-  position = m_SetPositionByAnchor();
+  position = util::SetPositionByAnchor(anchor, size, offset);
 }
 
 Text::~Text()
@@ -32,52 +33,7 @@ void Text::ChangeText(const std::string&& newStr)
 {
   str = newStr;
   size = MeasureTextEx(GetFontDefault(), str.c_str(), m_fontSize, 1.0f);
-  position = m_SetPositionByAnchor();
-}
-
-Vector2 Text::m_SetPositionByAnchor()
-{
-  // Variables for easier visualization
-  Vector2 screenSize = {(float)GetScreenWidth(), (float)GetScreenHeight()};
-  Vector2 result = Vector2{0.0f, 0.0f};
-  Vector2 halfSize = Vector2(size.x / 2.0f, size.y / 2.0f);
-
-  switch(anchor)
-  {
-    case Anchor::TOP_LEFT:
-      result = Vector2{(15.0f + halfSize.x) + offset.x, (15.0f + halfSize.y) + offset.y};
-      break;
-    case Anchor::TOP_CENTER:
-      result = Vector2{screenSize.x / 2.0f + offset.x, (15.0f + halfSize.y) + offset.y};
-      break;
-    case Anchor::TOP_RIGHT:
-      result = Vector2{(screenSize.x - halfSize.x - 15.0f) + offset.x, (15.0f + halfSize.y) + offset.y};
-      break;
-    case Anchor::CENTER_LEFT:
-      result = Vector2{(15.0f + halfSize.x) + offset.x, screenSize.y / 2.0f + offset.y};
-      break;
-    case Anchor::CENTER:
-      result = Vector2{screenSize.x / 2.0f + offset.x, screenSize.y / 2.0f + offset.y};
-      break;
-    case Anchor::CENTER_RIGHT:
-      result = Vector2{(screenSize.x - halfSize.x - 15.0f) + offset.x, screenSize.y / 2.0f + offset.y};
-      break;
-    case Anchor::BOTTOM_LEFT:
-      result = Vector2{(15.0f + halfSize.x) + offset.x, (screenSize.y - halfSize.y - 15.0f) + offset.y};
-      break;
-    case Anchor::BOTTOM_CENTER:
-      result = Vector2{screenSize.x / 2.0f + offset.x, (screenSize.y - halfSize.y - 15.0f) + offset.y};
-      break;
-    case Anchor::BOTTOM_RIGHT:
-      result = Vector2{(screenSize.x - halfSize.x - 15.0f) + offset.x, 
-                      (screenSize.y - halfSize.y - 15.0f) + offset.y};
-      break;
-    default:
-      result = Vector2{0.0f, 0.0f};
-      break;
-  }
-
-  return result;
+  position = util::SetPositionByAnchor(anchor, size, offset);
 }
 
 void Text::m_SetFontByType()

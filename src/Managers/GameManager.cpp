@@ -44,6 +44,9 @@ GameManager::GameManager()
   // Other globals init 
   global::isDebugDraw = false;
 
+  // Private variables init 
+  m_isRunning = true;
+
   // Listen to events 
   EventManager::Get().ListenToEvent<OnQuit>([&](bool running){
     m_isRunning = running;
@@ -66,14 +69,11 @@ GameManager::~GameManager()
 
 void GameManager::Update()
 {
-  // Box2D update 
+  // Box2D update
   global::world->Step(GetFrameTime(), global::VEL_ITER, global::POS_ITER);
   m_contactListen->Update();
 
-  // Turning debug draw on or off 
-  if(IsKeyPressed(KEY_F2))
-    global::isDebugDraw = !global::isDebugDraw;
-
+  // Scenes update
   m_scnMgr->Update(GetFrameTime());
 }
 

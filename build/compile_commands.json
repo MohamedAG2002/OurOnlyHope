@@ -85,6 +85,24 @@
 },
 {
   "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/UI/Text.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Text.cpp",
+  "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Text.cpp",
+  "output": "CMakeFiles/ooh.dir/src/UI/Text.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/UI/Button.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Button.cpp",
+  "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Button.cpp",
+  "output": "CMakeFiles/ooh.dir/src/UI/Button.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
+  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/UI/Checkbox.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Checkbox.cpp",
+  "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Checkbox.cpp",
+  "output": "CMakeFiles/ooh.dir/src/UI/Checkbox.cpp.o"
+},
+{
+  "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
   "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Scenes/MenuScene.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/MenuScene.cpp",
   "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/MenuScene.cpp",
   "output": "CMakeFiles/ooh.dir/src/Scenes/MenuScene.cpp.o"
@@ -124,18 +142,6 @@
   "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Scenes/SecretScene.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/SecretScene.cpp",
   "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/SecretScene.cpp",
   "output": "CMakeFiles/ooh.dir/src/Scenes/SecretScene.cpp.o"
-},
-{
-  "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
-  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/UI/Text.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Text.cpp",
-  "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Text.cpp",
-  "output": "CMakeFiles/ooh.dir/src/UI/Text.cpp.o"
-},
-{
-  "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
-  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/UI/Button.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Button.cpp",
-  "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Button.cpp",
-  "output": "CMakeFiles/ooh.dir/src/UI/Button.cpp.o"
 },
 {
   "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",

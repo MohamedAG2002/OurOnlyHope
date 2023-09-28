@@ -777,6 +777,30 @@ src/UI/Button.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/Button.cpp.s
 .PHONY : src/UI/Button.cpp.s
 
+src/UI/Checkbox.o: src/UI/Checkbox.cpp.o
+.PHONY : src/UI/Checkbox.o
+
+# target to build an object file
+src/UI/Checkbox.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/Checkbox.cpp.o
+.PHONY : src/UI/Checkbox.cpp.o
+
+src/UI/Checkbox.i: src/UI/Checkbox.cpp.i
+.PHONY : src/UI/Checkbox.i
+
+# target to preprocess a source file
+src/UI/Checkbox.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/Checkbox.cpp.i
+.PHONY : src/UI/Checkbox.cpp.i
+
+src/UI/Checkbox.s: src/UI/Checkbox.cpp.s
+.PHONY : src/UI/Checkbox.s
+
+# target to generate assembly for a file
+src/UI/Checkbox.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/Checkbox.cpp.s
+.PHONY : src/UI/Checkbox.cpp.s
+
 src/UI/Text.o: src/UI/Text.cpp.o
 .PHONY : src/UI/Text.o
 
@@ -963,6 +987,9 @@ help:
 	@echo "... src/UI/Button.o"
 	@echo "... src/UI/Button.i"
 	@echo "... src/UI/Button.s"
+	@echo "... src/UI/Checkbox.o"
+	@echo "... src/UI/Checkbox.i"
+	@echo "... src/UI/Checkbox.s"
 	@echo "... src/UI/Text.o"
 	@echo "... src/UI/Text.i"
 	@echo "... src/UI/Text.s"

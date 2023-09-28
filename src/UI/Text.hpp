@@ -30,7 +30,6 @@ class Text
     int m_fontSize;
 
   private:
-    Vector2 m_SetPositionByAnchor();
     void m_SetFontByType();
 };
   

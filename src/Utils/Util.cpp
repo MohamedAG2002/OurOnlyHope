@@ -1,6 +1,7 @@
 #include "Util.hpp"
 #include "Globals.hpp"
 #include "../Enums/BodyType.hpp"
+#include "../Enums/Anchor.hpp"
 
 #include <raylib.h>
 #include <box2d/box2d.h>
@@ -47,6 +48,52 @@ bool IsColorEqual(Color c1, Color c2)
 bool CheckEntityType(std::string& type1, std::string& type2, std::string&& desired)
 {
   return (type1 == desired) || (type2 == desired);
+}
+
+Vector2 SetPositionByAnchor(Anchor anc, Vector2 size, Vector2 offset)
+{
+  // Variables for easier visualization
+  Vector2 screenSize = {(float)GetScreenWidth(), (float)GetScreenHeight()};
+  Vector2 result = Vector2{0.0f, 0.0f};
+  Vector2 halfSize = Vector2(size.x / 2.0f, size.y / 2.0f);
+
+  switch(anc)
+  {
+    case Anchor::TOP_LEFT:
+      result = Vector2{(15.0f + halfSize.x) + offset.x, (15.0f + halfSize.y) + offset.y};
+      break;
+    case Anchor::TOP_CENTER:
+      result = Vector2{screenSize.x / 2.0f + offset.x, (15.0f + halfSize.y) + offset.y};
+      break;
+    case Anchor::TOP_RIGHT:
+      result = Vector2{(screenSize.x - halfSize.x - 15.0f) + offset.x, (15.0f + halfSize.y) + offset.y};
+      break;
+    case Anchor::CENTER_LEFT:
+      result = Vector2{(15.0f + halfSize.x) + offset.x, screenSize.y / 2.0f + offset.y};
+      break;
+    case Anchor::CENTER:
+      result = Vector2{screenSize.x / 2.0f + offset.x, screenSize.y / 2.0f + offset.y};
+      break;
+    case Anchor::CENTER_RIGHT:
+      result = Vector2{(screenSize.x - halfSize.x - 15.0f) + offset.x, screenSize.y / 2.0f + offset.y};
+      break;
+    case Anchor::BOTTOM_LEFT:
+      result = Vector2{(15.0f + halfSize.x) + offset.x, (screenSize.y - halfSize.y - 15.0f) + offset.y};
+      break;
+    case Anchor::BOTTOM_CENTER:
+      result = Vector2{screenSize.x / 2.0f + offset.x, (screenSize.y - halfSize.y - 15.0f) + offset.y};
+      break;
+    case Anchor::BOTTOM_RIGHT:
+      result = Vector2{(screenSize.x - halfSize.x - 15.0f) + offset.x, 
+                      (screenSize.y - halfSize.y - 15.0f) + offset.y};
+      break;
+    default:
+      result = Vector2{0.0f, 0.0f};
+      break;
+  }
+
+  return result;
+
 }
 
 Vector2 B2Vec2ToVector2(b2Vec2 vec)

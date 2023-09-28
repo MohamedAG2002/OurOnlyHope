@@ -100,6 +100,15 @@ void ZombieManager::Reset()
   m_hasStarted = false;
   m_zombiesKilled = 0;
 }
+    
+void ZombieManager::PauseZombies(bool paused)
+{
+  for(auto& zombie : zombies)
+  {
+    zombie->body.SetBodyActive(paused);
+    zombie->body.SetBodyPosition(zombie->transform.position);
+  }
+}
 
 void ZombieManager::m_SpawnZombie()
 {

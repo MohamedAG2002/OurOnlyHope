@@ -85,8 +85,12 @@ void Zombie::Render()
     
 void Zombie::Reset() 
 {
-  transform.position = m_startPos;
   isActive = false;
+  body.SetBodyActive(false);
+
+  body.SetBodyPosition(m_startPos);
+  transform.position = body.GetBodyPosition(); 
+  
   health = maxHealth;
   damage = 0;
 }
