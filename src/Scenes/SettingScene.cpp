@@ -37,6 +37,8 @@ void SettingScene::Update(float dt)
 
   if(fullScreenCheckBox->isChecked && !IsWindowFullscreen())
     ToggleFullscreen();
+  else if(!fullScreenCheckBox->isChecked && IsWindowFullscreen())
+    ToggleFullscreen();
 }
 
 void SettingScene::Render()
