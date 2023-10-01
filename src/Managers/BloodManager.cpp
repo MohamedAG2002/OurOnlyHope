@@ -1,6 +1,7 @@
 #include "BloodManager.hpp"
 #include "EventManager.hpp"
 #include "../Enums/DataPosition.hpp"
+#include "../Enums/SceneType.hpp"
 #include "../Events/EventFuncs.hpp"
 #include "../Utils/Util.hpp"
 
@@ -18,6 +19,17 @@ BloodManager::BloodManager()
   // Listen to events 
   EventManager::Get().ListenToEvent<OnBloodInc>([&](int value){
     blood += value;
+  });
+
+  EventManager::Get().ListenToEvent<OnSceneChange>([&](SceneType st){
+    // Will add the total blood to the file in case the player decides to 
+    // exit to the main menu. As soon as the game enters the shop scene, 
+    // it will add the total blood to the file.
+    if(st != SceneType::SHOP)
+      return;
+
+    totalBlood += blood;
+    util::SaveDataToFile<uint32_t>("data/dat.bin", totalBlood, DATPOS_BLOOD);
   });
 
   EventManager::Get().ListenToEvent<OnWaveEnd>([&](){

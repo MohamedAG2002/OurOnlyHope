@@ -39,6 +39,7 @@ set(SOURCES
   src/UI/Text.cpp
   src/UI/Button.cpp
   src/UI/Checkbox.cpp
+  src/UI/ItemFrame.cpp
 
   # Scenes 
   src/Scenes/MenuScene.cpp

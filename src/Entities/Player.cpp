@@ -136,29 +136,6 @@ void Player::m_GetKeyInput()
   if(m_canAttack && IsKeyDown(KEY_SPACE))
     m_Attack();
 }
-
-void Player::m_GetJoystickInput()
-{
-  // Getting the left analog(L)'s value(between -1 and 1)
-  Vector2 leftAnalogValue = Vector2{GetGamepadAxisMovement(global::CURRENT_GAMEPAD, 0),
-                                    GetGamepadAxisMovement(global::CURRENT_GAMEPAD, 1)};
-  
-  // Getting the right analog(R)'s value(between -1 and 1)
-  Vector2 rightAnalogValue = Vector2{GetGamepadAxisMovement(global::CURRENT_GAMEPAD, 2),
-                                     GetGamepadAxisMovement(global::CURRENT_GAMEPAD, 3)};
-
-  // Movements
-  velocity.x = leftAnalogValue.x * PLAYER_MOVE_SPEED;
-  velocity.y =  leftAnalogValue.y * PLAYER_MOVE_SPEED;
-
-  // Rotations
-  float angle = atan2f(-rightAnalogValue.y, -rightAnalogValue.x) * RAD2DEG; 
-  transform.rotation = angle > 0 || angle < 0 ? angle : transform.rotation;
-
-  // Attacking(when pressing R2 on a Dualshock or RT on an xbox controller)
-  if(m_canAttack && IsGamepadButtonDown(global::CURRENT_GAMEPAD, GAMEPAD_BUTTON_RIGHT_TRIGGER_2))
-    m_Attack();  
-}
     
 void Player::m_Attack()
 {
@@ -184,10 +161,7 @@ void Player::m_HandleHealth()
 
 void Player::m_HandleMovement(float dt)
 {
-  if(IsGamepadAvailable(global::CURRENT_GAMEPAD))
-    m_GetJoystickInput();
-  else 
-    m_GetKeyInput();
+  m_GetKeyInput();
 
   // Apply force based on the current velocity
   body.ApplyForce(velocity);

@@ -55,6 +55,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ooh.dir/src/UI/Button.cpp.o.d"
   "CMakeFiles/ooh.dir/src/UI/Checkbox.cpp.o"
   "CMakeFiles/ooh.dir/src/UI/Checkbox.cpp.o.d"
+  "CMakeFiles/ooh.dir/src/UI/ItemFrame.cpp.o"
+  "CMakeFiles/ooh.dir/src/UI/ItemFrame.cpp.o.d"
   "CMakeFiles/ooh.dir/src/UI/Text.cpp.o"
   "CMakeFiles/ooh.dir/src/UI/Text.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Utils/DebugDraw.cpp.o"

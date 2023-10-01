@@ -801,6 +801,30 @@ src/UI/Checkbox.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/Checkbox.cpp.s
 .PHONY : src/UI/Checkbox.cpp.s
 
+src/UI/ItemFrame.o: src/UI/ItemFrame.cpp.o
+.PHONY : src/UI/ItemFrame.o
+
+# target to build an object file
+src/UI/ItemFrame.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/ItemFrame.cpp.o
+.PHONY : src/UI/ItemFrame.cpp.o
+
+src/UI/ItemFrame.i: src/UI/ItemFrame.cpp.i
+.PHONY : src/UI/ItemFrame.i
+
+# target to preprocess a source file
+src/UI/ItemFrame.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/ItemFrame.cpp.i
+.PHONY : src/UI/ItemFrame.cpp.i
+
+src/UI/ItemFrame.s: src/UI/ItemFrame.cpp.s
+.PHONY : src/UI/ItemFrame.s
+
+# target to generate assembly for a file
+src/UI/ItemFrame.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/ItemFrame.cpp.s
+.PHONY : src/UI/ItemFrame.cpp.s
+
 src/UI/Text.o: src/UI/Text.cpp.o
 .PHONY : src/UI/Text.o
 
@@ -990,6 +1014,9 @@ help:
 	@echo "... src/UI/Checkbox.o"
 	@echo "... src/UI/Checkbox.i"
 	@echo "... src/UI/Checkbox.s"
+	@echo "... src/UI/ItemFrame.o"
+	@echo "... src/UI/ItemFrame.i"
+	@echo "... src/UI/ItemFrame.s"
 	@echo "... src/UI/Text.o"
 	@echo "... src/UI/Text.i"
 	@echo "... src/UI/Text.s"

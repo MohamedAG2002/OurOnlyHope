@@ -3,6 +3,7 @@
 #include "Scene.hpp"
 #include "../UI/Button.hpp"
 #include "../UI/Text.hpp"
+#include "../UI/ItemFrame.hpp"
 
 #include <raylib.h>
 
@@ -20,6 +21,7 @@ class ShopScene : public Scene
   public:
     std::unique_ptr<Text> title, bloodText, waveText;
     std::unique_ptr<Button> startButton;
+    std::unique_ptr<ItemFrame> items;
 
   public:
     void Update(float dt) override;
