@@ -31,11 +31,13 @@ ShopScene::ShopScene()
   
   startButton = std::make_unique<Button>("Start", Anchor::BOTTOM_RIGHT, TextType::SMALL, GREEN, WHITE, Vector2{-15.0f, 0.0f});
 
-  items = std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Light_Sword"), Anchor::TOP_LEFT, "Light Sword I", Vector2{100.0f, 100.0f});
+  m_InitItems();
 }
 
 ShopScene::~ShopScene()
-{}
+{
+  items.clear();
+}
 
 void ShopScene::Update(float dt)
 {
@@ -46,11 +48,13 @@ void ShopScene::Update(float dt)
 void ShopScene::Render()
 {
   startButton->Render();
-  items->Render();
   
   title->Render();
   bloodText->Render();
   waveText->Render();
+
+  for(auto& item : items)
+    item->Render();
 }
 
 void ShopScene::Reset()
@@ -60,6 +64,75 @@ void ShopScene::Reset()
   
   bloodText->ChangeText("BLOOD: " + std::to_string(m_blood));
   waveText->ChangeText("BEST WAVE: " + std::to_string(m_wave));
+}
+    
+void ShopScene::m_InitItems()
+{
+  // Adding the weapons
+  Vector2 wpnOff = Vector2{380.0f, 130.0f};
+  items.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Light_Sword"), 
+                                              Anchor::TOP_LEFT, 
+                                              "Light Sword I", 
+                                              wpnOff));
+  
+  items.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Medium_Sword"), 
+                                              Anchor::TOP_LEFT, 
+                                              "Medium Sword I", 
+                                              Vector2{wpnOff.x + 150.0f, wpnOff.y}));
+
+  items.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Heavy_Sword"), 
+                                              Anchor::TOP_LEFT, 
+                                              "Heavy Sword I", 
+                                              Vector2{wpnOff.x + 300, wpnOff.y}));
+
+  items.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Spear"), 
+                                              Anchor::TOP_LEFT, 
+                                              "Spear I", 
+                                              Vector2{wpnOff.x + 450.0f, wpnOff.y}));
+
+  // Adding the armors
+  Vector2 armrOff = Vector2{380.0f, 300.0f};
+  items.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Light_Armor"), 
+                                              Anchor::TOP_LEFT, 
+                                              "Light Armor I", 
+                                              armrOff));
+  
+  items.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Medium_Armor"), 
+                                              Anchor::TOP_LEFT, 
+                                              "Medium Armor I", 
+                                              Vector2{armrOff.x + 150.0f, armrOff.y}));
+
+  items.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Heavy_Armor"), 
+                                              Anchor::TOP_LEFT, 
+                                              "Heavy Armor I", 
+                                              Vector2{armrOff.x + 300, armrOff.y}));
+
+  items.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Naked_Armor"), 
+                                              Anchor::TOP_LEFT, 
+                                              "Naked Armor", 
+                                              Vector2{armrOff.x + 450.0f, armrOff.y}));
+  
+  // Adding the potions
+  Vector2 ptinOff = Vector2{380.0f, 470.0f};
+  items.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Health_Potion"), 
+                                              Anchor::TOP_LEFT, 
+                                              "HP Potion I", 
+                                              ptinOff));
+  
+  items.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Damage_Potion"), 
+                                              Anchor::TOP_LEFT, 
+                                              "DAM Potion I", 
+                                              Vector2{ptinOff.x + 150.0f, ptinOff.y}));
+
+  items.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Durability_Potion"), 
+                                              Anchor::TOP_LEFT, 
+                                              "DUR Potion I", 
+                                              Vector2{ptinOff.x + 300, ptinOff.y}));
+
+  items.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Dexterity_Potion"), 
+                                              Anchor::TOP_LEFT, 
+                                              "DEX Potion", 
+                                              Vector2{ptinOff.x + 450.0f, ptinOff.y}));
 }
 
 }

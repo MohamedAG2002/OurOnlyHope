@@ -9,6 +9,7 @@
 
 #include <cstdint>
 #include <memory>
+#include <vector>
 
 namespace ooh {
 
@@ -21,7 +22,7 @@ class ShopScene : public Scene
   public:
     std::unique_ptr<Text> title, bloodText, waveText;
     std::unique_ptr<Button> startButton;
-    std::unique_ptr<ItemFrame> items;
+    std::vector<std::unique_ptr<ItemFrame>> items;
 
   public:
     void Update(float dt) override;
@@ -30,6 +31,9 @@ class ShopScene : public Scene
 
   private:
     uint32_t m_blood, m_wave;
+
+  private:
+    void m_InitItems();
 };
 
 }
