@@ -44,7 +44,8 @@ class Player : public Entity
 
   private:
     std::unique_ptr<Weapon> m_weapon;
-    float m_attackCooldown, m_attackTimer;
+    int m_totalDefense;
+    float m_attackCooldown, m_attackTimer, m_speed;
     bool m_canAttack;
 
   private:

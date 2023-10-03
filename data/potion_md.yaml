@@ -1,0 +1,9 @@
+---
+HP-Potion-I:
+  level: 1
+  type: 0
+  durability: 0
+  health: 10
+  damage: 0
+  weight: 0 
+---

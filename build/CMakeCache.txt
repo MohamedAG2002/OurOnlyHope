@@ -242,6 +242,9 @@ ooh_SOURCE_DIR:STATIC=/home/mohamed/Dev/C++/Raylib/OurOnlyHope
 //Path to a library.
 raylib:FILEPATH=/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/lib/libraylib.so
 
+//Path to a library.
+yaml-cpp:FILEPATH=/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/lib/libyaml-cpp.a
+
 
 ########################
 # INTERNAL cache entries

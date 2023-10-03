@@ -31,21 +31,23 @@ Player::Player(const Vector2 startPos)
   health = maxHealth;
   velocity = Vector2{0.0f, 0.0f};
   
+  // Private variables init
+  m_attackCooldown = 20.0f;
+  m_attackTimer = 0.0f;
+  m_canAttack = false;
+  m_totalDefense = 0;
+  m_speed = PLAYER_MOVE_SPEED;
+  
   // Metadata init 
-  weaponMD = WeaponMetadata{"Light Sword", 1, WeaponType::LIGHT, 100, 50, 35.2f, 50.0f, 1000.0f};
-  armorMD = ArmorMetadata{};
-  potionMD = PotionMetadata{};
+  m_ApplyWeapon();
+  m_ApplyArmor();
+  m_ApplyPotion();
   bodyMetadata = BodyMetadata{"Player", UUID, weaponMD.damage};
 
   // Components init
   sprite = Sprite("Player_Sprite", Vector2{64.0f, 64.0f});
   body = PhysicsBody(&bodyMetadata, transform.position, BodyType::KINEMATIC, isActive);
   collider = Collider(body, sprite.size, 1.0f, false);
-
-  // Private variables init
-  m_attackCooldown = 20.0f;
-  m_attackTimer = 0.0f;
-  m_canAttack = false;
 
   // Weapon init 
   m_weapon = std::make_unique<Weapon>(&transform.position, weaponMD); 
@@ -64,10 +66,10 @@ Player::Player(const Vector2 startPos)
       // apply the damage of the second body to the player.
       /* 
       if(bodyMD1.entityUUID == UUID) 
-        health -= bodyMD2.entityDamage; 
+        health -= (bodyMD2.entityDamage - m_totalDefense); 
       // Vice versa.
       else if(bodyMD2.entityUUID == UUID)
-        health -= bodyMD1.entityDamage; 
+        health -= (bodyMD1.entityDamage - m_totalDefense); 
       */
     }
 
@@ -98,6 +100,7 @@ void Player::Render()
     
 void Player::Reset()
 {
+  // Reset player's variables
   health = maxHealth;
   isActive = true;
   
@@ -106,8 +109,12 @@ void Player::Reset()
   body.SetBodyPosition(transform.position);
   transform.position = body.GetBodyPosition();
 
-  // @TODO: Reload all of the metadata
-  
+  // Reset the player's equipment
+  m_ApplyWeapon();
+  m_ApplyArmor();
+  m_ApplyPotion();
+ 
+  // Reset the weapon
   m_weapon->Reset();
 }
 
@@ -115,16 +122,16 @@ void Player::m_GetKeyInput()
 {
   // Move horizontally 
   if(IsKeyDown(KEY_A))
-    velocity.x = -PLAYER_MOVE_SPEED; 
+    velocity.x = -m_speed; 
   else if(IsKeyDown(KEY_D))
-    velocity.x = PLAYER_MOVE_SPEED; 
+    velocity.x = m_speed; 
   else  
     velocity.x = 0.0f; 
   // Move vertically 
   if(IsKeyDown(KEY_W))
-    velocity.y = -PLAYER_MOVE_SPEED; 
+    velocity.y = -m_speed; 
   else if(IsKeyDown(KEY_S))
-    velocity.y = PLAYER_MOVE_SPEED; 
+    velocity.y = m_speed; 
   else  
     velocity.y = 0.0f; 
   
@@ -186,17 +193,30 @@ void Player::m_HandleCombat()
     
 void Player::m_ApplyWeapon()
 {
-
+  weaponMD = util::LoadWeaponMetadata("Light-Sword-I");
+  m_speed -= weaponMD.weight;
 }
 
 void Player::m_ApplyArmor()
 {
-
+  armorMD = util::LoadArmorMetadata("Light-Armor-I");
+  m_totalDefense += armorMD.defense;
+  m_speed -= armorMD.weight;
 }
 
 void Player::m_ApplyPotion()
 {
+  potionMD = util::LoadPotionMetadata("HP-Potion-I");
 
+  // Applying the multipliers to the player and their equipment
+  maxHealth += potionMD.health;
+  weaponMD.damage += potionMD.damage;
+  weaponMD.durability += potionMD.durability;
+  armorMD.durability += potionMD.durability;
+  m_speed += potionMD.weight;
+
+  // Reapplying the health to the new max health
+  health = maxHealth;
 }
 
 }

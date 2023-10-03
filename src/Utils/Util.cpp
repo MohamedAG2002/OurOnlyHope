@@ -2,12 +2,22 @@
 #include "Globals.hpp"
 #include "../Enums/BodyType.hpp"
 #include "../Enums/Anchor.hpp"
+#include "../Enums/WeaponType.hpp"
+#include "../Enums/ArmorType.hpp"
+#include "../Enums/PotionType.hpp"
+#include "../Metadata/ShopItemsMetadata.hpp"
 
+#include <ostream>
 #include <raylib.h>
 #include <box2d/box2d.h>
+#include <yaml-cpp/yaml.h>
 
 #include <math.h>
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include <cstdint>
 
 namespace ooh {
  
@@ -93,6 +103,81 @@ Vector2 SetPositionByAnchor(Anchor anc, Vector2 size, Vector2 offset)
   }
 
   return result;
+}
+
+WeaponMetadata LoadWeaponMetadata(const std::string& node)
+{
+  WeaponMetadata md = {};
+  YAML::Node data = YAML::LoadFile("data/weapon_md.yaml");
+  
+  // Err if there is no node called as the node given
+  if(!data[node])   
+  {
+    std::cerr << "ERROR: No node called " << node << std::endl;
+    return md;
+  }
+
+  // Filling in the metadata from the value in the equivelant yaml file
+  YAML::Node weapon = data[node];
+  md.name = node;
+  md.level = weapon["level"].as<uint8_t>();
+  md.type = (WeaponType)weapon["type"].as<int>();
+  md.damage = weapon["damage"].as<int>();
+  md.durability = weapon["durability"].as<int>();
+  md.weight = weapon["weight"].as<float>();
+  md.range = weapon["range"].as<float>();
+  md.speed = weapon["speed"].as<float>();
+
+  return md;
+}
+
+ArmorMetadata LoadArmorMetadata(const std::string& node)
+{
+  ArmorMetadata md = {};
+  YAML::Node data = YAML::LoadFile("data/armor_md.yaml");
+  
+  // Err if there is no node called as the node given
+  if(!data[node])   
+  {
+    std::cerr << "ERROR: No node called " << node << std::endl;
+    return md;
+  }
+
+  // Filling in the metadata from the value in the equivelant yaml file
+  YAML::Node armor = data[node];
+  md.name = node;
+  md.level = armor["level"].as<uint8_t>();
+  md.type = (ArmorType)armor["type"].as<int>();
+  md.defense = armor["defense"].as<int>(); 
+  md.durability = armor["durability"].as<int>();
+  md.weight = armor["weight"].as<float>();
+  
+  return md;
+}
+
+PotionMetadata LoadPotionMetadata(const std::string& node)
+{
+  PotionMetadata md = {};
+  YAML::Node data = YAML::LoadFile("data/potion_md.yaml");
+  
+  // Err if there is no node called as the node given
+  if(!data[node])   
+  {
+    std::cerr << "ERROR: No node called " << node << std::endl;
+    return md;
+  }
+
+  // Filling in the metadata from the value in the equivelant yaml file
+  YAML::Node potion = data[node];
+  md.name = node;
+  md.level = potion["level"].as<uint8_t>();
+  md.type = (PotionType)potion["type"].as<int>();
+  md.durability = potion["durability"].as<int>();
+  md.health = potion["health"].as<int>();
+  md.damage = potion["damage"].as<int>();
+  md.weight = potion["weight"].as<float>();
+  
+  return md;
 }
 
 Vector2 B2Vec2ToVector2(b2Vec2 vec)

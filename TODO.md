@@ -3,8 +3,8 @@
 - Particle sytem 
 
 # Game
-- Shop...!!!
 - Make the player equip different types of armor, weapons, and potions
+- Find a better way to add descriptions to the item frames
 - Implement the spear
 - Easter Egg
 - Embed in the web using Emscripten
@@ -12,6 +12,7 @@
 # Polish
 - Make the game pause when the window is out of focus
 - Better weapons: better roations, better attack pattern
+- Fill in the yaml files of the shop items with values
 - Get better assets i.e sprites, sounds, tiles
 - Polish up the killing of the zombies
 - Polish up the transition from the game to the shop scene. Don't make it abrupt

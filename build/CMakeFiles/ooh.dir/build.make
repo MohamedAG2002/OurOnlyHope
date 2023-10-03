@@ -606,6 +606,7 @@ ooh: CMakeFiles/ooh.dir/src/Entities/Tile.cpp.o
 ooh: CMakeFiles/ooh.dir/build.make
 ooh: /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/lib/libraylib.so
 ooh: /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/lib/libbox2d.a
+ooh: /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/lib/libyaml-cpp.a
 ooh: CMakeFiles/ooh.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Linking CXX executable ooh"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ooh.dir/link.txt --verbose=$(VERBOSE)

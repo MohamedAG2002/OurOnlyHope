@@ -11,6 +11,7 @@ set(CMAKE_PREFIX_PATH ${CMAKE_SOURCE_DIR}/libs/)
 
 find_library(raylib raylib REQUIRED)
 find_library(box2d box2d REQUIRED)
+find_library(yaml-cpp yaml-cpp REQUIRED)
 
 set(SOURCES
   # Base files
@@ -76,6 +77,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/libs/inclu
 target_link_libraries(${PROJECT_NAME} 
   ${raylib}
   ${box2d}
+  ${yaml-cpp}
 )
 
 # For windows builds

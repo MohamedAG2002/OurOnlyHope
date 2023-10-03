@@ -2,6 +2,10 @@
 
 #include "../Enums/BodyType.hpp"
 #include "../Enums/Anchor.hpp"
+#include "../Enums/WeaponType.hpp"
+#include "../Enums/ArmorType.hpp"
+#include "../Enums/PotionType.hpp"
+#include "../Metadata/ShopItemsMetadata.hpp"
 
 #include <raylib.h>
 #include <box2d/box2d.h>
@@ -15,7 +19,6 @@ namespace ooh {
  
 namespace util {
 
-// OOH utilites 
 float ClampF(float value, float min, float max);
 int ClampI(int value, int min, int max);
 float GetAngle(Vector2 point1, Vector2 point2);
@@ -26,6 +29,14 @@ bool CheckEntityType(std::string& type1, std::string& type2, std::string&& desir
 
 // Return a specific position based on the given Anchor
 Vector2 SetPositionByAnchor(Anchor anc, Vector2 size, Vector2 offset);
+
+// These functions will open and read a yaml file, extracing all of the information 
+// inside and returning the metadata to the you so that you can use it. Just specify 
+// the specific node that you need to deserialize and it will return the appropriate 
+// metadata with the correct information.
+WeaponMetadata LoadWeaponMetadata(const std::string& node);
+ArmorMetadata LoadArmorMetadata(const std::string& node);
+PotionMetadata LoadPotionMetadata(const std::string& node);
 
 template<typename T>
 T GetRandomNumber()
