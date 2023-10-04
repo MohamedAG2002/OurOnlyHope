@@ -57,9 +57,9 @@ class Player : public Entity
 
     // Retrieve and apply all of the multipliers from the different 
     // shop items' metadata.
-    void m_ApplyWeapon();
-    void m_ApplyArmor();
-    void m_ApplyPotion();
+    void m_ApplyWeapon(const std::string& node);
+    void m_ApplyArmor(const std::string& node);
+    void m_ApplyPotion(const std::string& node);
 };
 
 }

@@ -36,6 +36,11 @@ BloodManager::BloodManager()
     totalBlood += blood;
     util::SaveDataToFile<uint32_t>("data/dat.bin", totalBlood, DATPOS_BLOOD);
   });
+  
+  EventManager::Get().ListenToEvent<OnItemBuy>([&](const int cost){
+    totalBlood -= cost;
+    util::SaveDataToFile<uint32_t>("data/dat.bin", totalBlood, DATPOS_BLOOD);
+  });
 }
 
 BloodManager::~BloodManager()

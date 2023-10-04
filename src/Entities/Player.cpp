@@ -6,6 +6,7 @@
 #include "../Components/Collider.hpp"
 #include "../Enums/BodyType.hpp"
 #include "../Enums/WeaponType.hpp"
+#include "../Enums/ShopItem.hpp"
 #include "../Utils/Util.hpp"
 #include "../Utils/Globals.hpp"
 #include "../Managers/EventManager.hpp"
@@ -39,9 +40,6 @@ Player::Player(const Vector2 startPos)
   m_speed = PLAYER_MOVE_SPEED;
   
   // Metadata init 
-  m_ApplyWeapon();
-  m_ApplyArmor();
-  m_ApplyPotion();
   bodyMetadata = BodyMetadata{"Player", UUID, weaponMD.damage};
 
   // Components init
@@ -73,6 +71,21 @@ Player::Player(const Vector2 startPos)
       */
     }
 
+  });
+
+  EventManager::Get().ListenToEvent<OnItemEquip>([&](ShopItem item, const std::string& node){
+    switch(item)
+    {
+      case ShopItem::WEAPON: 
+        m_ApplyWeapon(node);
+        break;
+      case ShopItem::ARMOR: 
+        m_ApplyArmor(node);
+        break;
+      case ShopItem::POTION: 
+        m_ApplyPotion(node);
+        break;
+    }
   });
 }
 
@@ -108,14 +121,10 @@ void Player::Reset()
   transform.position = Vector2{GetScreenWidth() / 2.0f, GetScreenHeight() / 2.0f};
   body.SetBodyPosition(transform.position);
   transform.position = body.GetBodyPosition();
-
-  // Reset the player's equipment
-  m_ApplyWeapon();
-  m_ApplyArmor();
-  m_ApplyPotion();
  
   // Reset the weapon
   m_weapon->Reset();
+  m_weapon->metadata = weaponMD;
 }
 
 void Player::m_GetKeyInput()
@@ -191,22 +200,22 @@ void Player::m_HandleCombat()
   }
 }
     
-void Player::m_ApplyWeapon()
+void Player::m_ApplyWeapon(const std::string& node)
 {
-  weaponMD = util::LoadWeaponMetadata("Light-Sword-I");
+  weaponMD = util::LoadWeaponMetadata(node);
   m_speed -= weaponMD.weight;
 }
 
-void Player::m_ApplyArmor()
+void Player::m_ApplyArmor(const std::string& node)
 {
-  armorMD = util::LoadArmorMetadata("Light-Armor-I");
+  armorMD = util::LoadArmorMetadata(node);
   m_totalDefense += armorMD.defense;
   m_speed -= armorMD.weight;
 }
 
-void Player::m_ApplyPotion()
+void Player::m_ApplyPotion(const std::string& node)
 {
-  potionMD = util::LoadPotionMetadata("HP-Potion-I");
+  potionMD = util::LoadPotionMetadata(node);
 
   // Applying the multipliers to the player and their equipment
   maxHealth += potionMD.health;

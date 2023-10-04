@@ -28,6 +28,10 @@ class EventManager
         m_collisionEvents.push_back(static_cast<OnEntityCollision>(func));
       else if constexpr (std::is_same<T, OnBloodInc>::value)
         m_bloodEvents.push_back(static_cast<OnBloodInc>(func));
+      else if constexpr (std::is_same<T, OnItemEquip>::value)
+        m_itemEquipEvents.push_back(static_cast<OnItemEquip>(func));
+      else if constexpr (std::is_same<T, OnItemBuy>::value)
+        m_itemBuyEvents.push_back(static_cast<OnItemBuy>(func));
       else if constexpr (std::is_same<T, OnWaveEnd>::value)
         m_waveEvents.push_back(static_cast<OnWaveEnd>(func));
       else if constexpr (std::is_same<T, OnSceneChange>::value)
@@ -60,6 +64,10 @@ class EventManager
         std::for_each(m_collisionEvents.begin(), m_collisionEvents.end(), callFn);
       else if constexpr (std::is_same<T, OnBloodInc>::value)
         std::for_each(m_bloodEvents.begin(), m_bloodEvents.end(), callFn);
+      else if constexpr (std::is_same<T, OnItemEquip>::value)
+        std::for_each(m_itemEquipEvents.begin(), m_itemEquipEvents.end(), callFn);
+      else if constexpr (std::is_same<T, OnItemBuy>::value)
+        std::for_each(m_itemBuyEvents.begin(), m_itemBuyEvents.end(), callFn);
       else if constexpr (std::is_same<T, OnWaveEnd>::value)
         std::for_each(m_waveEvents.begin(), m_waveEvents.end(), callFn);
       else if constexpr (std::is_same<T, OnSceneChange>::value)
@@ -85,6 +93,8 @@ class EventManager
     std::vector<OnEntityCollision> m_collisionEvents;
     std::vector<OnBloodInc> m_bloodEvents;
     std::vector<OnWaveEnd> m_waveEvents;
+    std::vector<OnItemEquip> m_itemEquipEvents;
+    std::vector<OnItemBuy> m_itemBuyEvents;
     
     std::vector<OnSceneChange> m_sceneEvents;
     std::vector<OnSoundPlay> m_soundEvents;

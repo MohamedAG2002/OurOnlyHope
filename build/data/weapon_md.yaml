@@ -1,37 +1,33 @@
 ---
-Light-Sword-I: 
-  level: 1
+Light-Sword: 
   type: 0
   damage: 20
-  durability: 90
-  weight: 50.0
-  range: 10.0
-  speed: 500.0
-
-Light-Sword-II: 
-  level: 2
-  type: 0
-  damage: 30
-  durability: 100
-  weight: 25.0
+  durability: 80
+  weight: 20.0
   range: 20.0
-  speed: 600.0
+  speed: 1000.0
 
-Light-Sword-III: 
-  level: 3
-  type: 0
+Medium-Sword: 
+  type: 1
   damage: 50
-  durability: 110
+  durability: 90
   weight: 30.0
-  range: 30.0
+  range: 50.0
   speed: 700.0
 
-Light-Sword-IV: 
-  level: 4
-  type: 0
+Heavy-Sword: 
+  type: 2
   damage: 70
-  durability: 120
-  weight: 35.0
-  range: 50.0
+  durability: 100
+  weight: 50.0
+  range: 70.0
+  speed: 500.0
+
+Spear: 
+  type: 3
+  damage: 100
+  durability: 50
+  weight: 10.0
+  range: 100.0
   speed: 1000.0
 ---

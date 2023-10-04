@@ -17,51 +17,54 @@ namespace ooh {
 Button::Button(const std::string& str, Anchor anc, TextType textType, Color color, Color outlineColor, Vector2 offset)
   :anchor(anc), color(color), outlineColor(outlineColor), offset(offset)   
 {
-  m_state = ButtonState::IDLE;
+  state = ButtonState::IDLE;
   m_text = std::make_unique<Text>(str, anc, textType, WHITE, offset);
   hasClicked = false;
+  isActive = true;
   size = Vector2(m_text->size.x + 50.0f, m_text->size.y + 5.0f);
   position = Vector2{m_text->position.x - 25.0f, m_text->position.y - 2.5f};
   rect = {position.x, position.y, size.x, size.y};
 }
 
 Button::~Button()
-{
-
-}
+{}
     
 bool Button::OnPressed()
 {
+  if(!isActive)
+  {
+    state = ButtonState::DISABLE;
+    return false;
+  }
+
   Vector2 mousePos = GetMousePosition();
   bool onCollision = CheckCollisionPointRec(mousePos, rect);
 
-  if(m_state == ButtonState::DISABLE)
-    return false;
-
-  // On Click 
+  // On click 
   if(onCollision && IsMouseButtonPressed(0))
   {
-    m_state = ButtonState::CLICK;
+    state = ButtonState::CLICK;
     EventManager::Get().DispatchEvent<OnSoundPlay>("Button_Click");    
     return true;
   }
-  else
-  {
-    m_state = ButtonState::IDLE;
-    return false;
-  }
+
+  // Default return value
+  state = ButtonState::IDLE;
+  return false;
 }
     
 void Button::Render()
 {
+  bool onCollision = CheckCollisionPointRec(GetMousePosition(), rect);
+
   // On Hover 
-  if(CheckCollisionPointRec(GetMousePosition(), rect) && m_state != ButtonState::CLICK)
-    m_state = ButtonState::HOVER;
-  else 
-    m_state = ButtonState::IDLE;
+  if(onCollision && state != ButtonState::CLICK && isActive)
+    state = ButtonState::HOVER;
+  else if(!onCollision && isActive)
+    state = ButtonState::IDLE;
 
   // Changing the alpha based on the state
-  switch(m_state)
+  switch(state)
   {
     case ButtonState::IDLE:
       color.a = 255;
@@ -92,7 +95,8 @@ void Button::Render()
 void Button::Reset()
 {
   hasClicked = false;
-  m_state = ButtonState::IDLE;
+  isActive = true;
+  state = ButtonState::IDLE;
 }
 
 }

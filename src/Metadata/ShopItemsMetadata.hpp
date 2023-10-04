@@ -12,7 +12,6 @@ namespace ooh {
 struct WeaponMetadata
 {
   std::string name;
-  uint8_t level; // From 1 to 4
   WeaponType type;
 
   int damage, durability;
@@ -22,7 +21,6 @@ struct WeaponMetadata
 struct ArmorMetadata
 {
   std::string name;
-  uint8_t level;
   ArmorType type; 
 
   int defense, durability;
@@ -32,7 +30,6 @@ struct ArmorMetadata
 struct PotionMetadata
 {
   std::string name;
-  uint8_t level;
   PotionType type;
 
   // These value will be deducted or applied to the weapon, armor, or the player 

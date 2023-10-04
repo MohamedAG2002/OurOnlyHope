@@ -19,8 +19,9 @@ class Button
     ~Button();
 
   public:
-    bool hasClicked;
+    bool hasClicked, isActive;
     Anchor anchor;
+    ButtonState state;
     Color color, outlineColor;
     Vector2 offset, position, size;
     Rectangle rect;
@@ -31,7 +32,6 @@ class Button
     void Reset();
 
   private:
-    ButtonState m_state;
     std::unique_ptr<Text> m_text;
 };
   

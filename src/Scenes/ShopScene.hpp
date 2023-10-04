@@ -22,7 +22,9 @@ class ShopScene : public Scene
   public:
     std::unique_ptr<Text> title, bloodText, waveText;
     std::unique_ptr<Button> startButton;
-    std::vector<std::unique_ptr<ItemFrame>> items;
+    std::vector<std::unique_ptr<ItemFrame>> weapons;
+    std::vector<std::unique_ptr<ItemFrame>> armors;
+    std::vector<std::unique_ptr<ItemFrame>> potions;
 
   public:
     void Update(float dt) override;
@@ -30,10 +32,14 @@ class ShopScene : public Scene
     void Reset() override;
 
   private:
+    bool m_hasWeapon, m_hasArmor, m_hasPotion;
     uint32_t m_blood, m_wave;
 
   private:
     void m_InitItems();
+    void m_EquipWeapon();
+    void m_EquipArmor();
+    void m_EquipPotion();
 };
 
 }

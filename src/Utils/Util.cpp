@@ -120,7 +120,6 @@ WeaponMetadata LoadWeaponMetadata(const std::string& node)
   // Filling in the metadata from the value in the equivelant yaml file
   YAML::Node weapon = data[node];
   md.name = node;
-  md.level = weapon["level"].as<uint8_t>();
   md.type = (WeaponType)weapon["type"].as<int>();
   md.damage = weapon["damage"].as<int>();
   md.durability = weapon["durability"].as<int>();
@@ -146,7 +145,6 @@ ArmorMetadata LoadArmorMetadata(const std::string& node)
   // Filling in the metadata from the value in the equivelant yaml file
   YAML::Node armor = data[node];
   md.name = node;
-  md.level = armor["level"].as<uint8_t>();
   md.type = (ArmorType)armor["type"].as<int>();
   md.defense = armor["defense"].as<int>(); 
   md.durability = armor["durability"].as<int>();
@@ -170,7 +168,6 @@ PotionMetadata LoadPotionMetadata(const std::string& node)
   // Filling in the metadata from the value in the equivelant yaml file
   YAML::Node potion = data[node];
   md.name = node;
-  md.level = potion["level"].as<uint8_t>();
   md.type = (PotionType)potion["type"].as<int>();
   md.durability = potion["durability"].as<int>();
   md.health = potion["health"].as<int>();
