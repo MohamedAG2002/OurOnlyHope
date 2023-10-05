@@ -99,4 +99,10 @@ void Button::Reset()
   state = ButtonState::IDLE;
 }
 
+void Button::SetPosition(const Vector2 pos)
+{
+  position = pos;
+  m_text->position = Vector2{(pos.x + size.x / 2.0f) - m_text->size.x / 2.0f, pos.y + 3.0f};
+}
+
 }

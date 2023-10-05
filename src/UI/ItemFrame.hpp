@@ -29,6 +29,7 @@ class ItemFrame
   public:
     void Render();
     void Reset();
+    void SetDesc(const std::string&& description);
 
   private:
     bool m_isDescShown;

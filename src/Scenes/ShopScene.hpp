@@ -4,6 +4,7 @@
 #include "../UI/Button.hpp"
 #include "../UI/Text.hpp"
 #include "../UI/ItemFrame.hpp"
+#include "../Metadata/ShopItemsMetadata.hpp"
 
 #include <raylib.h>
 
@@ -34,9 +35,15 @@ class ShopScene : public Scene
   private:
     bool m_hasWeapon, m_hasArmor, m_hasPotion;
     uint32_t m_blood, m_wave;
+    WeaponMetadata m_wpnMD;
+    ArmorMetadata m_armrMD;
+    PotionMetadata m_ptnMD;
 
   private:
     void m_InitItems();
+    const std::string m_GetFormatedWeaponDesc(WeaponMetadata md);
+    const std::string m_GetFormatedArmorDesc(ArmorMetadata md);
+    const std::string m_GetFormatedPotionDesc(PotionMetadata md);
     void m_EquipWeapon();
     void m_EquipArmor();
     void m_EquipPotion();

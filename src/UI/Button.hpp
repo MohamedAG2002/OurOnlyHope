@@ -30,6 +30,7 @@ class Button
     bool OnPressed();
     void Render();
     void Reset();
+    void SetPosition(const Vector2 pos);
 
   private:
     std::unique_ptr<Text> m_text;
