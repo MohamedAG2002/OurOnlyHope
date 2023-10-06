@@ -93,6 +93,8 @@ void Zombie::Reset()
   
   health = maxHealth;
   damage = 0;
+
+  m_attackTimer = 0.0f;
 }
     
 void Zombie::m_HandleHealth()

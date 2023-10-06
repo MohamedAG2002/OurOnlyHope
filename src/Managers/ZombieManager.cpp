@@ -126,8 +126,10 @@ void ZombieManager::m_SpawnZombie()
     if(zombie->isActive)
       continue;
 
-    zombie->health = zombie->maxHealth;
+    zombie->Reset();
     zombie->isActive = true;
+    zombie->body.SetBodyActive(true);
+
     spawnedZombies++;
 
     break; // We only want one zombie

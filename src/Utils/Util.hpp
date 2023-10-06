@@ -53,7 +53,7 @@ T GetRandomNumber()
 // It's purpose is going to be to know where exactly in the file to begin 
 // saving.
 template<typename T>
-void SaveDataToFile(const std::string&& fileName, T data, uint8_t position)
+void SaveDataToFile(const std::string&& fileName, T data)
 {
   // Open the file in write mode
   std::fstream file(fileName, std::ios::out | std::ios::binary);
@@ -65,9 +65,6 @@ void SaveDataToFile(const std::string&& fileName, T data, uint8_t position)
     std::cerr << "File: " << fileName << " failed to open" << std::endl;
   }
   
-  // Start writing to the specified position
-  file.seekp(position, std::ios::beg);
-  
   // Save the data to the file as a binary stream
   file.write((char*)&data, sizeof(data));
   
@@ -78,7 +75,7 @@ void SaveDataToFile(const std::string&& fileName, T data, uint8_t position)
 // Starts to write at the given position to the 
 // specified file using the given file name.
 template<typename T>
-T GetDataFromFile(const std::string&& fileName, uint8_t position)
+T GetDataFromFile(const std::string&& fileName)
 {
   // Open the file in read mode
   std::fstream file(fileName, std::ios::in | std::ios::binary);
@@ -91,9 +88,6 @@ T GetDataFromFile(const std::string&& fileName, uint8_t position)
     std::cerr << "File: " << fileName << " failed to open" << std::endl;
   }
 
-  // Start reading at the specified position
-  file.seekg(position, std::ios::beg);
-  
   // Read the contents of the file at the position 
   // specified to the buffer(the data variable that will be returned).
   file.read((char*)&data, sizeof(data));

@@ -1,9 +1,9 @@
 #include "BloodManager.hpp"
 #include "EventManager.hpp"
-#include "../Enums/DataPosition.hpp"
 #include "../Enums/SceneType.hpp"
 #include "../Events/EventFuncs.hpp"
 #include "../Utils/Util.hpp"
+#include "../Utils/Globals.hpp"
 
 #include <raylib.h>
 
@@ -14,7 +14,7 @@ namespace ooh {
 BloodManager::BloodManager()
 {
   blood = 0;
-  totalBlood = util::GetDataFromFile<uint32_t>("data/dat.bin", DATPOS_BLOOD); 
+  totalBlood = util::GetDataFromFile<uint32_t>(global::BLD_DAT_FILE_NAME); 
 
   // Listen to events 
   EventManager::Get().ListenToEvent<OnBloodInc>([&](int value){
@@ -29,17 +29,21 @@ BloodManager::BloodManager()
       return;
 
     totalBlood += blood;
-    util::SaveDataToFile<uint32_t>("data/dat.bin", totalBlood, DATPOS_BLOOD);
+    util::SaveDataToFile<uint32_t>(global::BLD_DAT_FILE_NAME, totalBlood);
   });
 
   EventManager::Get().ListenToEvent<OnWaveEnd>([&](){
     totalBlood += blood;
-    util::SaveDataToFile<uint32_t>("data/dat.bin", totalBlood, DATPOS_BLOOD);
+    util::SaveDataToFile<uint32_t>(global::BLD_DAT_FILE_NAME, totalBlood);
   });
   
   EventManager::Get().ListenToEvent<OnItemBuy>([&](const int cost){
+    // Don't allow the player to buy an item when there's not enough blood 
+    if(totalBlood < cost)
+      return;
+
     totalBlood -= cost;
-    util::SaveDataToFile<uint32_t>("data/dat.bin", totalBlood, DATPOS_BLOOD);
+    util::SaveDataToFile<uint32_t>(global::BLD_DAT_FILE_NAME, totalBlood);
   });
 }
 

@@ -17,7 +17,5 @@
 - Fade into the menu scene
 
 # Problems to fix 
-- The wave counter in the shop scene reads a bunch of garbage from the file. Maybe have two different .dat files instead of 1?
 - The zombies' grunts sample together and it sounds like a demon orgy
 - The player still goes out of bounds
-- Make the ESC the pause key instead of P?

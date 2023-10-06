@@ -2964,7 +2964,6 @@ CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.o: /home/mohamed/Dev/C++/Raylib
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/box2d/b2_world_callbacks.h \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/box2d/box2d.h \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/raylib.h \
-  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/DataPosition.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/SceneType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/ShopItem.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Metadata/BodyMetadata.hpp \
@@ -2975,6 +2974,7 @@ CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.o: /home/mohamed/Dev/C++/Raylib
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/PotionType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/WeaponType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Metadata/ShopItemsMetadata.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Util.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/BloodManager.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/EventManager.hpp \
@@ -4905,7 +4905,6 @@ CMakeFiles/ooh.dir/src/Managers/WaveManager.cpp.o: /home/mohamed/Dev/C++/Raylib/
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/box2d/b2_world_callbacks.h \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/box2d/box2d.h \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/raylib.h \
-  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/DataPosition.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/SceneType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/ShopItem.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Metadata/BodyMetadata.hpp \
@@ -7294,7 +7293,6 @@ CMakeFiles/ooh.dir/src/Scenes/ShopScene.cpp.o: /home/mohamed/Dev/C++/Raylib/OurO
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/box2d/b2_world_callbacks.h \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/box2d/box2d.h \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/raylib.h \
-  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/DataPosition.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/SceneType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/ShopItem.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Metadata/BodyMetadata.hpp \
@@ -10415,8 +10413,6 @@ CMakeFiles/ooh.dir/src/main.cpp.o: /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/
 /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/OverLoseScene.hpp:
 
 /usr/include/c++/11/bits/stringfwd.h:
-
-/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/DataPosition.hpp:
 
 /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/box2d/b2_shape.h:
 

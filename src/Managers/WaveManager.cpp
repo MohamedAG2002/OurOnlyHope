@@ -3,7 +3,6 @@
 #include "../Utils/Globals.hpp"
 #include "../Events/EventFuncs.hpp"
 #include "../Managers/EventManager.hpp"
-#include "../Enums/DataPosition.hpp"
 #include "../Enums/SceneType.hpp"
 
 #include <cstdint>
@@ -13,7 +12,7 @@ namespace ooh {
 WaveManager::WaveManager()
 {
   waveCounter = 1;
-  highestWave = util::GetDataFromFile<uint32_t>("data/dat.bin", DATPOS_WAVE);
+  highestWave = util::GetDataFromFile<uint32_t>(global::WV_DAT_FILE_NAME);
 
   // Listen to events 
   EventManager::Get().ListenToEvent<OnWaveEnd>([&](){
@@ -36,8 +35,8 @@ void WaveManager::Update()
   // Saving the highest wave count 
   if(waveCounter > highestWave)
   {
-    highestWave = 10;
-    util::SaveDataToFile<uint32_t>("data/dat.bin", highestWave, DATPOS_WAVE);
+    highestWave = waveCounter;
+    util::SaveDataToFile<uint32_t>(global::WV_DAT_FILE_NAME, highestWave);
   }
 }
 

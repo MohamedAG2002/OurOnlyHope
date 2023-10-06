@@ -7,7 +7,6 @@
 #include "../Enums/ButtonState.hpp"
 #include "../Enums/Anchor.hpp"
 #include "../Enums/TextType.hpp"
-#include "../Enums/DataPosition.hpp"
 #include "../UI/Button.hpp"
 #include "../UI/Text.hpp"
 #include "../UI/ItemFrame.hpp"
@@ -28,8 +27,8 @@ ShopScene::ShopScene()
   m_hasWeapon = false;
   m_hasArmor = false;
   m_hasPotion = false;
-  m_blood = util::GetDataFromFile<uint32_t>("data/dat.bin", DATPOS_BLOOD);
-  m_wave = util::GetDataFromFile<uint32_t>("data/dat.bin", DATPOS_WAVE);
+  m_blood = util::GetDataFromFile<uint32_t>(global::BLD_DAT_FILE_NAME);
+  m_wave = util::GetDataFromFile<uint32_t>(global::WV_DAT_FILE_NAME);
 
   title = std::make_unique<Text>("Make Your Choice...", Anchor::TOP_CENTER, TextType::BIG, WHITE);
   bloodText = std::make_unique<Text>("BLOOD: " + std::to_string(m_blood), Anchor::BOTTOM_LEFT, TextType::SMALL, RED);
@@ -50,8 +49,8 @@ ShopScene::~ShopScene()
 void ShopScene::Update(float dt)
 {
   // The player is only able to press the start button when they purchased at least 
-  // one item out of the three catagories in the shop.
-  startButton->isActive = m_hasWeapon && m_hasArmor && m_hasPotion;
+  // one weapon and one armor. The potion can either be ignored or purchased.
+  startButton->isActive = m_hasWeapon && m_hasArmor;
 
   // Start the game
   if(startButton->OnPressed())
@@ -97,8 +96,8 @@ void ShopScene::Render()
 void ShopScene::Reset()
 {
   // Reset private members
-  m_blood = util::GetDataFromFile<uint32_t>("data/dat.bin", DATPOS_BLOOD);
-  m_wave = util::GetDataFromFile<uint32_t>("data/dat.bin", DATPOS_WAVE);
+  m_blood = util::GetDataFromFile<uint32_t>(global::BLD_DAT_FILE_NAME);
+  m_wave = util::GetDataFromFile<uint32_t>(global::WV_DAT_FILE_NAME);
   m_hasWeapon = false;
   m_hasArmor = false;
   m_hasPotion = false;
@@ -254,7 +253,7 @@ void ShopScene::m_EquipWeapon()
 {
   for(auto& item : weapons)
   {
-    if(item->button->OnPressed())
+    if(item->button->OnPressed() && m_blood > item->cost)
     {
       EventManager::Get().DispatchEvent<OnItemEquip>(ShopItem::WEAPON, item->title);
       EventManager::Get().DispatchEvent<OnItemBuy>(item->cost);
@@ -272,7 +271,7 @@ void ShopScene::m_EquipArmor()
 {
   for(auto& item : armors)
   {
-    if(item->button->OnPressed())
+    if(item->button->OnPressed() && m_blood > item->cost)
     {
       EventManager::Get().DispatchEvent<OnItemEquip>(ShopItem::ARMOR, item->title);
       EventManager::Get().DispatchEvent<OnItemBuy>(item->cost);
@@ -290,7 +289,7 @@ void ShopScene::m_EquipPotion()
 {
   for(auto& item : potions)
   {
-    if(item->button->OnPressed())
+    if(item->button->OnPressed() && m_blood > item->cost)
     {
       EventManager::Get().DispatchEvent<OnItemEquip>(ShopItem::POTION, item->title);
       EventManager::Get().DispatchEvent<OnItemBuy>(item->cost);
