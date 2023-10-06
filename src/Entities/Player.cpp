@@ -168,8 +168,13 @@ void Player::m_Attack()
   else 
   {
     // Spear attack
+    m_weapon->body.SetBodyPosition(transform.position);
+    m_weapon->transform.position = transform.position;
+
     m_weapon->transform.rotation = transform.rotation;
     m_weapon->isActive = true;
+    m_weapon->distTraveled = 0.0f;
+    // @TODO: Play a spear throwing sound
   }
 
   m_canAttack = false;

@@ -1,11 +1,12 @@
 # Engine
 - Animation
 - Particle sytem 
+- Embed in the web using Emscripten
 
 # Game
-- Implement the spear
+- Add joystick controls?
+- Add camera?
 - Easter Egg
-- Embed in the web using Emscripten
 
 # Polish
 - Make the game pause when the window is out of focus

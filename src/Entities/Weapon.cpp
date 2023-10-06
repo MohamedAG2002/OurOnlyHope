@@ -7,11 +7,12 @@
 #include "../Enums/BodyType.hpp"
 #include "../Events/EventFuncs.hpp"
 #include "../Managers/EventManager.hpp"
+#include "../Managers/AssetManager.hpp"
 #include "../Utils/Util.hpp"
 #include "../Metadata/BodyMetadata.hpp"
 
-#include <iostream>
 #include <raylib.h>
+#include <raymath.h>
 
 namespace ooh {
 
@@ -27,6 +28,10 @@ Weapon::Weapon(Vector2* holderPos, WeaponMetadata& metadata)
   rotationDest = 0.0f;
   velocity = Vector2{0.0f, 0.0f};
   bodyMetadata = BodyMetadata{"Weapon", UUID, metadata.damage};
+
+  // Private variables init 
+  distTraveled = 0.0f;
+  maxDist = 100.0f;
 
   // Components init 
   body = PhysicsBody(&bodyMetadata, *m_holderPos, BodyType::KINEMATIC, isActive);
@@ -64,19 +69,41 @@ void Weapon::Update(float dt)
   else 
   {
     // Getting the angle at which to throw the spear 
+    Vector2 diff = Vector2Subtract(GetMousePosition(), *m_holderPos); 
+    diff = Vector2Normalize(diff);
+    velocity = Vector2{diff.x * SPEAR_SPEED, diff.y * SPEAR_SPEED};
 
-    body.ApplyForce(velocity);      
+    // Applying the velocity to the body (i.e throwing the spear)
+    body.ApplyForce(velocity);
+    transform.position = body.GetBodyPosition();
+
+    distTraveled++;
+
+    // The spear should go back to the player's "inventory" once the spear traveled far enough
+    if(distTraveled > maxDist)
+    {
+      isActive = false;
+      body.SetBodyActive(false);
+      
+      body.SetBodyPosition(*m_holderPos);
+      transform.position = body.GetBodyPosition();
+    }
   }
 }
 
 void Weapon::Render() 
 {
-  // Does nothing here...
+  DrawTexture(AssetManager::Get().GetSprite("Spear"), transform.position.x, transform.position.y, WHITE);
 }
     
 void Weapon::Reset()
 {
-  // @TODO: Reset the weapon
+  distTraveled = 0.0f;
+  isActive = false;
+  
+  body.SetBodyActive(false);
+  body.SetBodyPosition(*m_holderPos);
+  transform.position = body.GetBodyPosition();
 }
 
 }

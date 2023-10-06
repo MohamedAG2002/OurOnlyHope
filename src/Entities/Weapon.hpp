@@ -21,7 +21,7 @@ class Weapon : public Entity
   public:
     WeaponMetadata metadata;
     BodyMetadata bodyMetadata;
-    float rotationDest;
+    float rotationDest, distTraveled, maxDist;
     Vector2 velocity;
     PhysicsBody body;
     Collider collider;
