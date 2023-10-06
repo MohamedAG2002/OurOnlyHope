@@ -31,7 +31,7 @@ SceneManager::SceneManager()
   m_scenes[SceneType::SECRET_ENDING] = std::make_shared<SecretScene>();
   
   // Setting default values
-  m_currentScene = m_scenes[SceneType::MENU];
+  m_currentScene = m_scenes[SceneType::GAME];
 
   // Listen to scene change event
   EventManager::Get().ListenToEvent<OnSceneChange>([&](SceneType st){

@@ -18,4 +18,3 @@
 
 # Problems to fix 
 - The zombies' grunts sample together and it sounds like a demon orgy
-- The player still goes out of bounds

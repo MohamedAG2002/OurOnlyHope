@@ -9,7 +9,9 @@
 #include <raylib.h>
 
 namespace ooh {
- 
+
+const float SPEAR_SPEED = 300.0f;
+
 class Weapon : public Entity 
 {
   public:
@@ -20,6 +22,7 @@ class Weapon : public Entity
     WeaponMetadata metadata;
     BodyMetadata bodyMetadata;
     float rotationDest;
+    Vector2 velocity;
     PhysicsBody body;
     Collider collider;
 

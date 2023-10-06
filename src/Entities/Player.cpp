@@ -44,7 +44,7 @@ Player::Player(const Vector2 startPos)
 
   // Components init
   sprite = Sprite("Player_Sprite", Vector2{64.0f, 64.0f});
-  body = PhysicsBody(&bodyMetadata, transform.position, BodyType::KINEMATIC, isActive);
+  body = PhysicsBody(&bodyMetadata, transform.position, BodyType::RIGID, isActive);
   collider = Collider(body, sprite.size, 1.0f, false);
 
   // Weapon init 
@@ -157,12 +157,22 @@ void Player::m_Attack()
 {
   // Enabling the weapon to attack depending on the type 
   // (i.e it will attack in a different pattern if it was a spear or a sword).
-  m_weapon->transform.rotation = transform.rotation;
-  m_weapon->rotationDest = (transform.rotation - 180.0f);
-  m_weapon->isActive = true;
+  if(m_weapon->metadata.type != WeaponType::SPEAR)
+  {
+    // Sword attack
+    m_weapon->transform.rotation = transform.rotation;
+    m_weapon->rotationDest = (transform.rotation - 180.0f);
+    m_weapon->isActive = true;
+    EventManager::Get().DispatchEvent<OnSoundPlay>("Sword_Swing");
+  }
+  else 
+  {
+    // Spear attack
+    m_weapon->transform.rotation = transform.rotation;
+    m_weapon->isActive = true;
+  }
 
   m_canAttack = false;
-  EventManager::Get().DispatchEvent<OnSoundPlay>("Sword_Swing");
 }
 
 void Player::m_HandleHealth()

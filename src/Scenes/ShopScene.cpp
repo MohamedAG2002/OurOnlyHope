@@ -103,7 +103,7 @@ void ShopScene::Reset()
   m_hasPotion = false;
 
   // Reset the texts
-  bloodText->ChangeText("BLOOD: " + std::to_string(m_blood));
+  bloodText->str = "BLOOD: " + std::to_string(m_blood);
   waveText->ChangeText("BEST WAVE: " + std::to_string(m_wave));
   
   // Reset the item frames 
