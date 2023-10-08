@@ -14,6 +14,9 @@ class Collider
     Collider();
     ~Collider();
 
+  public:
+    void SetSize(Vector2 size);
+
   private:
     b2PolygonShape m_shape;
     b2FixtureDef m_fixtureDef;

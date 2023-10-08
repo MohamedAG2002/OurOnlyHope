@@ -72,7 +72,7 @@ void GameScene::Update(float dt)
   bloodText->ChangeText("BLOOD: " + std::to_string(bldMgr.blood));
   waveText->ChangeText(std::to_string(wvMgr.waveCounter));
   zombieCountText->ChangeText("Zombies Left: " + std::to_string(enttMgr->zmbMgr->spawnedZombies));
-  
+
   enttMgr->Update(dt);
   wvMgr.Update();
 

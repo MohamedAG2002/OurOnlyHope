@@ -105,8 +105,12 @@ void ZombieManager::PauseZombies(bool paused)
 {
   for(auto& zombie : zombies)
   {
-    zombie->body.SetBodyActive(paused);
+    if(!zombie->isActive)
+      continue; 
+        
+    zombie->body.SetBodyActive(!paused);
     zombie->body.SetBodyPosition(zombie->transform.position);
+    zombie->anim.isAnimating = !paused;
   }
 }
 

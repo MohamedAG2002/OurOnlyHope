@@ -46,7 +46,7 @@ Player::Player(const Vector2 startPos)
   collider = Collider(body, sprite.size, 1.0f, false);
 
   // Weapon init 
-  m_weapon = std::make_unique<Weapon>(&transform.position, weaponMD); 
+  weapon = std::make_unique<Weapon>(&transform.position, weaponMD); 
 
   // Listen to events 
   EventManager::Get().ListenToEvent<OnEntityCollision>([&](BodyMetadata& bodyMD1, BodyMetadata& bodyMD2){
@@ -61,11 +61,16 @@ Player::Player(const Vector2 startPos)
       // If the player is the first body, it means the zombie is the second body, therefore, 
       // apply the damage of the second body to the player.
       /* 
-      if(bodyMD1.entityUUID == UUID) 
+      if((bodyMD1.entityUUID == UUID)) 
+      {
         health -= (bodyMD2.entityDamage - m_totalDefense); 
-      // Vice versa.
+        armorMD.durability--;
+      }
       else if(bodyMD2.entityUUID == UUID)
+      {
         health -= (bodyMD1.entityDamage - m_totalDefense); 
+        armorMD.durability--;
+      }
       */
     }
 
@@ -97,8 +102,8 @@ void Player::Update(float dt)
   if(!isActive)
     return;
 
-  if(m_weapon->isActive)
-    m_weapon->Update(dt);
+  if(weapon->isActive)
+    weapon->Update(dt);
 
   m_HandleMovement(dt);
 }
@@ -106,6 +111,10 @@ void Player::Update(float dt)
 void Player::Render()
 {
   sprite.Render(transform);
+
+  DrawText(TextFormat("Damge = %i", weapon->bodyMetadata.entityDamage), 10, 200, 20, WHITE);
+  DrawText(TextFormat("Durability = %i", weapon->metadata.durability), 10, 220, 20, WHITE);
+  DrawText(TextFormat("Name = %s", weapon->metadata.name.c_str()), 10, 240, 20, WHITE);
 }
     
 void Player::Reset()
@@ -123,8 +132,9 @@ void Player::Reset()
   transform.position = body.GetBodyPosition();
  
   // Reset the weapon
-  m_weapon->Reset();
-  m_weapon->metadata = weaponMD;
+  weapon->Reset();
+  weapon->metadata = weaponMD;
+  weapon->bodyMetadata.entityDamage = weaponMD.damage;
 }
 
 void Player::m_GetKeyInput()
@@ -149,7 +159,7 @@ void Player::m_GetKeyInput()
   transform.rotation = angle;
 
   // Attacking 
-  if(!m_weapon->isActive && IsKeyDown(KEY_SPACE))
+  if(!weapon->isActive && IsKeyDown(KEY_SPACE))
     m_Attack();
 }
     
@@ -157,23 +167,23 @@ void Player::m_Attack()
 {
   // Enabling the weapon to attack depending on the type 
   // (i.e it will attack in a different pattern if it was a spear or a sword).
-  if(m_weapon->metadata.type != WeaponType::SPEAR)
+  if(weapon->metadata.type != WeaponType::SPEAR)
   {
     // Sword attack
-    m_weapon->transform.rotation = transform.rotation;
-    m_weapon->rotationDest = (transform.rotation - 180.0f);
-    m_weapon->isActive = true;
+    weapon->transform.rotation = transform.rotation;
+    weapon->rotationDest = (transform.rotation - 180.0f);
+    weapon->isActive = true;
     EventManager::Get().DispatchEvent<OnSoundPlay>("Sword_Swing");
   }
   else 
   {
     // Spear attack
-    m_weapon->body.SetBodyPosition(transform.position);
-    m_weapon->transform.position = transform.position;
+    weapon->body.SetBodyPosition(transform.position);
+    weapon->transform.position = transform.position;
 
-    m_weapon->transform.rotation = transform.rotation;
-    m_weapon->isActive = true;
-    m_weapon->distTraveled = 0.0f;
+    weapon->transform.rotation = transform.rotation;
+    weapon->isActive = true;
+    weapon->distTraveled = 0.0f;
     // @TODO: Play a spear throwing sound
   }
 
@@ -184,7 +194,11 @@ void Player::m_HandleHealth()
 {
   // Clamp the health from 0 to the max 
   health = util::ClampI(health, 0, maxHealth);
-  
+ 
+  // Nerf the player's defense once the armor is low on durability
+  if(armorMD.durability == 0)
+    m_totalDefense /= 2.0f;
+
   // KILL HIM!!!... when low on health
   if(health <= 0)
     isActive = false;
@@ -224,7 +238,7 @@ void Player::m_ApplyPotion(const std::string& node)
   weaponMD.durability += potionMD.durability;
   armorMD.durability += potionMD.durability;
   m_totalWeight -= potionMD.weight;
-
+  
   // Reapplying the health to the new max health
   health = maxHealth;
 }

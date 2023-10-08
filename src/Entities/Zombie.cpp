@@ -14,7 +14,6 @@
 #include <raylib.h>
 #include <raymath.h>
 
-#include <iostream>
 #include <math.h>
 
 namespace ooh {
@@ -58,7 +57,7 @@ Zombie::Zombie(Vector2 startPos, Vector2* target)
       if(bodyMD1.entityUUID == UUID) 
         health -= bodyMD2.entityDamage; 
       else if(bodyMD2.entityUUID == UUID)
-        health -= bodyMD1.entityDamage;
+        health -= bodyMD1.entityDamage; 
     }
   });
 }

@@ -46,8 +46,9 @@ void EntityManager::PauseEntities(bool paused)
 {
   zmbMgr->PauseZombies(paused);
 
-  player->velocity = Vector2{0.0f, 0.0f};
-  player->body.ApplyForce(player->velocity);
+  player->body.SetBodyActive(!paused);
+  //player->velocity = Vector2{0.0f, 0.0f};
+  //player->body.ApplyForce(player->velocity);
 }
   
 }

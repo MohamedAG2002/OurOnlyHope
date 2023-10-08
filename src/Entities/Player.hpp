@@ -36,6 +36,8 @@ class Player : public Entity
     Sprite sprite;
     PhysicsBody body;
     Collider collider;
+    
+    std::unique_ptr<Weapon> weapon;
 
   public:
     void Update(float dt) override;
@@ -43,7 +45,6 @@ class Player : public Entity
     void Reset() override;
 
   private:
-    std::unique_ptr<Weapon> m_weapon;
     int m_totalDefense;
     float m_speed, m_totalWeight;
     bool m_canAttack;

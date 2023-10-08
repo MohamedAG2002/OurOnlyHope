@@ -46,7 +46,7 @@ class PhysicsBody
     // NOTE: Do not use this in gameplay code. When the body gets passed to the collider, 
     // the collider itself will call this function. So there's no need to call it as a user.
     void AttachCollider(const b2FixtureDef& collider);
-
+ 
   private:
     b2Body* m_body; 
     b2BodyDef m_bodyDef;

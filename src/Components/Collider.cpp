@@ -35,5 +35,13 @@ Collider::~Collider()
 {
 
 }
+    
+void Collider::SetSize(Vector2 size)
+{
+  b2Vec2 halfSize = util::Vector2ToB2Vec2(Vector2(size.x / 4.0f, size.y / 4.0f));
+
+  m_shape.SetAsBox(halfSize.x, halfSize.y);
+  m_fixtureDef.shape = &m_shape;
+}
   
 }

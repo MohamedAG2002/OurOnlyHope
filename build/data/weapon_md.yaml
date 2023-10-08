@@ -1,33 +1,33 @@
 ---
 Light-Sword: 
   type: 0
-  damage: 20
-  durability: 80
+  damage: 50
+  durability: 200 
   weight: 20.0
-  range: 20.0
+  range: 1.5
   speed: 1000.0
 
 Medium-Sword: 
   type: 1
-  damage: 50
-  durability: 90
+  damage: 75
+  durability: 250
   weight: 30.0
-  range: 50.0
+  range: 2.0
   speed: 700.0
 
 Heavy-Sword: 
   type: 2
-  damage: 70
-  durability: 100
+  damage: 90
+  durability: 350
   weight: 50.0
-  range: 70.0
+  range: 2.5
   speed: 500.0
 
 Spear: 
   type: 3
-  damage: 1000
-  durability: 50
+  damage: 100
+  durability: 100
   weight: 10.0
-  range: 100.0
+  range: 3.0
   speed: 1000.0
 ---
