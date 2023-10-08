@@ -45,7 +45,7 @@ class Player : public Entity
   private:
     std::unique_ptr<Weapon> m_weapon;
     int m_totalDefense;
-    float m_attackCooldown, m_attackTimer, m_speed;
+    float m_speed, m_totalWeight;
     bool m_canAttack;
 
   private:
@@ -53,7 +53,6 @@ class Player : public Entity
     void m_Attack();
     void m_HandleHealth();
     void m_HandleMovement(float dt);
-    void m_HandleCombat();
 
     // Retrieve and apply all of the multipliers from the different 
     // shop items' metadata.

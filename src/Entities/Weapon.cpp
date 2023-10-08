@@ -31,7 +31,7 @@ Weapon::Weapon(Vector2* holderPos, WeaponMetadata& metadata)
 
   // Private variables init 
   distTraveled = 0.0f;
-  maxDist = 100.0f;
+  maxDist = 73.0f;
 
   // Components init 
   body = PhysicsBody(&bodyMetadata, *m_holderPos, BodyType::KINEMATIC, isActive);
@@ -71,7 +71,7 @@ void Weapon::Update(float dt)
     // Getting the angle at which to throw the spear 
     Vector2 diff = Vector2Subtract(GetMousePosition(), *m_holderPos); 
     diff = Vector2Normalize(diff);
-    velocity = Vector2{diff.x * SPEAR_SPEED, diff.y * SPEAR_SPEED};
+    velocity = Vector2{diff.x * metadata.speed, diff.y * metadata.speed};
 
     // Applying the velocity to the body (i.e throwing the spear)
     body.ApplyForce(velocity);

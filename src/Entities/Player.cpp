@@ -33,8 +33,6 @@ Player::Player(const Vector2 startPos)
   velocity = Vector2{0.0f, 0.0f};
   
   // Private variables init
-  m_attackCooldown = 20.0f;
-  m_attackTimer = 0.0f;
   m_canAttack = false;
   m_totalDefense = 0;
   m_speed = PLAYER_MOVE_SPEED;
@@ -103,7 +101,6 @@ void Player::Update(float dt)
     m_weapon->Update(dt);
 
   m_HandleMovement(dt);
-  m_HandleCombat();
 }
 
 void Player::Render()
@@ -116,7 +113,10 @@ void Player::Reset()
   // Reset player's variables
   health = maxHealth;
   isActive = true;
-  
+  m_speed = PLAYER_MOVE_SPEED;
+  m_speed -= m_totalWeight;
+  m_totalWeight = 0;
+
   // Resetting the player's position and updating the body's position as well
   transform.position = Vector2{GetScreenWidth() / 2.0f, GetScreenHeight() / 2.0f};
   body.SetBodyPosition(transform.position);
@@ -149,7 +149,7 @@ void Player::m_GetKeyInput()
   transform.rotation = angle;
 
   // Attacking 
-  if(m_canAttack && IsKeyDown(KEY_SPACE))
+  if(!m_weapon->isActive && IsKeyDown(KEY_SPACE))
     m_Attack();
 }
     
@@ -200,32 +200,18 @@ void Player::m_HandleMovement(float dt)
   // Update the pixel position and rotation(in degrees)
   transform.position = body.GetBodyPosition();
 }
-
-void Player::m_HandleCombat()
-{
-  // Only start timer when the player already attacked 
-  if(!m_canAttack)
-    m_attackTimer++;
-
-  // Once the timer runs out, the player can attack again 
-  if(m_attackTimer > m_attackCooldown)
-  {
-    m_canAttack = true;
-    m_attackTimer = 0.0f;
-  }
-}
     
 void Player::m_ApplyWeapon(const std::string& node)
 {
   weaponMD = util::LoadWeaponMetadata(node);
-  m_speed -= weaponMD.weight;
+  m_totalWeight += weaponMD.weight;
 }
 
 void Player::m_ApplyArmor(const std::string& node)
 {
   armorMD = util::LoadArmorMetadata(node);
   m_totalDefense += armorMD.defense;
-  m_speed -= armorMD.weight;
+  m_totalWeight += armorMD.weight;
 }
 
 void Player::m_ApplyPotion(const std::string& node)
@@ -237,7 +223,7 @@ void Player::m_ApplyPotion(const std::string& node)
   weaponMD.damage += potionMD.damage;
   weaponMD.durability += potionMD.durability;
   armorMD.durability += potionMD.durability;
-  m_speed += potionMD.weight;
+  m_totalWeight -= potionMD.weight;
 
   // Reapplying the health to the new max health
   health = maxHealth;

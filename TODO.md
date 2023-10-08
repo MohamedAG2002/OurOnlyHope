@@ -8,7 +8,7 @@
 - Easter Egg
 
 # Polish
-- Better weapons: better roations, better attack pattern
+- Better weapons: better roations, better attack pattern, and add the durability system
 - Get better assets i.e sprites, sounds, tiles
 - Redo the values of the items maybe?
 - Polish up the killing of the zombies
