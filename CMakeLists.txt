@@ -56,6 +56,7 @@ set(SOURCES
   src/Components/Sprite.cpp
   src/Components/PhysicsBody.cpp
   src/Components/Collider.cpp
+  src/Components/Animator.cpp
 
   # Entities
   src/Entities/Player.cpp

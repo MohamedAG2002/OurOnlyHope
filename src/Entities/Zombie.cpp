@@ -3,7 +3,7 @@
 #include "../Utils/Util.hpp"
 #include "../Utils/Globals.hpp"
 #include "../Components/Transform2D.hpp"
-#include "../Components/Sprite.hpp"
+#include "../Components/Collider.hpp"
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
 #include "../Enums/BodyType.hpp"
@@ -35,9 +35,9 @@ Zombie::Zombie(Vector2 startPos, Vector2* target)
   bodyMetadata = BodyMetadata{"Zombie", UUID, damage};
 
   // Components init
-  sprite = Sprite("Zombie_Sprite", Vector2(64.0f, 64.0f));
+  anim = Animator("Zombie_Sprite", Vector2(64.0f, 64.0f), 4, 0.2f);
   body = PhysicsBody(&bodyMetadata, transform.position, BodyType::RIGID, isActive);
-  collider = Collider(body, sprite.size, 1.0f, false);
+  collider = Collider(body, Vector2{64.0f, 64.0f}, 1.0f, false);
 
   // Private variables init
   m_attackTimer = 0.0f;
@@ -80,7 +80,7 @@ void Zombie::Update(float dt)
 
 void Zombie::Render() 
 {
-  sprite.Render(transform);
+  anim.Render(transform);
 }
     
 void Zombie::Reset() 

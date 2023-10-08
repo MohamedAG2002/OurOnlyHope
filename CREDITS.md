@@ -1,6 +1,7 @@
 # Art
 Tiles: Hyptosis
 Shop items: Joe Williamson/joecreates.co.uk
+Zombie: CornerLord
 
 # Music 
 Menu Hymn: Marcel Hernandez

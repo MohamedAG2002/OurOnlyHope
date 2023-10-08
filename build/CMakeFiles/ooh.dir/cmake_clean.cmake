@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ooh.dir/src/Components/Animator.cpp.o"
+  "CMakeFiles/ooh.dir/src/Components/Animator.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Components/Collider.cpp.o"
   "CMakeFiles/ooh.dir/src/Components/Collider.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o"

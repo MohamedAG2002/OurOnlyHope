@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Animator.cpp" "CMakeFiles/ooh.dir/src/Components/Animator.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Components/Animator.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Collider.cpp" "CMakeFiles/ooh.dir/src/Components/Collider.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Components/Collider.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/PhysicsBody.cpp" "CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Components/PhysicsBody.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Sprite.cpp" "CMakeFiles/ooh.dir/src/Components/Sprite.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Components/Sprite.cpp.o.d"

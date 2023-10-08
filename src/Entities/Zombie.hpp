@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Entity.hpp"
-#include "../Components/Sprite.hpp"
+#include "../Components/Animator.hpp"
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
 #include "../Metadata/BodyMetadata.hpp"
@@ -23,7 +23,7 @@ class Zombie : public Entity
   public:
     int maxHealth, maxDamage, health, damage;
     BodyMetadata bodyMetadata;
-    Sprite sprite;
+    Animator anim;
     PhysicsBody body;
     Collider collider;
 

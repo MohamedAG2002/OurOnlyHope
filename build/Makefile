@@ -129,6 +129,30 @@ ooh/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/build
 .PHONY : ooh/fast
 
+src/Components/Animator.o: src/Components/Animator.cpp.o
+.PHONY : src/Components/Animator.o
+
+# target to build an object file
+src/Components/Animator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Components/Animator.cpp.o
+.PHONY : src/Components/Animator.cpp.o
+
+src/Components/Animator.i: src/Components/Animator.cpp.i
+.PHONY : src/Components/Animator.i
+
+# target to preprocess a source file
+src/Components/Animator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Components/Animator.cpp.i
+.PHONY : src/Components/Animator.cpp.i
+
+src/Components/Animator.s: src/Components/Animator.cpp.s
+.PHONY : src/Components/Animator.s
+
+# target to generate assembly for a file
+src/Components/Animator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Components/Animator.cpp.s
+.PHONY : src/Components/Animator.cpp.s
+
 src/Components/Collider.o: src/Components/Collider.cpp.o
 .PHONY : src/Components/Collider.o
 
@@ -930,6 +954,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ooh"
+	@echo "... src/Components/Animator.o"
+	@echo "... src/Components/Animator.i"
+	@echo "... src/Components/Animator.s"
 	@echo "... src/Components/Collider.o"
 	@echo "... src/Components/Collider.i"
 	@echo "... src/Components/Collider.s"

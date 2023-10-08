@@ -25,7 +25,7 @@ Heavy-Sword:
 
 Spear: 
   type: 3
-  damage: 100
+  damage: 1000
   durability: 50
   weight: 10.0
   range: 100.0
