@@ -3,6 +3,7 @@
 - Embed in the web using Emscripten
 
 # Game
+- Sliders for the volume settings
 - Add joystick controls?
 - Add camera?
 - Easter Egg

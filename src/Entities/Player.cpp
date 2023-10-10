@@ -111,10 +111,6 @@ void Player::Update(float dt)
 void Player::Render()
 {
   sprite.Render(transform);
-
-  DrawText(TextFormat("Damge = %i", weapon->bodyMetadata.entityDamage), 10, 200, 20, WHITE);
-  DrawText(TextFormat("Durability = %i", weapon->metadata.durability), 10, 220, 20, WHITE);
-  DrawText(TextFormat("Name = %s", weapon->metadata.name.c_str()), 10, 240, 20, WHITE);
 }
     
 void Player::Reset()

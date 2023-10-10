@@ -14,8 +14,6 @@
 #include <raylib.h>
 #include <raymath.h>
 
-#include <iostream>
-
 namespace ooh {
 
 Weapon::Weapon(Vector2* holderPos, WeaponMetadata& metadata)
@@ -47,10 +45,7 @@ Weapon::Weapon(Vector2* holderPos, WeaponMetadata& metadata)
 
     // Zombie VS. Weapon 
     if(util::CheckEntityType(enttType1, enttType2, "Zombie") && util::CheckEntityType(enttType1, enttType2, "Weapon"))
-    {
       metadata.durability--; 
-      std::cout << "DUR = " << metadata.durability << std::endl;
-    }
   });
 }
 
