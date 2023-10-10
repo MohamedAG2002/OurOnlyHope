@@ -82,7 +82,7 @@ void GameManager::Update()
 void GameManager::Render()
 {
   BeginDrawing();
-  ClearBackground(BLACK);
+  ClearBackground(SKYBLUE);
 
   m_scnMgr->Render();
   

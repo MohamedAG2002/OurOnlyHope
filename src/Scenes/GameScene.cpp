@@ -83,7 +83,7 @@ void GameScene::Update(float dt)
 
 void GameScene::Render()
 {
-  //tileMgr->Render();
+  tileMgr->Render();
   enttMgr->Render();
   healthText->Render();
   bloodText->Render();

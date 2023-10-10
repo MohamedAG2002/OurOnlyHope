@@ -1,6 +1,6 @@
 # Art
-Tiles: Hyptosis
-Shop items: Joe Williamson/joecreates.co.uk
+Tiles: cainos/https://cainos.itch.io/
+Shop items: Joe Williamson/https://joecreates.co.uk
 Zombie: CornerLord
 
 # Music 
