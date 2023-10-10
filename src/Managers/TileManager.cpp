@@ -13,10 +13,8 @@
 
 namespace ooh {
 
-TileManager::TileManager(const std::string&& img)
+TileManager::TileManager()
 {
-  m_tileMap = AssetManager::Get().GetSprite(img);
-
   // Util variables
   Vector2 screenSize = Vector2{(float)GetScreenWidth(), (float)GetScreenHeight()};
  
@@ -48,8 +46,6 @@ TileManager::~TileManager()
 }
 
 void TileManager::Render()
-{
-  DrawTexture(m_tileMap, 0, 0, WHITE);
-}
+{}
 
 }

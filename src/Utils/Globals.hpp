@@ -13,7 +13,7 @@ static const char* BLD_DAT_FILE_NAME = "data/bld.dat";
 static const char* WV_DAT_FILE_NAME = "data/wv.dat";
 const Color UI_BOX_COLOR = RED;
 const Color UI_OUTLINE_COLOR = BLACK;
-const Color UI_TEXT_COLOR = DARKGREEN;
+const Color UI_TEXT_COLOR = WHITE;
 
 // Box2D consts
 const int VEL_ITER = 6;

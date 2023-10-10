@@ -30,11 +30,11 @@ ShopScene::ShopScene()
   m_blood = util::GetDataFromFile<uint32_t>(global::BLD_DAT_FILE_NAME);
   m_wave = util::GetDataFromFile<uint32_t>(global::WV_DAT_FILE_NAME);
 
-  title = std::make_unique<Text>("Make Your Choice...", Anchor::TOP_CENTER, TextType::BIG, WHITE);
-  bloodText = std::make_unique<Text>("BLOOD: " + std::to_string(m_blood), Anchor::BOTTOM_LEFT, TextType::SMALL, RED);
-  waveText = std::make_unique<Text>("BEST WAVE: " + std::to_string(m_wave), Anchor::BOTTOM_LEFT, TextType::SMALL, GREEN, Vector2{0.0f, -30.0f});
+  title = std::make_unique<Text>("Make Your Choice...", Anchor::TOP_CENTER, TextType::BIG);
+  bloodText = std::make_unique<Text>("BLOOD: " + std::to_string(m_blood), Anchor::BOTTOM_LEFT, TextType::SMALL);
+  waveText = std::make_unique<Text>("BEST WAVE: " + std::to_string(m_wave), Anchor::BOTTOM_LEFT, TextType::SMALL, WHITE, Vector2{0.0f, -30.0f});
   
-  startButton = std::make_unique<Button>("Start", Anchor::BOTTOM_RIGHT, TextType::SMALL, GREEN, WHITE, Vector2{-15.0f, 0.0f});
+  startButton = std::make_unique<Button>("Start", Anchor::BOTTOM_RIGHT, TextType::SMALL, Vector2{-15.0f, 0.0f});
 
   m_InitItems();
 }

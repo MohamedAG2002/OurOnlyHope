@@ -14,13 +14,18 @@
 
 namespace ooh {
 
-Button::Button(const std::string& str, Anchor anc, TextType textType, Color color, Color outlineColor, Vector2 offset)
-  :anchor(anc), color(color), outlineColor(outlineColor), offset(offset)   
+Button::Button(const std::string& str, Anchor anc, TextType textType, Vector2 offset)
+  :anchor(anc), offset(offset)   
 {
-  state = ButtonState::IDLE;
   m_text = std::make_unique<Text>(str, anc, textType, WHITE, offset);
+  
+  state = ButtonState::IDLE;
+  color = global::UI_BOX_COLOR;
+  outlineColor = global::UI_OUTLINE_COLOR;
+
   hasClicked = false;
   isActive = true;
+  
   size = Vector2(m_text->size.x + 50.0f, m_text->size.y + 5.0f);
   position = Vector2{m_text->position.x - 25.0f, m_text->position.y - 2.5f};
   rect = {position.x, position.y, size.x, size.y};

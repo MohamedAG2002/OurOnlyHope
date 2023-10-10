@@ -17,13 +17,13 @@ namespace ooh {
 MenuScene::MenuScene()
 {
   // Titles init
-  title = std::make_unique<Text>("Our Only Hope", Anchor::TOP_CENTER, TextType::BIG, WHITE);
-  credits = std::make_unique<Text>("Made By One Guy", Anchor::BOTTOM_LEFT, TextType::LETTER, WHITE);
+  title = std::make_unique<Text>("Our Only Hope", Anchor::TOP_CENTER, TextType::BIG);
+  credits = std::make_unique<Text>("Made By One Guy", Anchor::BOTTOM_LEFT, TextType::LETTER);
   
   // Buttons init
-  playButton = std::make_unique<Button>("Play", Anchor::CENTER, TextType::MEDIUM, GREEN, WHITE, Vector2(0, -50.0f));
-  settingsButton = std::make_unique<Button>("Settings", Anchor::CENTER, TextType::MEDIUM, GREEN, WHITE);
-  quitButton = std::make_unique<Button>("Quit", Anchor::CENTER, TextType::MEDIUM, GREEN, WHITE, Vector2(0.0f, 50.0f));
+  playButton = std::make_unique<Button>("Play", Anchor::CENTER, TextType::MEDIUM, Vector2(0, -50.0f));
+  settingsButton = std::make_unique<Button>("Settings", Anchor::CENTER, TextType::MEDIUM);
+  quitButton = std::make_unique<Button>("Quit", Anchor::CENTER, TextType::MEDIUM, Vector2(0.0f, 50.0f));
 
   EventManager::Get().DispatchEvent<OnMusicPlay>("Menu_Hymn");
 }

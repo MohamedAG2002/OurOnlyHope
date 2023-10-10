@@ -22,15 +22,14 @@ namespace ooh {
 GameScene::GameScene()
 {
   enttMgr = std::make_unique<EntityManager>();
-  tileMgr = std::make_unique<TileManager>("Map");
+  tileMgr = std::make_unique<TileManager>();
   
   pausedText = std::make_unique<Text>("Paused", Anchor::CENTER, TextType::BIG, WHITE);
   healthText = std::make_unique<Text>("HP: ", Anchor::TOP_LEFT, TextType::LETTER, GREEN);
   bloodText = std::make_unique<Text>("BLOOD: ", Anchor::TOP_LEFT, TextType::LETTER, RED, Vector2{0.0f, 20.0f});
-  waveText = std::make_unique<Text>(std::to_string(wvMgr.waveCounter), Anchor::TOP_CENTER, TextType::SMALL, WHITE);
-  zombieCountText = std::make_unique<Text>("Zombies Left: " + std::to_string(enttMgr->zmbMgr->spawnedZombies), Anchor::TOP_RIGHT, TextType::LETTER, BROWN);
+  waveText = std::make_unique<Text>(std::to_string(wvMgr.waveCounter), Anchor::TOP_CENTER, TextType::SMALL, BLACK);
   
-  menuButton = std::make_unique<Button>("Menu", Anchor::BOTTOM_LEFT, TextType::SMALL, GREEN, WHITE, Vector2{15.0f, 0.0f});
+  menuButton = std::make_unique<Button>("Menu", Anchor::BOTTOM_LEFT, TextType::SMALL, Vector2{15.0f, 0.0f});
 
   m_isPaused = false;
 
@@ -71,7 +70,6 @@ void GameScene::Update(float dt)
   healthText->ChangeText("HP: " + std::to_string(enttMgr->player->health));
   bloodText->ChangeText("BLOOD: " + std::to_string(bldMgr.blood));
   waveText->ChangeText(std::to_string(wvMgr.waveCounter));
-  zombieCountText->ChangeText("Zombies Left: " + std::to_string(enttMgr->zmbMgr->spawnedZombies));
 
   enttMgr->Update(dt);
   wvMgr.Update();
@@ -88,7 +86,6 @@ void GameScene::Render()
   healthText->Render();
   bloodText->Render();
   waveText->Render();
-  zombieCountText->Render();
 
   if(!m_isPaused)
     return;

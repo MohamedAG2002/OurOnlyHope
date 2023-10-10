@@ -14,8 +14,7 @@ namespace ooh {
 class Button 
 {
   public:
-    Button(const std::string& str, Anchor anc, TextType textType, 
-           Color color, Color outlineColor, Vector2 offset = Vector2{0.0f, 0.0f});
+    Button(const std::string& str, Anchor anc, TextType textType, Vector2 offset = Vector2{0.0f, 0.0f});
     ~Button();
 
   public:

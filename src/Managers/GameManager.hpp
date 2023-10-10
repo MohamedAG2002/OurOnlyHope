@@ -5,6 +5,8 @@
 #include "SceneManager.hpp"
 #include "../Utils/DebugDraw.hpp"
 
+#include <raylib.h>
+
 #include <memory>
 
 namespace ooh {
@@ -22,6 +24,7 @@ class GameManager
 
   private:
     bool m_isRunning;
+    Texture2D m_bgImg;
     std::unique_ptr<AudioListener> m_audioListen;
     std::unique_ptr<SceneManager> m_scnMgr;
     std::unique_ptr<DebugDraw> m_debugDraw;

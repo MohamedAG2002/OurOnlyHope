@@ -3,6 +3,7 @@
 #include "../Enums/Anchor.hpp"
 #include "../Enums/TextType.hpp"
 #include "../Utils/Util.hpp"
+#include "../Utils/Globals.hpp"
 
 #include <raylib.h>
 
@@ -22,15 +23,15 @@ ItemFrame::ItemFrame(Texture2D texture, Anchor anc, const std::string&& title, i
   descLength = MeasureTextEx(GetFontDefault(), desc.c_str(), fontSize, 1.0f); 
   titleLength = MeasureTextEx(GetFontDefault(), title.c_str(), fontSize, 1.0f); 
 
-  outlineColor = GREEN;
+  outlineColor = global::UI_OUTLINE_COLOR;
   descColor = BROWN;
-  textColor = WHITE;
+  textColor = global::UI_TEXT_COLOR;
   
   outlineRec = Rectangle{position.x - origin.x, position.y - origin.y, outlineSize.x, outlineSize.y};
   descRec = Rectangle{position.x, position.y, descLength.x + 20, 100.0f};
 
   Vector2 btnOffset = Vector2{offset.x + 5.0f, offset.y + 48.0f};
-  button = std::make_unique<Button>(std::to_string(cost), anchor, TextType::LETTER, GREEN, WHITE);
+  button = std::make_unique<Button>(std::to_string(cost), anchor, TextType::LETTER);
   button->SetPosition(Vector2{position.x - button->size.x / 3.0f, position.y + 32.0f});
 
   m_isDescShown = false;

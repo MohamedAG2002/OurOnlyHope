@@ -18,7 +18,6 @@ b2World* global::world;
 bool global::isDebugDraw;
 
 GameManager::GameManager()
-  :m_isRunning(true)
 {
   // Raylib init
   InitWindow(1270, 720, "Our Only Hope");
@@ -26,7 +25,7 @@ GameManager::GameManager()
   SetExitKey(KEY_F1);
   ToggleFullscreen(); 
   InitAudioDevice();
-  
+
   // Box2D init
   global::world = new b2World(b2Vec2(0.0f, 0.0f));
   
@@ -48,6 +47,7 @@ GameManager::GameManager()
 
   // Private variables init 
   m_isRunning = true;
+  m_bgImg = AssetManager::Get().GetSprite("Map");
 
   // Listen to events 
   EventManager::Get().ListenToEvent<OnQuit>([&](bool running){
@@ -83,9 +83,11 @@ void GameManager::Render()
 {
   BeginDrawing();
   ClearBackground(SKYBLUE);
+  
+  DrawTexture(m_bgImg, 0, 0, WHITE);
 
   m_scnMgr->Render();
-  
+ 
   if(global::isDebugDraw)
     global::world->DebugDraw();
 

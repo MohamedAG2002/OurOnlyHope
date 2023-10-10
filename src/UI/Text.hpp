@@ -2,6 +2,7 @@
 
 #include "../Enums/Anchor.hpp"
 #include "../Enums/TextType.hpp"
+#include "../Utils/Globals.hpp"
 
 #include <raylib.h>
 
@@ -12,7 +13,7 @@ namespace ooh {
 class Text 
 {
   public:
-    Text(const std::string& str, Anchor anc, TextType type, Color color, Vector2 offset = Vector2{0.0f, 0.0f});
+    Text(const std::string& str, Anchor anc, TextType type, Color color = global::UI_TEXT_COLOR, Vector2 offset = Vector2{0.0f, 0.0f});
     ~Text();
 
   public:

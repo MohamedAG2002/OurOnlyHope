@@ -2763,6 +2763,7 @@ CMakeFiles/ooh.dir/src/Listeners/ContactListener.cpp.o: /home/mohamed/Dev/C++/Ra
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/box2d/b2_world.h \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/box2d/b2_world_callbacks.h \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/box2d/box2d.h \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/raylib.h \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/SceneType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/ShopItem.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Metadata/BodyMetadata.hpp \
@@ -4522,6 +4523,7 @@ CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o: /home/mohamed/Dev/C++/Raylib
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/Anchor.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/ButtonState.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/TextType.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Button.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Checkbox.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/ItemFrame.hpp \
@@ -5941,9 +5943,9 @@ CMakeFiles/ooh.dir/src/Scenes/GameScene.cpp.o: /home/mohamed/Dev/C++/Raylib/OurO
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/Anchor.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/ButtonState.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/TextType.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Button.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Text.hpp \
-  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/GameScene.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/Scene.hpp \
   /usr/include/alloca.h \
@@ -6283,9 +6285,9 @@ CMakeFiles/ooh.dir/src/Scenes/MenuScene.cpp.o: /home/mohamed/Dev/C++/Raylib/OurO
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/Anchor.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/ButtonState.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/TextType.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Button.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Text.hpp \
-  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/MenuScene.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/Scene.hpp \
   /usr/include/alloca.h \
@@ -7273,10 +7275,10 @@ CMakeFiles/ooh.dir/src/Scenes/SettingScene.cpp.o: /home/mohamed/Dev/C++/Raylib/O
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/Anchor.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/ButtonState.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/TextType.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Button.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Checkbox.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Text.hpp \
-  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/Scene.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/SettingScene.hpp \
   /usr/include/alloca.h \
@@ -7624,11 +7626,11 @@ CMakeFiles/ooh.dir/src/Scenes/ShopScene.cpp.o: /home/mohamed/Dev/C++/Raylib/OurO
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/Anchor.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/ButtonState.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/TextType.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Button.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/ItemFrame.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Text.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/BodyType.hpp \
-  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Util.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/Scene.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/ShopScene.hpp \
@@ -8671,6 +8673,7 @@ CMakeFiles/ooh.dir/src/UI/ItemFrame.cpp.o: /home/mohamed/Dev/C++/Raylib/OurOnlyH
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/PotionType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/WeaponType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Metadata/ShopItemsMetadata.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Util.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Button.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/ItemFrame.hpp \
