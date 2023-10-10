@@ -9,7 +9,8 @@
 
 namespace ooh {
 
-const int MAX_PARTICLES = 10;
+const int MAX_PARTICLES = 50;
+const int MAX_SPAWNED_PARTICLES = 5;
 
 class ParticleManager 
 {
@@ -24,6 +25,9 @@ class ParticleManager
     void Update();
     void Render();
     void Reset();
+
+  private:
+    int m_spawnedParticles;
 
   private:
     void m_SpawnParticle(const Vector2 pos);
