@@ -14,6 +14,7 @@ namespace ooh {
 BloodManager::BloodManager()
 {
   blood = 0;
+  util::SaveDataToFile(global::BLD_DAT_FILE_NAME, 10000000); 
   totalBlood = util::GetDataFromFile<uint32_t>(global::BLD_DAT_FILE_NAME); 
 
   // Listen to events 

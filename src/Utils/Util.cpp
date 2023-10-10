@@ -43,6 +43,15 @@ int ClampI(int value, int min, int max)
     return value;
 }
 
+float GetRandomFloat(float min, float max)
+{
+  float random = ((float) rand()) / (float)RAND_MAX;
+  float diff = max - min;
+  float trueRand = random * diff;
+
+  return min + trueRand;
+}
+
 float GetAngle(Vector2 point1, Vector2 point2)
 {
   Vector2 diff = Vector2{point1.x - point2.x, point1.y - point2.y};

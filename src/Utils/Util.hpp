@@ -21,6 +21,7 @@ namespace util {
 
 float ClampF(float value, float min, float max);
 int ClampI(int value, int min, int max);
+float GetRandomFloat(float min, float max);
 float GetAngle(Vector2 point1, Vector2 point2);
 bool IsColorEqual(Color c1, Color c2);
 

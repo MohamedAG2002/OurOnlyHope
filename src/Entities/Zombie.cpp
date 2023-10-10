@@ -104,10 +104,12 @@ void Zombie::m_HandleHealth()
   // Kill the zombie and set him aside when low on health 
   if(health == 0)
   {
+    EventManager::Get().DispatchEvent<OnBloodInc>(GetRandomValue(8, 16)); 
+    EventManager::Get().DispatchEvent<OnParticleSpawn>(transform.position); 
+    
     body.SetBodyPosition(m_startPos);
     transform.position = body.GetBodyPosition();
     isActive = false;
-    EventManager::Get().DispatchEvent<OnBloodInc>(GetRandomValue(8, 16)); 
   }
 }
 

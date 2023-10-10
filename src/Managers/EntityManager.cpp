@@ -25,7 +25,7 @@ void EntityManager::Update(float dt)
   if(player->isActive)
     player->Update(dt);
 
-  //zmbMgr->Update(dt);
+  zmbMgr->Update(dt);
 }
 
 void EntityManager::Render()

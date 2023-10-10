@@ -6,6 +6,7 @@
 #include "../Managers/TileManager.hpp"
 #include "../Managers/BloodManager.hpp"
 #include "../Managers/WaveManager.hpp"
+#include "../Managers/ParticleManager.hpp"
 #include "../UI/Button.hpp"
 #include "../UI/Text.hpp"
 #include "../Enums/Anchor.hpp"
@@ -23,7 +24,8 @@ GameScene::GameScene()
 {
   enttMgr = std::make_unique<EntityManager>();
   tileMgr = std::make_unique<TileManager>();
-  
+  prtclMgr = std::make_unique<ParticleManager>();  
+
   pausedText = std::make_unique<Text>("Paused", Anchor::CENTER, TextType::BIG, WHITE);
   healthText = std::make_unique<Text>("HP: ", Anchor::TOP_LEFT, TextType::LETTER, GREEN);
   bloodText = std::make_unique<Text>("BLOOD: ", Anchor::TOP_LEFT, TextType::LETTER, RED, Vector2{0.0f, 20.0f});
@@ -72,6 +74,7 @@ void GameScene::Update(float dt)
   waveText->ChangeText(std::to_string(wvMgr.waveCounter));
 
   enttMgr->Update(dt);
+  prtclMgr->Update();
   wvMgr.Update();
 
   // Make sure to switch the scenes when the player dies 
@@ -83,6 +86,8 @@ void GameScene::Render()
 {
   tileMgr->Render();
   enttMgr->Render();
+  prtclMgr->Render();
+  
   healthText->Render();
   bloodText->Render();
   waveText->Render();
@@ -97,6 +102,7 @@ void GameScene::Render()
 void GameScene::Reset()
 {
   enttMgr->Reset();
+  prtclMgr->Reset();
   bldMgr.Reset();
 
   m_isPaused = false;

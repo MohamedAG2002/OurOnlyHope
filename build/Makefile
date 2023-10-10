@@ -249,6 +249,30 @@ src/Components/Transform2D.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Components/Transform2D.cpp.s
 .PHONY : src/Components/Transform2D.cpp.s
 
+src/Entities/Particle.o: src/Entities/Particle.cpp.o
+.PHONY : src/Entities/Particle.o
+
+# target to build an object file
+src/Entities/Particle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Particle.cpp.o
+.PHONY : src/Entities/Particle.cpp.o
+
+src/Entities/Particle.i: src/Entities/Particle.cpp.i
+.PHONY : src/Entities/Particle.i
+
+# target to preprocess a source file
+src/Entities/Particle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Particle.cpp.i
+.PHONY : src/Entities/Particle.cpp.i
+
+src/Entities/Particle.s: src/Entities/Particle.cpp.s
+.PHONY : src/Entities/Particle.s
+
+# target to generate assembly for a file
+src/Entities/Particle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Entities/Particle.cpp.s
+.PHONY : src/Entities/Particle.cpp.s
+
 src/Entities/Player.o: src/Entities/Player.cpp.o
 .PHONY : src/Entities/Player.o
 
@@ -512,6 +536,30 @@ src/Managers/GameManager.s: src/Managers/GameManager.cpp.s
 src/Managers/GameManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/GameManager.cpp.s
 .PHONY : src/Managers/GameManager.cpp.s
+
+src/Managers/ParticleManager.o: src/Managers/ParticleManager.cpp.o
+.PHONY : src/Managers/ParticleManager.o
+
+# target to build an object file
+src/Managers/ParticleManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/ParticleManager.cpp.o
+.PHONY : src/Managers/ParticleManager.cpp.o
+
+src/Managers/ParticleManager.i: src/Managers/ParticleManager.cpp.i
+.PHONY : src/Managers/ParticleManager.i
+
+# target to preprocess a source file
+src/Managers/ParticleManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/ParticleManager.cpp.i
+.PHONY : src/Managers/ParticleManager.cpp.i
+
+src/Managers/ParticleManager.s: src/Managers/ParticleManager.cpp.s
+.PHONY : src/Managers/ParticleManager.s
+
+# target to generate assembly for a file
+src/Managers/ParticleManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/ParticleManager.cpp.s
+.PHONY : src/Managers/ParticleManager.cpp.s
 
 src/Managers/SceneManager.o: src/Managers/SceneManager.cpp.o
 .PHONY : src/Managers/SceneManager.o
@@ -969,6 +1017,9 @@ help:
 	@echo "... src/Components/Transform2D.o"
 	@echo "... src/Components/Transform2D.i"
 	@echo "... src/Components/Transform2D.s"
+	@echo "... src/Entities/Particle.o"
+	@echo "... src/Entities/Particle.i"
+	@echo "... src/Entities/Particle.s"
 	@echo "... src/Entities/Player.o"
 	@echo "... src/Entities/Player.i"
 	@echo "... src/Entities/Player.s"
@@ -1002,6 +1053,9 @@ help:
 	@echo "... src/Managers/GameManager.o"
 	@echo "... src/Managers/GameManager.i"
 	@echo "... src/Managers/GameManager.s"
+	@echo "... src/Managers/ParticleManager.o"
+	@echo "... src/Managers/ParticleManager.i"
+	@echo "... src/Managers/ParticleManager.s"
 	@echo "... src/Managers/SceneManager.o"
 	@echo "... src/Managers/SceneManager.i"
 	@echo "... src/Managers/SceneManager.s"

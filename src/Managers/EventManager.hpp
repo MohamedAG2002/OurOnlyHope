@@ -34,6 +34,8 @@ class EventManager
         m_itemBuyEvents.push_back(static_cast<OnItemBuy>(func));
       else if constexpr (std::is_same<T, OnWaveEnd>::value)
         m_waveEvents.push_back(static_cast<OnWaveEnd>(func));
+      else if constexpr (std::is_same<T, OnParticleSpawn>::value)
+        m_particleEvents.push_back(static_cast<OnParticleSpawn>(func));
       else if constexpr (std::is_same<T, OnSceneChange>::value)
         m_sceneEvents.push_back(static_cast<OnSceneChange>(func));
       else if constexpr (std::is_same<T, OnSoundPlay>::value)
@@ -70,6 +72,8 @@ class EventManager
         std::for_each(m_itemBuyEvents.begin(), m_itemBuyEvents.end(), callFn);
       else if constexpr (std::is_same<T, OnWaveEnd>::value)
         std::for_each(m_waveEvents.begin(), m_waveEvents.end(), callFn);
+      else if constexpr (std::is_same<T, OnParticleSpawn>::value)
+        std::for_each(m_particleEvents.begin(), m_particleEvents.end(), callFn);
       else if constexpr (std::is_same<T, OnSceneChange>::value)
         std::for_each(m_sceneEvents.begin(), m_sceneEvents.end(), callFn);
       else if constexpr (std::is_same<T, OnSoundPlay>::value)
@@ -90,13 +94,14 @@ class EventManager
     void operator=(const EventManager&) = delete;
 
   private:
-    std::vector<OnEntityCollision> m_collisionEvents;
     std::vector<OnBloodInc> m_bloodEvents;
     std::vector<OnWaveEnd> m_waveEvents;
     std::vector<OnItemEquip> m_itemEquipEvents;
     std::vector<OnItemBuy> m_itemBuyEvents;
     
+    std::vector<OnEntityCollision> m_collisionEvents;
     std::vector<OnSceneChange> m_sceneEvents;
+    std::vector<OnParticleSpawn> m_particleEvents;
     std::vector<OnSoundPlay> m_soundEvents;
     std::vector<OnMusicPlay> m_musicPlayEvents;
     std::vector<OnMusicStop> m_musicStopEvents;

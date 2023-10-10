@@ -31,6 +31,7 @@ set(SOURCES
   src/Managers/TileManager.cpp
   src/Managers/BloodManager.cpp
   src/Managers/WaveManager.cpp
+  src/Managers/ParticleManager.cpp
 
   # Listeners
   src/Listeners/AudioListener.cpp
@@ -63,6 +64,7 @@ set(SOURCES
   src/Entities/Zombie.cpp
   src/Entities/Weapon.cpp
   src/Entities/Tile.cpp
+  src/Entities/Particle.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
