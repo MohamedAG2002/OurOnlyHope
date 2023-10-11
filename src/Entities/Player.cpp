@@ -180,8 +180,11 @@ void Player::m_Attack()
     
 void Player::m_HitPlayer(int damage)
 {
-  damage -= m_totalDefense;
-  health -= damage;
+  // Only take away the defense multiplier when the zombie's damage is eligible
+  if(damage == 0) 
+    return; 
+
+  health -= (damage - m_totalDefense);
   armorMD.durability--;
 
   // Play a random player hurt sound from the available ones 
@@ -191,7 +194,7 @@ void Player::m_HitPlayer(int damage)
 void Player::m_HandleHealth()
 {
   // Clamp the health from 0 to the max 
-  //health = util::ClampI(health, 0, maxHealth);
+  health = util::ClampI(health, 0, maxHealth);
  
   // Nerf the player's defense once the armor is low on durability
   if(armorMD.durability == 0)

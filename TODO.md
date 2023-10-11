@@ -3,7 +3,6 @@
 
 # Game
 - Sliders for the volume settings
-- Player death
 - Easter Egg
 
 # Polish

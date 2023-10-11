@@ -40,7 +40,7 @@ Zombie::Zombie(Vector2 startPos, Vector2* target)
 
   // Private variables init
   m_attackTimer = 0.0f;
-  m_attackCooldown = 0.7f;
+  m_attackCooldown = 0.0350f;
   m_velocity = Vector2{0.0f, 0.0f};
 
   // Listen to events 
@@ -130,6 +130,8 @@ void Zombie::m_HandleDamage()
     m_attackTimer = 0.0f;
     damage = maxDamage;
   }
+  else 
+    damage = 0;
 
   // Update the body metadata and tell it what the new damage is 
   bodyMetadata.entityDamage = damage;
