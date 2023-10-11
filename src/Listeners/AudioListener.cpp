@@ -9,8 +9,8 @@ namespace ooh {
 
 AudioListener::AudioListener()
 {
-  masterVolume = 0.0f;
-  soundVolume = 50.0f;
+  masterVolume = 1.0f;
+  soundVolume = 20.0f;
   musicVolume = 50.0f;
 
   // Setting the default volume values

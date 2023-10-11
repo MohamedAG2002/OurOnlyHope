@@ -79,7 +79,10 @@ void GameScene::Update(float dt)
 
   // Make sure to switch the scenes when the player dies 
   if(!enttMgr->player->isActive)
+  {
+    Reset();
     EventManager::Get().DispatchEvent<OnSceneChange>(SceneType::OVER_LOSE);
+  }
 }
 
 void GameScene::Render()

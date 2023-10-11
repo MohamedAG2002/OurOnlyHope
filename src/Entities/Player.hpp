@@ -52,6 +52,7 @@ class Player : public Entity
   private:
     void m_GetKeyInput();
     void m_Attack();
+    void m_HitPlayer(int damage);
     void m_HandleHealth();
     void m_HandleMovement(float dt);
 

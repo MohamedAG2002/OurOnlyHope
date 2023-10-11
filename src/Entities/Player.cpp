@@ -60,18 +60,10 @@ Player::Player(const Vector2 startPos)
     {
       // If the player is the first body, it means the zombie is the second body, therefore, 
       // apply the damage of the second body to the player.
-      /* 
-      if((bodyMD1.entityUUID == UUID)) 
-      {
-        health -= (bodyMD2.entityDamage - m_totalDefense); 
-        armorMD.durability--;
-      }
+      if(bodyMD1.entityUUID == UUID) 
+        m_HitPlayer(bodyMD2.entityDamage);
       else if(bodyMD2.entityUUID == UUID)
-      {
-        health -= (bodyMD1.entityDamage - m_totalDefense); 
-        armorMD.durability--;
-      }
-      */
+        m_HitPlayer(bodyMD1.entityDamage);
     }
 
   });
@@ -180,16 +172,26 @@ void Player::m_Attack()
     weapon->transform.rotation = transform.rotation;
     weapon->isActive = true;
     weapon->distTraveled = 0.0f;
-    // @TODO: Play a spear throwing sound
+    EventManager::Get().DispatchEvent<OnSoundPlay>("Spear_Throw");
   }
 
   m_canAttack = false;
+}
+    
+void Player::m_HitPlayer(int damage)
+{
+  damage -= m_totalDefense;
+  health -= damage;
+  armorMD.durability--;
+
+  // Play a random player hurt sound from the available ones 
+  EventManager::Get().DispatchEvent<OnSoundPlay>(GetRandomValue(1, 2) == 1 ? "Player_Hurt-1" : "Player_Hurt-2");
 }
 
 void Player::m_HandleHealth()
 {
   // Clamp the health from 0 to the max 
-  health = util::ClampI(health, 0, maxHealth);
+  //health = util::ClampI(health, 0, maxHealth);
  
   // Nerf the player's defense once the armor is low on durability
   if(armorMD.durability == 0)
@@ -197,7 +199,10 @@ void Player::m_HandleHealth()
 
   // KILL HIM!!!... when low on health
   if(health <= 0)
+  {
+    EventManager::Get().DispatchEvent<OnSoundPlay>("Player_Death");
     isActive = false;
+  }
 }
 
 void Player::m_HandleMovement(float dt)

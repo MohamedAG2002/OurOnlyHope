@@ -17,7 +17,7 @@ Particle::Particle()
   position = Vector2{-1000.0f, -1000.0f}; 
   size = {12.0f, 12.0f};
 
-  color = RED;
+  color = MAROON;
   rec = Rectangle{position.x, position.y, size.x, size.y};
 }
 

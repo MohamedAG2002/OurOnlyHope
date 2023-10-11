@@ -28,7 +28,7 @@ Zombie::Zombie(Vector2 startPos, Vector2* target)
 
   // Public variables init
   maxHealth = 100;
-  maxDamage = 10;
+  maxDamage = 25;
   health = maxHealth; 
   damage = 0;
   bodyMetadata = BodyMetadata{"Zombie", UUID, damage};
@@ -40,7 +40,7 @@ Zombie::Zombie(Vector2 startPos, Vector2* target)
 
   // Private variables init
   m_attackTimer = 0.0f;
-  m_attackCooldown = 7.0f;
+  m_attackCooldown = 0.7f;
   m_velocity = Vector2{0.0f, 0.0f};
 
   // Listen to events 
@@ -107,6 +107,9 @@ void Zombie::m_HandleHealth()
     EventManager::Get().DispatchEvent<OnBloodInc>(GetRandomValue(8, 16)); 
     EventManager::Get().DispatchEvent<OnParticleSpawn>(transform.position); 
     
+    // Pick a random sound from the available zombie death sounds and play it
+    EventManager::Get().DispatchEvent<OnSoundPlay>(GetRandomValue(0, 1) == 0 ? "Zombie_Death-1" : "Zombie_Death-2"); 
+
     body.SetBodyPosition(m_startPos);
     transform.position = body.GetBodyPosition();
     isActive = false;
@@ -119,17 +122,14 @@ void Zombie::m_HandleDamage()
   
   // Only tick the attack timer when the zombie cannot attack
   if(damage == 0)
-    m_attackTimer++;
+    m_attackTimer += GetFrameTime();
 
   // Put the zombie's damage to the maximum when the timer runs out
   if(m_attackTimer > m_attackCooldown)
   {
     m_attackTimer = 0.0f;
     damage = maxDamage;
-    EventManager::Get().DispatchEvent<OnSoundPlay>("Zombie_Grunt");
   }
-  else 
-    damage = 0;
 
   // Update the body metadata and tell it what the new damage is 
   bodyMetadata.entityDamage = damage;
