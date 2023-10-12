@@ -897,6 +897,30 @@ src/UI/ItemFrame.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/ItemFrame.cpp.s
 .PHONY : src/UI/ItemFrame.cpp.s
 
+src/UI/Slider.o: src/UI/Slider.cpp.o
+.PHONY : src/UI/Slider.o
+
+# target to build an object file
+src/UI/Slider.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/Slider.cpp.o
+.PHONY : src/UI/Slider.cpp.o
+
+src/UI/Slider.i: src/UI/Slider.cpp.i
+.PHONY : src/UI/Slider.i
+
+# target to preprocess a source file
+src/UI/Slider.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/Slider.cpp.i
+.PHONY : src/UI/Slider.cpp.i
+
+src/UI/Slider.s: src/UI/Slider.cpp.s
+.PHONY : src/UI/Slider.s
+
+# target to generate assembly for a file
+src/UI/Slider.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/UI/Slider.cpp.s
+.PHONY : src/UI/Slider.cpp.s
+
 src/UI/Text.o: src/UI/Text.cpp.o
 .PHONY : src/UI/Text.o
 
@@ -1098,6 +1122,9 @@ help:
 	@echo "... src/UI/ItemFrame.o"
 	@echo "... src/UI/ItemFrame.i"
 	@echo "... src/UI/ItemFrame.s"
+	@echo "... src/UI/Slider.o"
+	@echo "... src/UI/Slider.i"
+	@echo "... src/UI/Slider.s"
 	@echo "... src/UI/Text.o"
 	@echo "... src/UI/Text.i"
 	@echo "... src/UI/Text.s"

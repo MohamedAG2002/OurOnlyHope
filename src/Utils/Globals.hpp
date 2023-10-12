@@ -25,6 +25,11 @@ const float PIXEL_TO_METER = 1.0f / METER_TO_PIXEL;
 extern b2World* world; // Everything with the box2d world is handled in GameManager.cpp
 extern bool isDebugDraw; // This is declared and initialized in GameManager.cpp
 
+// All of the sound related global variables are initialized in AudioListener.cpp
+extern float masterVolume;
+extern float soundVolume;
+extern float musicVolume; 
+
 }
 
 }
