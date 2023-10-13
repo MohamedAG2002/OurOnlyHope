@@ -6,6 +6,7 @@
 - Easter Egg
 
 # Polish
+- Over scene
 - Player sprite animation
 - Polish up the transition from the game to the shop scene. Don't make it abrupt
 - Fade into the menu scene

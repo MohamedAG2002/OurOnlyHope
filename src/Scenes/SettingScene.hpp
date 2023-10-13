@@ -4,7 +4,6 @@
 #include "../UI/Button.hpp"
 #include "../UI/Text.hpp"
 #include "../UI/Checkbox.hpp"
-#include "../UI/Slider.hpp"
 
 #include <raylib.h>
 
@@ -23,7 +22,6 @@ class SettingScene : public Scene
     std::unique_ptr<Text> title, fullScreenText;
     std::unique_ptr<Button> menuButton;
     std::unique_ptr<Checkbox> fullScreenCheckBox;
-    std::array<std::unique_ptr<Slider>, 3> sliders;
 
   public:
     void Update(float dt) override;

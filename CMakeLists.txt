@@ -42,7 +42,6 @@ set(SOURCES
   src/UI/Button.cpp
   src/UI/Checkbox.cpp
   src/UI/ItemFrame.cpp
-  src/UI/Slider.cpp
 
   # Scenes 
   src/Scenes/MenuScene.cpp

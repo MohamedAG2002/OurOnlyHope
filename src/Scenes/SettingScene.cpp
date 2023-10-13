@@ -5,7 +5,6 @@
 #include "../UI/Button.hpp"
 #include "../UI/Text.hpp"
 #include "../UI/Checkbox.hpp"
-#include "../UI/Slider.hpp"
 #include "../Enums/Anchor.hpp"
 #include "../Enums/TextType.hpp"
 #include "../Utils/Globals.hpp"
@@ -14,6 +13,7 @@
 
 #include <iostream>
 #include <memory>
+#include <string>
 
 namespace ooh {
 
@@ -25,10 +25,6 @@ SettingScene::SettingScene()
   menuButton = std::make_unique<Button>("MENU", Anchor::BOTTOM_LEFT, TextType::SMALL, Vector2{15.0f, 0.0f});
   
   fullScreenCheckBox = std::make_unique<Checkbox>(Anchor::CENTER_LEFT, global::UI_BOX_COLOR, Vector2{fullScreenText->size.x + 70.0f, 0.0f});
-
-  sliders[0] = std::make_unique<Slider>("Master Volume", &global::masterVolume, Anchor::CENTER_LEFT, Vector2{100.0f, 50.0f});
-  sliders[1] = std::make_unique<Slider>("Music Volume", &global::musicVolume, Anchor::CENTER_LEFT, Vector2{100.0f, 100.0f});
-  sliders[2] = std::make_unique<Slider>("Sound Volume", &global::soundVolume, Anchor::CENTER_LEFT, Vector2{100.0f, 150.0f});
 }
 
 SettingScene::~SettingScene()
@@ -36,9 +32,11 @@ SettingScene::~SettingScene()
 
 void SettingScene::Update(float dt)
 {
+  // Go back to the menu
   if(menuButton->OnPressed())
     EventManager::Get().DispatchEvent<OnSceneChange>(SceneType::MENU);
 
+  // Enable/disable fullscreen mode
   if(fullScreenCheckBox->isChecked && !IsWindowFullscreen())
     ToggleFullscreen();
   else if(!fullScreenCheckBox->isChecked && IsWindowFullscreen())
@@ -52,9 +50,6 @@ void SettingScene::Render()
 
   title->Render();  
   fullScreenText->Render();  
-
-  for(auto& slider : sliders)
-    slider->Render();
 }
 
 void SettingScene::Reset()

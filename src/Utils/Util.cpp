@@ -64,6 +64,20 @@ bool IsColorEqual(Color c1, Color c2)
          (c1.b == c2.b) && (c1.a == c2.a);
 }
 
+float ConvertRange(float value, float min1, float max1, float min2, float max2)
+{
+  float oldRange = (max1 - min1);
+  float newRange = (max2 - min2);
+  float newValue = 0.0f;
+  
+  if(oldRange == 0)
+    newValue = min2;
+  else 
+    newValue = (((value - min1) * newRange) / oldRange) + min2;
+
+  return newValue;
+}
+
 bool CheckEntityType(std::string& type1, std::string& type2, std::string&& desired)
 {
   return (type1 == desired) || (type2 == desired);
