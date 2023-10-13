@@ -9,7 +9,7 @@
 namespace ooh {
 
 // Extern variables initialization
-float global::masterVolume = 1.0f;
+float global::masterVolume = 0.5f;
 float global::soundVolume = 5.0f;
 float global::musicVolume = 5.0f;
 
@@ -32,7 +32,7 @@ AudioListener::AudioListener()
   });
   
   // Listen to OnMusicStop
-  EventManager::Get().ListenToEvent<OnMusicStop>([&](std::string& music){
+  EventManager::Get().ListenToEvent<OnMusicStop>([&](std::string&& music){
     StopMusicStream(AssetManager::Get().GetMusic(music)); 
   });
 }

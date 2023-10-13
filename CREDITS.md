@@ -9,6 +9,6 @@ Menu Hymn: Marcel Hernandez
 
 # Sound Effects
 Sword swings: qubodup/Iwan Gabovitch
-Spear sounds: EminYILDIRIM/https://freesound.org/people/EminYILDIRIM/
+Spear sounds: punkzen/https://www.aurelienmontero.com/
 Zombie killing sounds: Will Leamon/706 Gaming
 Player death/hurting sounds: Michel Baradari/apollo-music.de

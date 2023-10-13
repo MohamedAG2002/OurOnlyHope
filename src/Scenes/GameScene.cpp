@@ -104,6 +104,9 @@ void GameScene::Render()
 
 void GameScene::Reset()
 {
+  EventManager::Get().DispatchEvent<OnMusicStop>("Menu_Hymn");
+  // @TODO: Play cool combat music
+
   enttMgr->Reset();
   prtclMgr->Reset();
   bldMgr.Reset();

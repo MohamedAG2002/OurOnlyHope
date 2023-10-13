@@ -172,7 +172,7 @@ void Player::m_Attack()
     weapon->transform.rotation = transform.rotation;
     weapon->isActive = true;
     weapon->distTraveled = 0.0f;
-    //EventManager::Get().DispatchEvent<OnSoundPlay>("Spear_Throw");
+    EventManager::Get().DispatchEvent<OnSoundPlay>(GetRandomValue(0, 1) == 0 ? "Spear_Throw-1" : "Spear_Throw-2");
   }
 
   m_canAttack = false;

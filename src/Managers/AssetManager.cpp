@@ -67,7 +67,8 @@ void AssetManager::LoadSounds()
   load("Button_Click", "assets/audio/button_click.wav");
   
   load("Sword_Swing", "assets/audio/sword_swing.wav");
-  load("Spear_Throw", "assets/audio/spear_throw.wav");
+  load("Spear_Throw-1", "assets/audio/spear_throw-1.wav");
+  load("Spear_Throw-2", "assets/audio/spear_throw-2.wav");
   
   load("Zombie_Death-1", "assets/audio/sword_kill_zombie-1.wav");
   load("Zombie_Death-2", "assets/audio/sword_kill_zombie-2.wav");
