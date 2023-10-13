@@ -75,6 +75,9 @@ void GameManager::Update()
   global::world->Step(GetFrameTime(), global::VEL_ITER, global::POS_ITER);
   m_contactListen->Update();
 
+  // Update music
+  m_audioListen->Update();
+  
   // Scenes update
   m_scnMgr->Update(GetFrameTime());
 }

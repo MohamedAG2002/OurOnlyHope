@@ -25,11 +25,6 @@ float GetRandomFloat(float min, float max);
 float GetAngle(Vector2 point1, Vector2 point2);
 bool IsColorEqual(Color c1, Color c2);
 
-// Converts the first range given (min1 and max1) to the second range given (min2 and max2).
-// The returned value will be a value between the first range given in the "format" of the 
-// second range, while still maintaing the ratio.
-float ConvertRange(float value, float min1, float max1, float min2, float max2);
-
 // Will check if the given "desired" is equal to either "type1" or "type2"
 bool CheckEntityType(std::string& type1, std::string& type2, std::string&& desired);
 

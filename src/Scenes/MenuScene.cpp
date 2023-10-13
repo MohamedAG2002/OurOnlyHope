@@ -57,9 +57,7 @@ void MenuScene::Render()
 
 void MenuScene::Reset()
 {
-  playButton->Reset();
-  settingsButton->Reset();
-  quitButton->Reset();
+  EventManager::Get().DispatchEvent<OnMusicPlay>("Menu_Hymn");
 }
 
 }

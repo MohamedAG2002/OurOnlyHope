@@ -5173,7 +5173,6 @@ CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o: /home/mohamed/Dev/C++/Raylib
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Button.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Checkbox.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/ItemFrame.hpp \
-  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Slider.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Text.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/GameScene.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/MenuScene.hpp \
@@ -7927,7 +7926,6 @@ CMakeFiles/ooh.dir/src/Scenes/SettingScene.cpp.o: /home/mohamed/Dev/C++/Raylib/O
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Button.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Checkbox.hpp \
-  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Slider.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Text.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/Scene.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/SettingScene.hpp \
@@ -11126,8 +11124,6 @@ CMakeFiles/ooh.dir/src/main.cpp.o: /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/
 /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/ShopItem.hpp:
 
 /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Player.cpp:
-
-/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Slider.hpp:
 
 /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Particle.hpp:
 
