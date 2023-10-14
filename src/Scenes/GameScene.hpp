@@ -24,7 +24,7 @@ class GameScene : public Scene
     std::unique_ptr<EntityManager> enttMgr;
     std::unique_ptr<TileManager> tileMgr;
     std::unique_ptr<ParticleManager> prtclMgr;
-    std::unique_ptr<Text> pausedText, healthText, bloodText, waveText;
+    std::unique_ptr<Text> pausedText, healthText, waveText;
     std::unique_ptr<Button> menuButton;
     WaveManager wvMgr;
 

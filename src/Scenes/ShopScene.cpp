@@ -28,7 +28,7 @@ ShopScene::ShopScene()
   m_wave = util::GetDataFromFile<uint32_t>(global::WV_DAT_FILE_NAME);
 
   title = std::make_unique<Text>("Make Your Choice...", Anchor::TOP_CENTER, TextType::BIG);
-  waveText = std::make_unique<Text>("BEST WAVE: " + std::to_string(m_wave), Anchor::BOTTOM_LEFT, TextType::SMALL, WHITE, Vector2{0.0f, -30.0f});
+  waveText = std::make_unique<Text>("BEST WAVE: " + std::to_string(m_wave), Anchor::BOTTOM_LEFT, TextType::SMALL, WHITE);
   
   startButton = std::make_unique<Button>("Start", Anchor::BOTTOM_RIGHT, TextType::SMALL, Vector2{-15.0f, 0.0f});
 
@@ -91,7 +91,6 @@ void ShopScene::m_InitItems()
   potions.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Health_Potion"), 
                                               Anchor::TOP_LEFT, 
                                               "HP-Potion", 
-                                              500,
                                               ptinOff));
   m_ptnMD = util::LoadPotionMetadata(potions[0]->title);
   potions[0]->SetDesc(m_GetFormatedPotionDesc(m_ptnMD));
@@ -99,7 +98,6 @@ void ShopScene::m_InitItems()
   potions.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Damage_Potion"), 
                                               Anchor::TOP_LEFT, 
                                               "DAM-Potion", 
-                                              500,
                                               Vector2{ptinOff.x + 150.0f, ptinOff.y}));
   m_ptnMD = util::LoadPotionMetadata(potions[1]->title);
   potions[1]->SetDesc(m_GetFormatedPotionDesc(m_ptnMD));
@@ -107,7 +105,6 @@ void ShopScene::m_InitItems()
   potions.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Durability_Potion"), 
                                               Anchor::TOP_LEFT, 
                                               "DUR-Potion", 
-                                              500,
                                               Vector2{ptinOff.x + 300, ptinOff.y}));
   m_ptnMD = util::LoadPotionMetadata(potions[2]->title);
   potions[2]->SetDesc(m_GetFormatedPotionDesc(m_ptnMD));
@@ -115,7 +112,6 @@ void ShopScene::m_InitItems()
   potions.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Dexterity_Potion"), 
                                               Anchor::TOP_LEFT, 
                                               "DEX-Potion", 
-                                              500,
                                               Vector2{ptinOff.x + 450.0f, ptinOff.y}));
   m_ptnMD = util::LoadPotionMetadata(potions[3]->title);
   potions[3]->SetDesc(m_GetFormatedPotionDesc(m_ptnMD));

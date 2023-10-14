@@ -34,24 +34,12 @@ void AssetManager::LoadSprites()
   // Adding character sprites
   load("Player_Sprite", "assets/sprites/player.png");
   load("Zombie_Sprite", "assets/sprites/zombie.png");
-
-  // Adding armor sprites
-  load("Light_Armor", "assets/sprites/armors/light_armor.png");
-  load("Medium_Armor", "assets/sprites/armors/medium_armor.png");
-  load("Heavy_Armor", "assets/sprites/armors/heavy_armor.png");
-  load("Naked_Armor", "assets/sprites/armors/naked_armor.png");
  
   // Adding potion sprites
   load("Health_Potion", "assets/sprites/potions/health_potion.png");
   load("Damage_Potion", "assets/sprites/potions/damage_potion.png");
   load("Durability_Potion", "assets/sprites/potions/durability_potion.png");
   load("Dexterity_Potion", "assets/sprites/potions/dexterity_potion.png");
- 
-  // Adding sword potions
-  load("Light_Sword", "assets/sprites/weapons/light_sword.png");
-  load("Medium_Sword", "assets/sprites/weapons/medium_sword.png");
-  load("Heavy_Sword", "assets/sprites/weapons/heavy_sword.png");
-  load("Spear", "assets/sprites/weapons/spear.png");
 
   // Adding the map sprite 
   load("Map", "assets/sprites/map.png");

@@ -9,7 +9,7 @@
 namespace ooh {
 
 // Extern variables initialization
-float global::masterVolume = 0.5f;
+float global::masterVolume = 0.0f;
 float global::soundVolume = 5.0f;
 float global::musicVolume = 5.0f;
 

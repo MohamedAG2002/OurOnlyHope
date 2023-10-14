@@ -12,8 +12,8 @@
 
 namespace ooh {
  
-ItemFrame::ItemFrame(Texture2D texture, Anchor anc, const std::string&& title, int itemCost, Vector2 offset)
-  :texture(texture), anchor(anc), title(title), cost(itemCost)
+ItemFrame::ItemFrame(Texture2D texture, Anchor anc, const std::string&& title, Vector2 offset)
+  :texture(texture), anchor(anc), title(title)
 {
   fontSize = 15;
 
@@ -31,8 +31,8 @@ ItemFrame::ItemFrame(Texture2D texture, Anchor anc, const std::string&& title, i
   descRec = Rectangle{position.x, position.y, descLength.x + 20, 100.0f};
 
   Vector2 btnOffset = Vector2{offset.x + 5.0f, offset.y + 48.0f};
-  button = std::make_unique<Button>(std::to_string(cost), anchor, TextType::LETTER);
-  button->SetPosition(Vector2{position.x - button->size.x / 3.0f, position.y + 32.0f});
+  button = std::make_unique<Button>("Equip", anchor, TextType::LETTER);
+  button->SetPosition(Vector2{position.x - 25.0f, position.y + 32.0f});
 
   m_isDescShown = false;
 }

@@ -27,8 +27,7 @@ GameScene::GameScene()
 
   pausedText = std::make_unique<Text>("Paused", Anchor::CENTER, TextType::BIG, WHITE);
   healthText = std::make_unique<Text>("HP: ", Anchor::TOP_LEFT, TextType::LETTER, GREEN);
-  bloodText = std::make_unique<Text>("BLOOD: ", Anchor::TOP_LEFT, TextType::LETTER, RED, Vector2{0.0f, 20.0f});
-  waveText = std::make_unique<Text>(std::to_string(wvMgr.waveCounter), Anchor::TOP_CENTER, TextType::SMALL, BLACK);
+  waveText = std::make_unique<Text>(std::to_string(wvMgr.waveCounter), Anchor::TOP_CENTER, TextType::MEDIUM, BLACK);
   
   menuButton = std::make_unique<Button>("Menu", Anchor::BOTTOM_LEFT, TextType::SMALL, Vector2{15.0f, 0.0f});
 
@@ -90,7 +89,6 @@ void GameScene::Render()
   prtclMgr->Render();
   
   healthText->Render();
-  bloodText->Render();
   waveText->Render();
 
   if(!m_isPaused)
