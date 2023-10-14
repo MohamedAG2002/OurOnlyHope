@@ -4,26 +4,26 @@ HP-Potion:
   durability: 0
   health: 20
   damage: 0
-  weight: 0 
+  speed: 0 
 
 DAM-Potion:
   type: 1
   durability: 0
   health: 0
   damage: 20
-  weight: 0 
+  speed: 0 
 
 DUR-Potion:
   type: 2
   durability: 40
   health: 0
   damage: 0
-  weight: 0 
+  speed: 0 
 
 DEX-Potion:
   type: 3
   durability: 0
   health: 0
   damage: 0
-  weight: 50 
+  speed: 50 
 ---

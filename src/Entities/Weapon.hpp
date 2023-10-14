@@ -3,24 +3,23 @@
 #include "Entity.hpp"
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
-#include "../Metadata/ShopItemsMetadata.hpp"
 #include "../Metadata/BodyMetadata.hpp"
 
 #include <raylib.h>
 
 namespace ooh {
 
-const float SPEAR_SPEED = 300.0f;
+const float SPEAR_SPEED = 1000.0f;
 
 class Weapon : public Entity 
 {
   public:
-    Weapon(Vector2* holderPos, WeaponMetadata& metadata);
+    Weapon(Vector2* holderPos);
     ~Weapon();
 
   public:
-    WeaponMetadata metadata;
     BodyMetadata bodyMetadata;
+    int damage;
     float rotationDest, distTraveled, maxDist;
     Vector2 velocity;
     PhysicsBody body;

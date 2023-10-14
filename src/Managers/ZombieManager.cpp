@@ -18,6 +18,9 @@ ZombieManager::ZombieManager(Vector2* playerPos)
  
   m_spawnCooldown = 10.0f;
   m_spawnTimer = 0.0f;
+  m_gruntTimer = 0.0f;
+  m_gruntCooldown = 150.0f;
+
   m_zombieSpawnLimit = 50;
   m_zombiesKilled = 0;
   m_hasStarted = false;
@@ -63,6 +66,14 @@ void ZombieManager::Update(float dt)
     m_SpawnZombie();
   }
 
+  m_gruntTimer++;
+
+  if(m_gruntTimer > m_gruntCooldown)
+  {
+    m_gruntTimer = 0.0f;
+    EventManager::Get().DispatchEvent<OnSoundPlay>("Zombie_Grunt");
+  }
+
   // Once the first zombie spawned, it's safe to assume that the game started up and we can 
   // ignore this check later on. This "m_hasStarted" flag will get reset every time the zombie manager 
   // get reset.
@@ -97,6 +108,7 @@ void ZombieManager::Reset()
 
   spawnedZombies = 0;
   m_spawnTimer = 0.0f;
+  m_gruntTimer = 0.0f;
   m_hasStarted = false;
   m_zombiesKilled = 0;
 }

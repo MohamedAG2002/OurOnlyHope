@@ -81,12 +81,12 @@ clean: CMakeFiles/ooh.dir/clean
 CMakeFiles/ooh.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37 "Built target ooh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36 "Built target ooh"
 .PHONY : CMakeFiles/ooh.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ooh.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mohamed/Dev/C++/Raylib/OurOnlyHope/build/CMakeFiles 37
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mohamed/Dev/C++/Raylib/OurOnlyHope/build/CMakeFiles 36
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ooh.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mohamed/Dev/C++/Raylib/OurOnlyHope/build/CMakeFiles 0
 .PHONY : CMakeFiles/ooh.dir/rule

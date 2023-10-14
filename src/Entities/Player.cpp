@@ -5,13 +5,12 @@
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
 #include "../Enums/BodyType.hpp"
-#include "../Enums/WeaponType.hpp"
-#include "../Enums/ShopItem.hpp"
 #include "../Utils/Util.hpp"
 #include "../Utils/Globals.hpp"
 #include "../Managers/EventManager.hpp"
 #include "../Events/EventFuncs.hpp"
 #include "../Metadata/BodyMetadata.hpp"
+#include "../Metadata/PotionMetadata.hpp"
 
 #include <memory>
 #include <raylib.h>
@@ -34,22 +33,21 @@ Player::Player(const Vector2 startPos)
   
   // Private variables init
   m_canAttack = false;
-  m_totalDefense = 0;
   m_speed = PLAYER_MOVE_SPEED;
   
+  // Weapon init 
+  weapon = std::make_unique<Weapon>(&transform.position); 
+  
   // Metadata init 
-  bodyMetadata = BodyMetadata{"Player", UUID, weaponMD.damage};
+  bodyMetadata = BodyMetadata{"Player", UUID, weapon->damage};
 
   // Components init
   sprite = Sprite("Player_Sprite", Vector2{64.0f, 64.0f});
   body = PhysicsBody(&bodyMetadata, transform.position, BodyType::RIGID, isActive);
   collider = Collider(body, sprite.size, 1.0f, false);
 
-  // Weapon init 
-  weapon = std::make_unique<Weapon>(&transform.position, weaponMD); 
-
   // Listen to events 
-  EventManager::Get().ListenToEvent<OnEntityCollision>([&](BodyMetadata& bodyMD1, BodyMetadata& bodyMD2){
+  EventManager::Get().ListenToEvent<OnEntityCollision>([&](BodyMetadata& bodyMD1, BodyMetadata& bodyMD2) {
     // Some util variables for better visualization
     std::string enttType1 = bodyMD1.entityType;
     std::string enttType2 = bodyMD2.entityType;
@@ -65,22 +63,10 @@ Player::Player(const Vector2 startPos)
       else if(bodyMD2.entityUUID == UUID)
         m_HitPlayer(bodyMD1.entityDamage);
     }
-
   });
 
-  EventManager::Get().ListenToEvent<OnItemEquip>([&](ShopItem item, const std::string& node){
-    switch(item)
-    {
-      case ShopItem::WEAPON: 
-        m_ApplyWeapon(node);
-        break;
-      case ShopItem::ARMOR: 
-        m_ApplyArmor(node);
-        break;
-      case ShopItem::POTION: 
-        m_ApplyPotion(node);
-        break;
-    }
+  EventManager::Get().ListenToEvent<OnItemEquip>([&](const std::string& potion){
+    m_ApplyPotion(potion);
   });
 }
 
@@ -111,8 +97,6 @@ void Player::Reset()
   health = maxHealth;
   isActive = true;
   m_speed = PLAYER_MOVE_SPEED;
-  m_speed -= m_totalWeight;
-  m_totalWeight = 0;
 
   // Resetting the player's position and updating the body's position as well
   transform.position = Vector2{GetScreenWidth() / 2.0f, GetScreenHeight() / 2.0f};
@@ -121,8 +105,6 @@ void Player::Reset()
  
   // Reset the weapon
   weapon->Reset();
-  weapon->metadata = weaponMD;
-  weapon->bodyMetadata.entityDamage = weaponMD.damage;
 }
 
 void Player::m_GetKeyInput()
@@ -153,27 +135,14 @@ void Player::m_GetKeyInput()
     
 void Player::m_Attack()
 {
-  // Enabling the weapon to attack depending on the type 
-  // (i.e it will attack in a different pattern if it was a spear or a sword).
-  if(weapon->metadata.type != WeaponType::SPEAR)
-  {
-    // Sword attack
-    weapon->transform.rotation = transform.rotation;
-    weapon->rotationDest = (transform.rotation - 180.0f);
-    weapon->isActive = true;
-    EventManager::Get().DispatchEvent<OnSoundPlay>("Sword_Swing");
-  }
-  else 
-  {
-    // Spear attack
-    weapon->body.SetBodyPosition(transform.position);
-    weapon->transform.position = transform.position;
+  // Enabling the weapon to attack 
+  weapon->body.SetBodyPosition(transform.position);
+  weapon->transform.position = transform.position;
 
-    weapon->transform.rotation = transform.rotation;
-    weapon->isActive = true;
-    weapon->distTraveled = 0.0f;
-    EventManager::Get().DispatchEvent<OnSoundPlay>(GetRandomValue(0, 1) == 0 ? "Spear_Throw-1" : "Spear_Throw-2");
-  }
+  weapon->transform.rotation = transform.rotation;
+  weapon->isActive = true;
+  weapon->distTraveled = 0.0f;
+  EventManager::Get().DispatchEvent<OnSoundPlay>(GetRandomValue(0, 1) == 0 ? "Spear_Throw-1" : "Spear_Throw-2");
 
   m_canAttack = false;
 }
@@ -184,8 +153,7 @@ void Player::m_HitPlayer(int damage)
   if(damage == 0) 
     return; 
 
-  health -= (damage - m_totalDefense);
-  armorMD.durability--;
+  health -= damage;
 
   // Play a random player hurt sound from the available ones 
   EventManager::Get().DispatchEvent<OnSoundPlay>(GetRandomValue(1, 2) == 1 ? "Player_Hurt-1" : "Player_Hurt-2");
@@ -195,10 +163,6 @@ void Player::m_HandleHealth()
 {
   // Clamp the health from 0 to the max 
   health = util::ClampI(health, 0, maxHealth);
- 
-  // Nerf the player's defense once the armor is low on durability
-  if(armorMD.durability == 0)
-    m_totalDefense /= 2.0f;
 
   // KILL HIM!!!... when low on health
   if(health <= 0)
@@ -219,30 +183,15 @@ void Player::m_HandleMovement(float dt)
   transform.position = body.GetBodyPosition();
 }
     
-void Player::m_ApplyWeapon(const std::string& node)
-{
-  weaponMD = util::LoadWeaponMetadata(node);
-  m_totalWeight += weaponMD.weight;
-}
-
-void Player::m_ApplyArmor(const std::string& node)
-{
-  armorMD = util::LoadArmorMetadata(node);
-  m_totalDefense += armorMD.defense;
-  m_totalWeight += armorMD.weight;
-}
-
 void Player::m_ApplyPotion(const std::string& node)
 {
   potionMD = util::LoadPotionMetadata(node);
 
   // Applying the multipliers to the player and their equipment
   maxHealth += potionMD.health;
-  weaponMD.damage += potionMD.damage;
-  weaponMD.durability += potionMD.durability;
-  armorMD.durability += potionMD.durability;
-  m_totalWeight -= potionMD.weight;
-  
+  weapon->damage += potionMD.damage;
+  m_speed += potionMD.speed; 
+
   // Reapplying the health to the new max health
   health = maxHealth;
 }

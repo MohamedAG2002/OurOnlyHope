@@ -5,8 +5,8 @@
 #include "../Components/Sprite.hpp"
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
-#include "../Metadata/ShopItemsMetadata.hpp"
 #include "../Metadata/BodyMetadata.hpp"
+#include "../Metadata/PotionMetadata.hpp"
 
 #include <raylib.h>
 
@@ -26,8 +26,6 @@ class Player : public Entity
 
   public:
     BodyMetadata bodyMetadata;
-    WeaponMetadata weaponMD;
-    ArmorMetadata armorMD;
     PotionMetadata potionMD;
     
     int health, maxHealth;
@@ -45,8 +43,7 @@ class Player : public Entity
     void Reset() override;
 
   private:
-    int m_totalDefense;
-    float m_speed, m_totalWeight;
+    float m_speed;
     bool m_canAttack;
 
   private:
@@ -57,9 +54,7 @@ class Player : public Entity
     void m_HandleMovement(float dt);
 
     // Retrieve and apply all of the multipliers from the different 
-    // shop items' metadata.
-    void m_ApplyWeapon(const std::string& node);
-    void m_ApplyArmor(const std::string& node);
+    // potion metadata.
     void m_ApplyPotion(const std::string& node);
 };
 

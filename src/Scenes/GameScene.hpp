@@ -3,7 +3,6 @@
 #include "Scene.hpp"
 #include "../Managers/EntityManager.hpp"
 #include "../Managers/TileManager.hpp"
-#include "../Managers/BloodManager.hpp"
 #include "../Managers/WaveManager.hpp"
 #include "../Managers/ParticleManager.hpp"
 #include "../UI/Button.hpp"
@@ -27,7 +26,6 @@ class GameScene : public Scene
     std::unique_ptr<ParticleManager> prtclMgr;
     std::unique_ptr<Text> pausedText, healthText, bloodText, waveText;
     std::unique_ptr<Button> menuButton;
-    BloodManager bldMgr;
     WaveManager wvMgr;
 
   public:

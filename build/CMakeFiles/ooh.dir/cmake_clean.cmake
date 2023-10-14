@@ -25,8 +25,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/ooh.dir/src/Listeners/ContactListener.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Managers/AssetManager.cpp.o"
   "CMakeFiles/ooh.dir/src/Managers/AssetManager.cpp.o.d"
-  "CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.o"
-  "CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Managers/EntityManager.cpp.o"
   "CMakeFiles/ooh.dir/src/Managers/EntityManager.cpp.o.d"
   "CMakeFiles/ooh.dir/src/Managers/EventManager.cpp.o"

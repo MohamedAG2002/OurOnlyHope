@@ -29,7 +29,6 @@ set(SOURCES
   src/Managers/EntityManager.cpp
   src/Managers/ZombieManager.cpp
   src/Managers/TileManager.cpp
-  src/Managers/BloodManager.cpp
   src/Managers/WaveManager.cpp
   src/Managers/ParticleManager.cpp
 

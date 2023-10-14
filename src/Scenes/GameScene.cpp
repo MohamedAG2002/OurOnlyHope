@@ -4,7 +4,6 @@
 #include "../Managers/EventManager.hpp"
 #include "../Managers/EntityManager.hpp"
 #include "../Managers/TileManager.hpp"
-#include "../Managers/BloodManager.hpp"
 #include "../Managers/WaveManager.hpp"
 #include "../Managers/ParticleManager.hpp"
 #include "../UI/Button.hpp"
@@ -70,7 +69,6 @@ void GameScene::Update(float dt)
 
   // Updating the health text, blood text, and wave text 
   healthText->ChangeText("HP: " + std::to_string(enttMgr->player->health));
-  bloodText->ChangeText("BLOOD: " + std::to_string(bldMgr.blood));
   waveText->ChangeText(std::to_string(wvMgr.waveCounter));
 
   enttMgr->Update(dt);
@@ -109,7 +107,6 @@ void GameScene::Reset()
 
   enttMgr->Reset();
   prtclMgr->Reset();
-  bldMgr.Reset();
 
   m_isPaused = false;
 }

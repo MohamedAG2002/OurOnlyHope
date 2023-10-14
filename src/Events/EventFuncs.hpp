@@ -1,7 +1,7 @@
 #pragma once 
 
 #include "../Enums/SceneType.hpp"
-#include "../Enums/ShopItem.hpp"
+#include "../Enums/PotionType.hpp"
 #include "../Metadata/BodyMetadata.hpp"
 
 #include <raylib.h>
@@ -14,8 +14,7 @@ namespace ooh {
 // Gameplay events 
 using OnBloodInc = std::function<void(int)>; 
 using OnWaveEnd = std::function<void(void)>;
-using OnItemEquip = std::function<void(ShopItem, const std::string&)>;
-using OnItemBuy = std::function<void(const int)>;
+using OnItemEquip = std::function<void(const std::string&)>;
 
 // Engine events 
 using OnEntityCollision = std::function<void(BodyMetadata& bodyMD1, BodyMetadata& bodyMD2)>;

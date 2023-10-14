@@ -441,30 +441,6 @@ src/Managers/AssetManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/AssetManager.cpp.s
 .PHONY : src/Managers/AssetManager.cpp.s
 
-src/Managers/BloodManager.o: src/Managers/BloodManager.cpp.o
-.PHONY : src/Managers/BloodManager.o
-
-# target to build an object file
-src/Managers/BloodManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.o
-.PHONY : src/Managers/BloodManager.cpp.o
-
-src/Managers/BloodManager.i: src/Managers/BloodManager.cpp.i
-.PHONY : src/Managers/BloodManager.i
-
-# target to preprocess a source file
-src/Managers/BloodManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.i
-.PHONY : src/Managers/BloodManager.cpp.i
-
-src/Managers/BloodManager.s: src/Managers/BloodManager.cpp.s
-.PHONY : src/Managers/BloodManager.s
-
-# target to generate assembly for a file
-src/Managers/BloodManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.s
-.PHONY : src/Managers/BloodManager.cpp.s
-
 src/Managers/EntityManager.o: src/Managers/EntityManager.cpp.o
 .PHONY : src/Managers/EntityManager.o
 
@@ -1041,9 +1017,6 @@ help:
 	@echo "... src/Managers/AssetManager.o"
 	@echo "... src/Managers/AssetManager.i"
 	@echo "... src/Managers/AssetManager.s"
-	@echo "... src/Managers/BloodManager.o"
-	@echo "... src/Managers/BloodManager.i"
-	@echo "... src/Managers/BloodManager.s"
 	@echo "... src/Managers/EntityManager.o"
 	@echo "... src/Managers/EntityManager.i"
 	@echo "... src/Managers/EntityManager.s"

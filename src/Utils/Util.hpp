@@ -2,10 +2,8 @@
 
 #include "../Enums/BodyType.hpp"
 #include "../Enums/Anchor.hpp"
-#include "../Enums/WeaponType.hpp"
-#include "../Enums/ArmorType.hpp"
 #include "../Enums/PotionType.hpp"
-#include "../Metadata/ShopItemsMetadata.hpp"
+#include "../Metadata/PotionMetadata.hpp"
 
 #include <raylib.h>
 #include <box2d/box2d.h>
@@ -35,8 +33,6 @@ Vector2 SetPositionByAnchor(Anchor anc, Vector2 size, Vector2 offset);
 // inside and returning the metadata to the you so that you can use it. Just specify 
 // the specific node that you need to deserialize and it will return the appropriate 
 // metadata with the correct information.
-WeaponMetadata LoadWeaponMetadata(const std::string& node);
-ArmorMetadata LoadArmorMetadata(const std::string& node);
 PotionMetadata LoadPotionMetadata(const std::string& node);
 
 template<typename T>

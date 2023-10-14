@@ -21,7 +21,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Listeners/AudioListener.cpp" "CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Listeners/AudioListener.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Listeners/ContactListener.cpp" "CMakeFiles/ooh.dir/src/Listeners/ContactListener.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Listeners/ContactListener.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/AssetManager.cpp" "CMakeFiles/ooh.dir/src/Managers/AssetManager.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Managers/AssetManager.cpp.o.d"
-  "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/BloodManager.cpp" "CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Managers/BloodManager.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/EntityManager.cpp" "CMakeFiles/ooh.dir/src/Managers/EntityManager.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Managers/EntityManager.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/EventManager.cpp" "CMakeFiles/ooh.dir/src/Managers/EventManager.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Managers/EventManager.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/GameManager.cpp" "CMakeFiles/ooh.dir/src/Managers/GameManager.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Managers/GameManager.cpp.o.d"

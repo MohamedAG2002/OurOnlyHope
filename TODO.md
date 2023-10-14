@@ -2,16 +2,18 @@
 - Embed in the web using Emscripten
 
 # Game
+- Over scene
 - Easter Egg
 
 # Polish
-- Over scene
+- Get a cool combat theme for the GameScene
+- Add a spear sprite
 - Find a sprite for the player
-- Remove the armor and weapon selection. Just have a spear as the only option and make the player choose only the potions after each wave
 - Polish up the transition from the game to the shop scene. Don't make it abrupt
 - Fade into the menu scene
 - FUCKIN PLAY TEST IT!
 - Redo the values of the items maybe?
 
 # Problems to fix
-- The zombies' grunts sample together and it sounds like a demon orgy
+- Think of a different potion type than durability
+- Remove the over win scene

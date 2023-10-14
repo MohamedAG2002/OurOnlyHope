@@ -72,6 +72,7 @@ void AssetManager::LoadSounds()
   
   load("Zombie_Death-1", "assets/audio/sword_kill_zombie-1.wav");
   load("Zombie_Death-2", "assets/audio/sword_kill_zombie-2.wav");
+  load("Zombie_Grunt", "assets/audio/zombie_grunt.wav");
 
   load("Player_Death", "assets/audio/player_death.wav");
   load("Player_Hurt-1", "assets/audio/player_hurt-1.wav");
