@@ -98,6 +98,9 @@ void Player::Reset()
   isActive = true;
   m_speed = PLAYER_MOVE_SPEED + potionMD.speed;
 
+  // Reactivating the body 
+  body.SetBodyActive(true);
+
   // Resetting the player's position and updating the body's position as well
   transform.position = Vector2{GetScreenWidth() / 2.0f, GetScreenHeight() / 2.0f};
   body.SetBodyPosition(transform.position);
@@ -153,7 +156,8 @@ void Player::m_HitPlayer(int damage)
   if(damage == 0) 
     return; 
 
-  health -= (damage * potionMD.defense);
+  // Only apply the defese multiplier if the player choose the defense potion
+  health -= potionMD.defense == 0 ? damage : (damage * potionMD.defense);
 
   // Play a random player hurt sound from the available ones 
   EventManager::Get().DispatchEvent<OnSoundPlay>(GetRandomValue(1, 2) == 1 ? "Player_Hurt-1" : "Player_Hurt-2");
