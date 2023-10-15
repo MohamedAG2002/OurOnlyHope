@@ -47,9 +47,7 @@ set(SOURCES
   src/Scenes/SettingScene.cpp
   src/Scenes/ShopScene.cpp
   src/Scenes/GameScene.cpp
-  src/Scenes/OverWinScene.cpp
   src/Scenes/OverLoseScene.cpp
-  src/Scenes/SecretScene.cpp
 
   # Components
   src/Components/Transform2D.cpp

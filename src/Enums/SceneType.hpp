@@ -6,7 +6,5 @@ enum class SceneType
   SETTINGS,
   SHOP,
   GAME,
-  OVER_WIN,
   OVER_LOSE,
-  SECRET_ENDING
 };

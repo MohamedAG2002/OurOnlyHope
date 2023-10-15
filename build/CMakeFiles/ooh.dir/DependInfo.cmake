@@ -32,8 +32,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/GameScene.cpp" "CMakeFiles/ooh.dir/src/Scenes/GameScene.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Scenes/GameScene.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/MenuScene.cpp" "CMakeFiles/ooh.dir/src/Scenes/MenuScene.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Scenes/MenuScene.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/OverLoseScene.cpp" "CMakeFiles/ooh.dir/src/Scenes/OverLoseScene.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Scenes/OverLoseScene.cpp.o.d"
-  "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/OverWinScene.cpp" "CMakeFiles/ooh.dir/src/Scenes/OverWinScene.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Scenes/OverWinScene.cpp.o.d"
-  "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/SecretScene.cpp" "CMakeFiles/ooh.dir/src/Scenes/SecretScene.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Scenes/SecretScene.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/SettingScene.cpp" "CMakeFiles/ooh.dir/src/Scenes/SettingScene.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Scenes/SettingScene.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/ShopScene.cpp" "CMakeFiles/ooh.dir/src/Scenes/ShopScene.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/Scenes/ShopScene.cpp.o.d"
   "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/UI/Button.cpp" "CMakeFiles/ooh.dir/src/UI/Button.cpp.o" "gcc" "CMakeFiles/ooh.dir/src/UI/Button.cpp.o.d"

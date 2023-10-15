@@ -2,8 +2,6 @@
 - Embed in the web using Emscripten
 
 # Game
-- Over scene
-- Easter Egg
 
 # Polish
 - Get a cool combat theme for the GameScene
@@ -13,6 +11,7 @@
 - Fade into the menu scene
 - FUCKIN PLAY TEST IT!
 - Redo the values of the items maybe?
+- Redo the design document
+- Write the README
 
 # Problems to fix
-- Remove the over win scene

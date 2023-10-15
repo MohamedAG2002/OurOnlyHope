@@ -705,54 +705,6 @@ src/Scenes/OverLoseScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Scenes/OverLoseScene.cpp.s
 .PHONY : src/Scenes/OverLoseScene.cpp.s
 
-src/Scenes/OverWinScene.o: src/Scenes/OverWinScene.cpp.o
-.PHONY : src/Scenes/OverWinScene.o
-
-# target to build an object file
-src/Scenes/OverWinScene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Scenes/OverWinScene.cpp.o
-.PHONY : src/Scenes/OverWinScene.cpp.o
-
-src/Scenes/OverWinScene.i: src/Scenes/OverWinScene.cpp.i
-.PHONY : src/Scenes/OverWinScene.i
-
-# target to preprocess a source file
-src/Scenes/OverWinScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Scenes/OverWinScene.cpp.i
-.PHONY : src/Scenes/OverWinScene.cpp.i
-
-src/Scenes/OverWinScene.s: src/Scenes/OverWinScene.cpp.s
-.PHONY : src/Scenes/OverWinScene.s
-
-# target to generate assembly for a file
-src/Scenes/OverWinScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Scenes/OverWinScene.cpp.s
-.PHONY : src/Scenes/OverWinScene.cpp.s
-
-src/Scenes/SecretScene.o: src/Scenes/SecretScene.cpp.o
-.PHONY : src/Scenes/SecretScene.o
-
-# target to build an object file
-src/Scenes/SecretScene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Scenes/SecretScene.cpp.o
-.PHONY : src/Scenes/SecretScene.cpp.o
-
-src/Scenes/SecretScene.i: src/Scenes/SecretScene.cpp.i
-.PHONY : src/Scenes/SecretScene.i
-
-# target to preprocess a source file
-src/Scenes/SecretScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Scenes/SecretScene.cpp.i
-.PHONY : src/Scenes/SecretScene.cpp.i
-
-src/Scenes/SecretScene.s: src/Scenes/SecretScene.cpp.s
-.PHONY : src/Scenes/SecretScene.s
-
-# target to generate assembly for a file
-src/Scenes/SecretScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ooh.dir/build.make CMakeFiles/ooh.dir/src/Scenes/SecretScene.cpp.s
-.PHONY : src/Scenes/SecretScene.cpp.s
-
 src/Scenes/SettingScene.o: src/Scenes/SettingScene.cpp.o
 .PHONY : src/Scenes/SettingScene.o
 
@@ -1050,12 +1002,6 @@ help:
 	@echo "... src/Scenes/OverLoseScene.o"
 	@echo "... src/Scenes/OverLoseScene.i"
 	@echo "... src/Scenes/OverLoseScene.s"
-	@echo "... src/Scenes/OverWinScene.o"
-	@echo "... src/Scenes/OverWinScene.i"
-	@echo "... src/Scenes/OverWinScene.s"
-	@echo "... src/Scenes/SecretScene.o"
-	@echo "... src/Scenes/SecretScene.i"
-	@echo "... src/Scenes/SecretScene.s"
 	@echo "... src/Scenes/SettingScene.o"
 	@echo "... src/Scenes/SettingScene.i"
 	@echo "... src/Scenes/SettingScene.s"

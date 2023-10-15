@@ -133,21 +133,9 @@
 },
 {
   "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
-  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Scenes/OverWinScene.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/OverWinScene.cpp",
-  "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/OverWinScene.cpp",
-  "output": "CMakeFiles/ooh.dir/src/Scenes/OverWinScene.cpp.o"
-},
-{
-  "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
   "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Scenes/OverLoseScene.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/OverLoseScene.cpp",
   "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/OverLoseScene.cpp",
   "output": "CMakeFiles/ooh.dir/src/Scenes/OverLoseScene.cpp.o"
-},
-{
-  "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
-  "command": "/usr/bin/c++ -DSDL_MAIN_HANDELED -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include -g -std=gnu++20 -o CMakeFiles/ooh.dir/src/Scenes/SecretScene.cpp.o -c /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/SecretScene.cpp",
-  "file": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Scenes/SecretScene.cpp",
-  "output": "CMakeFiles/ooh.dir/src/Scenes/SecretScene.cpp.o"
 },
 {
   "directory": "/home/mohamed/Dev/C++/Raylib/OurOnlyHope/build",
