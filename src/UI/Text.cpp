@@ -33,6 +33,7 @@ void Text::ChangeText(const std::string&& newStr)
 {
   str = newStr;
   size = MeasureTextEx(GetFontDefault(), str.c_str(), m_fontSize, 1.0f);
+  origin = Vector2{size.x / 2.0f, size.y / 2.0f}; 
   position = util::SetPositionByAnchor(anchor, size, offset);
 }
 

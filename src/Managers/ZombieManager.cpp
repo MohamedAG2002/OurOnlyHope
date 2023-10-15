@@ -155,7 +155,7 @@ void ZombieManager::m_SpawnZombie()
 void ZombieManager::m_BuffZombies()
 {
   for(auto& zombie : zombies)
-    zombie->maxHealth += 10;
+    zombie->maxHealth += 5;
 }
   
 }
