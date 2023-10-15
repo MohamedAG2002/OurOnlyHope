@@ -38,7 +38,7 @@ void AssetManager::LoadSprites()
   // Adding potion sprites
   load("Health_Potion", "assets/sprites/potions/health_potion.png");
   load("Damage_Potion", "assets/sprites/potions/damage_potion.png");
-  load("Durability_Potion", "assets/sprites/potions/durability_potion.png");
+  load("Defense_Potion", "assets/sprites/potions/defense_potion.png");
   load("Dexterity_Potion", "assets/sprites/potions/dexterity_potion.png");
 
   // Adding the map sprite 

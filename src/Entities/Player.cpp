@@ -96,7 +96,7 @@ void Player::Reset()
   // Reset player's variables
   health = maxHealth;
   isActive = true;
-  m_speed = PLAYER_MOVE_SPEED;
+  m_speed = PLAYER_MOVE_SPEED + potionMD.speed;
 
   // Resetting the player's position and updating the body's position as well
   transform.position = Vector2{GetScreenWidth() / 2.0f, GetScreenHeight() / 2.0f};
@@ -153,7 +153,7 @@ void Player::m_HitPlayer(int damage)
   if(damage == 0) 
     return; 
 
-  health -= damage;
+  health -= (damage * potionMD.defense);
 
   // Play a random player hurt sound from the available ones 
   EventManager::Get().DispatchEvent<OnSoundPlay>(GetRandomValue(1, 2) == 1 ? "Player_Hurt-1" : "Player_Hurt-2");

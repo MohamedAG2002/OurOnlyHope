@@ -15,5 +15,4 @@
 - Redo the values of the items maybe?
 
 # Problems to fix
-- Think of a different potion type than durability
 - Remove the over win scene

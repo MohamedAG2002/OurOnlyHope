@@ -102,9 +102,9 @@ void ShopScene::m_InitItems()
   m_ptnMD = util::LoadPotionMetadata(potions[1]->title);
   potions[1]->SetDesc(m_GetFormatedPotionDesc(m_ptnMD));
 
-  potions.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Durability_Potion"), 
+  potions.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Defense_Potion"), 
                                               Anchor::TOP_LEFT, 
-                                              "DUR-Potion", 
+                                              "DEF-Potion", 
                                               Vector2{ptinOff.x + 300, ptinOff.y}));
   m_ptnMD = util::LoadPotionMetadata(potions[2]->title);
   potions[2]->SetDesc(m_GetFormatedPotionDesc(m_ptnMD));
@@ -122,8 +122,8 @@ const std::string ShopScene::m_GetFormatedPotionDesc(PotionMetadata md)
   // Finding out which potion this is
   if(md.damage > 0)
     return "DAM + " + std::to_string(md.damage);
-  else if(md.durability > 0)
-    return "DUR + " + std::to_string(md.durability);
+  else if(md.defense > 0)
+    return "DEF + 50";
   else if(md.health > 0)
     return "HP + " + std::to_string(md.health);
   else 

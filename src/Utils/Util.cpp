@@ -127,7 +127,7 @@ PotionMetadata LoadPotionMetadata(const std::string& node)
   YAML::Node potion = data[node];
   md.name = node;
   md.type = (PotionType)potion["type"].as<int>();
-  md.durability = potion["durability"].as<int>();
+  md.defense = potion["defense"].as<float>();
   md.health = potion["health"].as<int>();
   md.damage = potion["damage"].as<int>();
   md.speed = potion["speed"].as<float>();
