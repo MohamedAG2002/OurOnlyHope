@@ -1507,6 +1507,7 @@ CMakeFiles/ooh.dir/src/Entities/Player.cpp.o: /home/mohamed/Dev/C++/Raylib/OurOn
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/raylib.h \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/BodyType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Metadata/BodyMetadata.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Animator.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Collider.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/PhysicsBody.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Sprite.hpp \
@@ -3638,6 +3639,7 @@ CMakeFiles/ooh.dir/src/Managers/EntityManager.cpp.o: /home/mohamed/Dev/C++/Rayli
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include/raylib.h \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/BodyType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Metadata/BodyMetadata.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Animator.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Collider.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/PhysicsBody.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Sprite.hpp \
@@ -3647,7 +3649,6 @@ CMakeFiles/ooh.dir/src/Managers/EntityManager.cpp.o: /home/mohamed/Dev/C++/Rayli
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Entity.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Player.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Weapon.hpp \
-  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Animator.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Zombie.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/ZombieManager.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Utils/Globals.hpp \
@@ -4797,6 +4798,7 @@ CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o: /home/mohamed/Dev/C++/Raylib
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Events/EventFuncs.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/BodyType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Metadata/BodyMetadata.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Animator.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Collider.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/PhysicsBody.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Sprite.hpp \
@@ -4806,7 +4808,6 @@ CMakeFiles/ooh.dir/src/Managers/SceneManager.cpp.o: /home/mohamed/Dev/C++/Raylib
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Player.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Tile.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Weapon.hpp \
-  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Animator.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Zombie.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/ZombieManager.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/EntityManager.hpp \
@@ -6204,6 +6205,7 @@ CMakeFiles/ooh.dir/src/Scenes/GameScene.cpp.o: /home/mohamed/Dev/C++/Raylib/OurO
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Events/EventFuncs.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/BodyType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Metadata/BodyMetadata.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Animator.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Collider.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/PhysicsBody.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Sprite.hpp \
@@ -6215,7 +6217,6 @@ CMakeFiles/ooh.dir/src/Scenes/GameScene.cpp.o: /home/mohamed/Dev/C++/Raylib/OurO
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Player.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Tile.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Weapon.hpp \
-  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Animator.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Entities/Zombie.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/ZombieManager.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Managers/EntityManager.hpp \

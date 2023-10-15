@@ -2,7 +2,7 @@
 
 #include "Entity.hpp"
 #include "Weapon.hpp"
-#include "../Components/Sprite.hpp"
+#include "../Components/Animator.hpp"
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
 #include "../Metadata/BodyMetadata.hpp"
@@ -31,7 +31,7 @@ class Player : public Entity
     int health, maxHealth;
     Vector2 velocity;
     
-    Sprite sprite;
+    Animator anim;
     PhysicsBody body;
     Collider collider;
     

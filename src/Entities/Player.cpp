@@ -1,7 +1,7 @@
 #include "Player.hpp"
 #include "Entity.hpp"
 #include "Weapon.hpp"
-#include "../Components/Sprite.hpp"
+#include "../Components/Animator.hpp"
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
 #include "../Enums/BodyType.hpp"
@@ -42,9 +42,9 @@ Player::Player(const Vector2 startPos)
   bodyMetadata = BodyMetadata{"Player", UUID, weapon->damage};
 
   // Components init
-  sprite = Sprite("Player_Sprite", Vector2{64.0f, 64.0f});
+  anim = Animator("Player_Sprite", Vector2{64.0f, 64.0f}, 4, 0.1f);
   body = PhysicsBody(&bodyMetadata, transform.position, BodyType::RIGID, isActive);
-  collider = Collider(body, sprite.size, 1.0f, false);
+  collider = Collider(body, anim.frameSize, 1.0f, false);
 
   // Listen to events 
   EventManager::Get().ListenToEvent<OnEntityCollision>([&](BodyMetadata& bodyMD1, BodyMetadata& bodyMD2) {
@@ -88,7 +88,7 @@ void Player::Update(float dt)
 
 void Player::Render()
 {
-  sprite.Render(transform);
+  anim.Render(transform);
   
   if(weapon->isActive)
     weapon->Render();
@@ -122,6 +122,7 @@ void Player::m_GetKeyInput()
     velocity.x = m_speed; 
   else  
     velocity.x = 0.0f; 
+
   // Move vertically 
   if(IsKeyDown(KEY_W))
     velocity.y = -m_speed; 
@@ -129,7 +130,10 @@ void Player::m_GetKeyInput()
     velocity.y = m_speed; 
   else  
     velocity.y = 0.0f; 
-  
+ 
+  // Only animate the sprite when the player is moving 
+  anim.isAnimating = (velocity.x > 0 || velocity.x < 0) || (velocity.y > 0 || velocity.y < 0);
+
   // Rotate the player based on where the mouse is relative to the screen 
   float angle = util::GetAngle(transform.position, GetMousePosition());
   transform.rotation = angle;
