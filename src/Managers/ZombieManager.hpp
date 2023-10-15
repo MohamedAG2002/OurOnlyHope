@@ -11,6 +11,9 @@ namespace ooh {
 
 // Consts 
 const int MAX_ZOMBIES = 50;
+const int HEALTH_CAP = 400;
+const int DAMAGE_CAP = 50;
+const int SPAWN_LIMIT_CAP = 150;
 
 class ZombieManager
 {

@@ -27,8 +27,8 @@ Zombie::Zombie(Vector2 startPos, Vector2* target)
   isActive = false;
 
   // Public variables init
-  maxHealth = 100;
-  maxDamage = 10;
+  maxHealth = 50;
+  maxDamage = 5;
   health = maxHealth; 
   damage = 0;
   bodyMetadata = BodyMetadata{"Zombie", UUID, damage};

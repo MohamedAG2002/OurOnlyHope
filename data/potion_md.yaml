@@ -2,7 +2,7 @@
 HP-Potion:
   type: 0
   defense: 0
-  health: 20
+  health: 50
   damage: 0
   speed: 0 
 
@@ -10,7 +10,7 @@ DAM-Potion:
   type: 1
   defense: 0
   health: 0
-  damage: 20
+  damage: 30
   speed: 0 
 
 DEF-Potion:

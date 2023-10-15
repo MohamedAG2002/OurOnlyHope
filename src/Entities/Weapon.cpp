@@ -28,7 +28,7 @@ Weapon::Weapon(Vector2* holderPos)
   distTraveled = 0.0f;
   maxDist = 73.0f;
   rotationDest = 0.0f;
-  damage = 150;  
+  damage = 120;  
   velocity = Vector2{0.0f, 0.0f};
   bodyMetadata = BodyMetadata{"Weapon", UUID, damage};
 

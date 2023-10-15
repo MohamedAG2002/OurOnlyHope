@@ -38,7 +38,9 @@ ZombieManager::ZombieManager(Vector2* playerPos)
   // Listen to events 
   EventManager::Get().ListenToEvent<OnWaveEnd>([&](void){
     m_BuffZombies();
-    m_zombieSpawnLimit += 10; // Increase the amount of zombies that spawn each wave
+  
+    // Don't increase the limit beyond the cap 
+    m_zombieSpawnLimit += m_zombieSpawnLimit == SPAWN_LIMIT_CAP ? 0 : 10;
   });
 
   EventManager::Get().ListenToEvent<OnBloodInc>([&](int value){
@@ -155,7 +157,11 @@ void ZombieManager::m_SpawnZombie()
 void ZombieManager::m_BuffZombies()
 {
   for(auto& zombie : zombies)
-    zombie->maxHealth += 5;
+  {
+    // Dont increase the health or the damage beyond the cap 
+    zombie->maxHealth += zombie->maxHealth == HEALTH_CAP ? 0 : 5;
+    zombie->maxDamage += zombie->maxDamage == DAMAGE_CAP ? 0 : 1;
+  }
 }
   
 }
