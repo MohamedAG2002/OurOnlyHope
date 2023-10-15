@@ -34,6 +34,7 @@ void AssetManager::LoadSprites()
   // Adding character sprites
   load("Player_Sprite", "assets/sprites/player.png");
   load("Zombie_Sprite", "assets/sprites/zombie.png");
+  load("Spear", "assets/sprites/spear.png");
  
   // Adding potion sprites
   load("Health_Potion", "assets/sprites/potions/health_potion.png");

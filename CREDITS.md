@@ -1,8 +1,9 @@
-# Art
+# Sprites
 Tiles: cainos/https://cainos.itch.io/
 Shop items: Joe Williamson/https://joecreates.co.uk
 Zombie: CornerLord
 Knight: chasersgaming/https://chasersgaming.itch.io/
+Spear: LorNeo/https://opengameart.org/users/lordneo
 
 # Music 
 Menu Hymn: Marcel Hernandez

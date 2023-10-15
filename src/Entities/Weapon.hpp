@@ -3,6 +3,7 @@
 #include "Entity.hpp"
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
+#include "../Components/Sprite.hpp"
 #include "../Metadata/BodyMetadata.hpp"
 
 #include <raylib.h>
@@ -24,6 +25,7 @@ class Weapon : public Entity
     Vector2 velocity;
     PhysicsBody body;
     Collider collider;
+    Sprite sprite;
 
   public:
     void Update(float dt) override;

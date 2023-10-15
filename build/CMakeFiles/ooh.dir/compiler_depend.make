@@ -2172,6 +2172,7 @@ CMakeFiles/ooh.dir/src/Entities/Weapon.cpp.o: /home/mohamed/Dev/C++/Raylib/OurOn
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Metadata/BodyMetadata.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Collider.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/PhysicsBody.hpp \
+  /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Sprite.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Components/Transform2D.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/PotionType.hpp \
   /home/mohamed/Dev/C++/Raylib/OurOnlyHope/src/Enums/SceneType.hpp \

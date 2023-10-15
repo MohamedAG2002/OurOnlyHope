@@ -4,6 +4,7 @@
 #include "../Components/Transform2D.hpp"
 #include "../Components/PhysicsBody.hpp"
 #include "../Components/Collider.hpp"
+#include "../Components/Sprite.hpp"
 #include "../Enums/BodyType.hpp"
 #include "../Events/EventFuncs.hpp"
 #include "../Managers/EventManager.hpp"
@@ -19,7 +20,7 @@ Weapon::Weapon(Vector2* holderPos)
   :m_holderPos(holderPos)
 {
   // Inherited variables init
-  transform = Transform2D(*m_holderPos);
+  transform = Transform2D(*m_holderPos, 45.0f);
   UUID = util::GetRandomNumber<uint64_t>();
   isActive = false;
 
@@ -31,11 +32,10 @@ Weapon::Weapon(Vector2* holderPos)
   velocity = Vector2{0.0f, 0.0f};
   bodyMetadata = BodyMetadata{"Weapon", UUID, damage};
 
-  // Private variables init 
-
   // Components init 
+  sprite = Sprite("Spear", Vector2{64.0f, 64.0f});
   body = PhysicsBody(&bodyMetadata, *m_holderPos, BodyType::KINEMATIC, isActive);
-  collider = Collider(body, Vector2{32.0f, 86.0f}, 0.0f, true);
+  collider = Collider(body, sprite.size, 0.0f, true);
 }
 
 Weapon::~Weapon()
@@ -71,7 +71,7 @@ void Weapon::Update(float dt)
 
 void Weapon::Render() 
 {
-  DrawTexture(AssetManager::Get().GetSprite("Spear"), transform.position.x, transform.position.y, WHITE);
+  sprite.Render(transform);
 }
     
 void Weapon::Reset()

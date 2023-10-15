@@ -89,6 +89,9 @@ void Player::Update(float dt)
 void Player::Render()
 {
   sprite.Render(transform);
+  
+  if(weapon->isActive)
+    weapon->Render();
 }
     
 void Player::Reset()
@@ -142,7 +145,7 @@ void Player::m_Attack()
   weapon->body.SetBodyPosition(transform.position);
   weapon->transform.position = transform.position;
 
-  weapon->transform.rotation = transform.rotation;
+  weapon->transform.rotation = transform.rotation - 45.0f;
   weapon->isActive = true;
   weapon->distTraveled = 0.0f;
   EventManager::Get().DispatchEvent<OnSoundPlay>(GetRandomValue(0, 1) == 0 ? "Spear_Throw-1" : "Spear_Throw-2");
