@@ -57,6 +57,8 @@ void MenuScene::Render()
 
 void MenuScene::Reset()
 {
+  EventManager::Get().DispatchEvent<OnMusicStop>("Combat_Hymn");
+  EventManager::Get().DispatchEvent<OnMusicStop>("Over_Hymn");
   EventManager::Get().DispatchEvent<OnMusicPlay>("Menu_Hymn");
 }
 

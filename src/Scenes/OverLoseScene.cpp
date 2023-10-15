@@ -41,6 +41,9 @@ void OverLoseScene::Render()
 }
 void OverLoseScene::Reset()
 {
+  EventManager::Get().DispatchEvent<OnMusicStop>("Combat_Hymn");
+  EventManager::Get().DispatchEvent<OnMusicPlay>("Over_Hymn");
+
   wave = util::GetDataFromFile<uint32_t>(global::WV_DAT_FILE_NAME);
   waveText->ChangeText("YOU SURVIVED " + std::to_string(wave) + " WAVES");
 }

@@ -76,6 +76,8 @@ void AssetManager::LoadMusic()
 
   // Adding music
   load("Menu_Hymn", "assets/audio/menu_hymn.ogg");
+  load("Combat_Hymn", "assets/audio/combat_hymn.mp3");
+  load("Over_Hymn", "assets/audio/over_hymn.ogg");
 }
 
 void AssetManager::UnloadAssets()
