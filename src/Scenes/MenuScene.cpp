@@ -16,9 +16,9 @@ namespace ooh {
 
 MenuScene::MenuScene()
 {
-  // Titles init
+  // Texts init
   title = std::make_unique<Text>("Our Only Hope", Anchor::TOP_CENTER, TextType::BIG);
-  credits = std::make_unique<Text>("Made By One Guy", Anchor::BOTTOM_LEFT, TextType::LETTER);
+  credits = std::make_unique<Text>("Made By One Guy And A Bunch Of Free Assets", Anchor::BOTTOM_LEFT, TextType::LETTER);
   
   // Buttons init
   playButton = std::make_unique<Button>("Play", Anchor::CENTER, TextType::MEDIUM, Vector2(0, -50.0f));

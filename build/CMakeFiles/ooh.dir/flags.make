@@ -6,5 +6,5 @@ CXX_DEFINES = -DSDL_MAIN_HANDELED
 
 CXX_INCLUDES = -I/home/mohamed/Dev/C++/Raylib/OurOnlyHope/libs/include
 
-CXX_FLAGS = -g -std=gnu++20
+CXX_FLAGS = -std=gnu++20
 

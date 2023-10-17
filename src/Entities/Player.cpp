@@ -42,7 +42,7 @@ Player::Player(const Vector2 startPos)
   bodyMetadata = BodyMetadata{"Player", UUID, weapon->damage};
 
   // Components init
-  anim = Animator("Player_Sprite", Vector2{64.0f, 64.0f}, 4, 0.1f);
+  anim = Animator("Player_Sprite", Vector2{64.0f, 64.0f}, 4, 0.15f);
   body = PhysicsBody(&bodyMetadata, transform.position, BodyType::RIGID, isActive);
   collider = Collider(body, anim.frameSize, 1.0f, false);
 

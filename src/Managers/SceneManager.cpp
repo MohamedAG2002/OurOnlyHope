@@ -11,7 +11,6 @@
 
 #include <raylib.h>
 
-#include <iostream>
 #include <unordered_map>
 #include <memory>
 
