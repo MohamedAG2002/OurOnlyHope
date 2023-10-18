@@ -21,9 +21,9 @@ MenuScene::MenuScene()
   credits = std::make_unique<Text>("Made By One Guy And A Bunch Of Free Assets", Anchor::BOTTOM_LEFT, TextType::LETTER);
   
   // Buttons init
-  playButton = std::make_unique<Button>("Play", Anchor::CENTER, TextType::MEDIUM, Vector2(0, -50.0f));
+  playButton = std::make_unique<Button>("Play", Anchor::CENTER, TextType::MEDIUM, Vector2{0, -50.0f});
   settingsButton = std::make_unique<Button>("Settings", Anchor::CENTER, TextType::MEDIUM);
-  quitButton = std::make_unique<Button>("Quit", Anchor::CENTER, TextType::MEDIUM, Vector2(0.0f, 50.0f));
+  quitButton = std::make_unique<Button>("Quit", Anchor::CENTER, TextType::MEDIUM, Vector2{0.0f, 50.0f});
 
   EventManager::Get().DispatchEvent<OnMusicPlay>("Menu_Hymn");
 }

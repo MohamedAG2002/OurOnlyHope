@@ -26,7 +26,7 @@ Button::Button(const std::string& str, Anchor anc, TextType textType, Vector2 of
   hasClicked = false;
   isActive = true;
   
-  size = Vector2(m_text->size.x + 50.0f, m_text->size.y + 5.0f);
+  size = Vector2{m_text->size.x + 50.0f, m_text->size.y + 5.0f};
   position = Vector2{m_text->position.x - 25.0f, m_text->position.y - 2.5f};
   rect = {position.x, position.y, size.x, size.y};
 }

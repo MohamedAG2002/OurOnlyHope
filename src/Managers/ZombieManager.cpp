@@ -26,10 +26,10 @@ ZombieManager::ZombieManager(Vector2* playerPos)
   m_hasStarted = false;
 
   Vector2 screenSize = Vector2{GetScreenWidth() - 32.0f, GetScreenHeight() - 32.0f};
-  m_spawnPoints[0] = Vector2(screenSize.x / 2.0f, 32.0f);
-  m_spawnPoints[1] = Vector2(screenSize.x, screenSize.y / 2.0f);
-  m_spawnPoints[2] = Vector2(screenSize.x / 2.0f, screenSize.y);
-  m_spawnPoints[3] = Vector2(32.0f, screenSize.y / 2.0f);
+  m_spawnPoints[0] = Vector2{screenSize.x / 2.0f, 32.0f};
+  m_spawnPoints[1] = Vector2{screenSize.x, screenSize.y / 2.0f};
+  m_spawnPoints[2] = Vector2{screenSize.x / 2.0f, screenSize.y};
+  m_spawnPoints[3] = Vector2{32.0f, screenSize.y / 2.0f};
 
   // Zombie default init 
   for(int i = 0; i < zombies.size(); i++)

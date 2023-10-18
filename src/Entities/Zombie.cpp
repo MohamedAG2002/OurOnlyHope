@@ -34,7 +34,7 @@ Zombie::Zombie(Vector2 startPos, Vector2* target)
   bodyMetadata = BodyMetadata{"Zombie", UUID, damage};
 
   // Components init
-  anim = Animator("Zombie_Sprite", Vector2(64.0f, 64.0f), 4, 0.2f);
+  anim = Animator("Zombie_Sprite", Vector2{64.0f, 64.0f}, 4, 0.2f);
   body = PhysicsBody(&bodyMetadata, transform.position, BodyType::RIGID, isActive);
   collider = Collider(body, Vector2{64.0f, 64.0f}, 1.0f, false);
 

@@ -71,7 +71,7 @@ Vector2 SetPositionByAnchor(Anchor anc, Vector2 size, Vector2 offset)
   // Variables for easier visualization
   Vector2 screenSize = {(float)GetScreenWidth(), (float)GetScreenHeight()};
   Vector2 result = Vector2{0.0f, 0.0f};
-  Vector2 halfSize = Vector2(size.x / 2.0f, size.y / 2.0f);
+  Vector2 halfSize = Vector2{size.x / 2.0f, size.y / 2.0f};
 
   switch(anc)
   {
@@ -137,7 +137,7 @@ PotionMetadata LoadPotionMetadata(const std::string& node)
 
 Vector2 B2Vec2ToVector2(b2Vec2 vec)
 {
-  return Vector2(vec.x * global::METER_TO_PIXEL, vec.y * global::METER_TO_PIXEL);
+  return Vector2{vec.x * global::METER_TO_PIXEL, vec.y * global::METER_TO_PIXEL};
 }
 
 b2Vec2 Vector2ToB2Vec2(Vector2 vec)
