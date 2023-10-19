@@ -13,6 +13,7 @@ namespace ooh {
 class Text 
 {
   public:
+    Text();
     Text(const std::string& str, Anchor anc, TextType type, Color color = global::UI_TEXT_COLOR, Vector2 offset = Vector2{0.0f, 0.0f});
     ~Text();
 

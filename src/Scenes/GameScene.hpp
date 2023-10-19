@@ -10,8 +10,6 @@
 
 #include <raylib.h>
 
-#include <memory>
-
 namespace ooh {
 
 class GameScene : public Scene 
@@ -24,8 +22,8 @@ class GameScene : public Scene
     std::unique_ptr<EntityManager> enttMgr;
     std::unique_ptr<TileManager> tileMgr;
     std::unique_ptr<ParticleManager> prtclMgr;
-    std::unique_ptr<Text> pausedText, healthText, waveText;
-    std::unique_ptr<Button> menuButton;
+    Text pausedText, healthText, waveText;
+    Button menuButton;
     WaveManager wvMgr;
 
   public:

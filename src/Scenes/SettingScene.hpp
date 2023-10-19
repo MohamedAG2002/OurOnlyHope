@@ -7,9 +7,6 @@
 
 #include <raylib.h>
 
-#include <memory>
-#include <array>
-
 namespace ooh {
 
 class SettingScene : public Scene 
@@ -19,9 +16,9 @@ class SettingScene : public Scene
     ~SettingScene();
 
   public:
-    std::unique_ptr<Text> title, fullScreenText;
-    std::unique_ptr<Button> menuButton;
-    std::unique_ptr<Checkbox> fullScreenCheckBox;
+    Text title, fullScreenText;
+    Button menuButton;
+    Checkbox fullScreenCheckBox;
 
   public:
     void Update(float dt) override;

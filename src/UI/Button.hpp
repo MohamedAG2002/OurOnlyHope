@@ -6,7 +6,6 @@
 
 #include <raylib.h>
 
-#include <memory>
 #include <string>
 
 namespace ooh {
@@ -14,6 +13,7 @@ namespace ooh {
 class Button 
 {
   public:
+    Button();
     Button(const std::string& str, Anchor anc, TextType textType, Vector2 offset = Vector2{0.0f, 0.0f});
     ~Button();
 
@@ -32,7 +32,7 @@ class Button
     void SetPosition(const Vector2 pos);
 
   private:
-    std::unique_ptr<Text> m_text;
+    Text m_text;
 };
   
 }

@@ -8,6 +8,17 @@
 
 namespace ooh {
 
+Checkbox::Checkbox()
+{
+  position = Vector2{0.0f, 0.0f};
+  size = Vector2{0.0f, 0.0f};
+  origin = Vector2{0.0f, 0.0f};
+  outlineColor = MAGENTA;
+  boxColor = MAGENTA; 
+  outlineRec = Rectangle{0.0f, 0.0f, 0.0f, 0.0f};
+  boxRec = Rectangle{0.0f, 0.0f, 0.0f, 0.0f};
+  isChecked = false;
+}
 
 Checkbox::Checkbox(Anchor anc, Color color, Vector2 offset)
   :outlineColor(color), boxColor(color)

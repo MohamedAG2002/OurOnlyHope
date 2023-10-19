@@ -6,8 +6,6 @@
 
 #include <raylib.h>
 
-#include <memory>
-
 namespace ooh {
 
 class OverLoseScene : public Scene 
@@ -17,8 +15,8 @@ class OverLoseScene : public Scene
     ~OverLoseScene();
 
   public:
-    std::unique_ptr<Text> title, waveText;
-    std::unique_ptr<Button> menuButton;
+    Text title, waveText;
+    Button menuButton;
     int wave;
 
   public:

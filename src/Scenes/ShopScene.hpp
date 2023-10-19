@@ -9,7 +9,6 @@
 #include <raylib.h>
 
 #include <cstdint>
-#include <memory>
 #include <vector>
 
 namespace ooh {
@@ -21,9 +20,9 @@ class ShopScene : public Scene
     ~ShopScene();
 
   public:
-    std::unique_ptr<Text> title, waveText;
-    std::unique_ptr<Button> startButton;
-    std::vector<std::unique_ptr<ItemFrame>> potions;
+    Text title, waveText;
+    Button startButton;
+    std::vector<ItemFrame> potions;
 
   public:
     void Update(float dt) override;

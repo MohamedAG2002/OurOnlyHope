@@ -14,7 +14,6 @@
 
 #include <raylib.h>
 
-#include <memory>
 #include <string>
 
 namespace ooh {
@@ -25,11 +24,11 @@ GameScene::GameScene()
   tileMgr = std::make_unique<TileManager>();
   prtclMgr = std::make_unique<ParticleManager>();  
 
-  pausedText = std::make_unique<Text>("Paused", Anchor::CENTER, TextType::BIG, WHITE);
-  healthText = std::make_unique<Text>("HP: ", Anchor::TOP_LEFT, TextType::LETTER, GREEN);
-  waveText = std::make_unique<Text>(std::to_string(wvMgr.waveCounter), Anchor::TOP_CENTER, TextType::MEDIUM, BLACK);
+  pausedText = Text("Paused", Anchor::CENTER, TextType::BIG, WHITE);
+  healthText = Text("HP: ", Anchor::TOP_LEFT, TextType::LETTER, GREEN);
+  waveText = Text(std::to_string(wvMgr.waveCounter), Anchor::TOP_CENTER, TextType::MEDIUM, BLACK);
   
-  menuButton = std::make_unique<Button>("Menu", Anchor::BOTTOM_LEFT, TextType::SMALL, Vector2{15.0f, 0.0f});
+  menuButton = Button("Menu", Anchor::BOTTOM_LEFT, TextType::SMALL, Vector2{15.0f, 0.0f});
 
   m_isPaused = false;
 
@@ -59,7 +58,7 @@ void GameScene::Update(float dt)
     global::isDebugDraw = !global::isDebugDraw;
 
   // Go to the menu (only possible if paused).
-  if(menuButton->OnPressed() && m_isPaused)
+  if(menuButton.OnPressed() && m_isPaused)
     EventManager::Get().DispatchEvent<OnSceneChange>(SceneType::MENU);
  
   // Don't update if the game is paused
@@ -67,8 +66,8 @@ void GameScene::Update(float dt)
     return;
 
   // Updating the health text, blood text, and wave text 
-  healthText->ChangeText("HP: " + std::to_string(enttMgr->player->health));
-  waveText->ChangeText(std::to_string(wvMgr.waveCounter));
+  healthText.ChangeText("HP: " + std::to_string(enttMgr->player->health));
+  waveText.ChangeText(std::to_string(wvMgr.waveCounter));
 
   enttMgr->Update(dt);
   prtclMgr->Update();
@@ -88,14 +87,14 @@ void GameScene::Render()
   enttMgr->Render();
   prtclMgr->Render();
   
-  healthText->Render();
-  waveText->Render();
+  healthText.Render();
+  waveText.Render();
 
   if(!m_isPaused)
     return;
 
-  menuButton->Render(); 
-  pausedText->Render();
+  menuButton.Render(); 
+  pausedText.Render();
 }
 
 void GameScene::Reset()

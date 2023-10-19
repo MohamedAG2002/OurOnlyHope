@@ -27,10 +27,10 @@ ShopScene::ShopScene()
   m_hasPotion = false;
   m_wave = util::GetDataFromFile<uint32_t>(global::WV_DAT_FILE_NAME);
 
-  title = std::make_unique<Text>("Make Your Choice...", Anchor::TOP_CENTER, TextType::BIG);
-  waveText = std::make_unique<Text>("BEST WAVE: " + std::to_string(m_wave), Anchor::BOTTOM_LEFT, TextType::SMALL, WHITE);
+  title = Text("Make Your Choice...", Anchor::TOP_CENTER, TextType::BIG);
+  waveText = Text("BEST WAVE: " + std::to_string(m_wave), Anchor::BOTTOM_LEFT, TextType::SMALL, WHITE);
   
-  startButton = std::make_unique<Button>("Start", Anchor::BOTTOM_RIGHT, TextType::SMALL, Vector2{-15.0f, 0.0f});
+  startButton = Button("Start", Anchor::BOTTOM_RIGHT, TextType::SMALL, Vector2{-15.0f, 0.0f});
 
   m_InitItems();
 }
@@ -44,10 +44,10 @@ void ShopScene::Update(float dt)
 {
   // The player is only able to press the start button when they purchased at least 
   // one potion. 
-  startButton->isActive = m_hasPotion;
+  startButton.isActive = m_hasPotion;
 
   // Start the game
-  if(startButton->OnPressed())
+  if(startButton.OnPressed())
     EventManager::Get().DispatchEvent<OnSceneChange>(SceneType::GAME);
 
   // Only make the player choose a potion once
@@ -57,16 +57,16 @@ void ShopScene::Update(float dt)
 
 void ShopScene::Render()
 {
-  startButton->Render();
+  startButton.Render();
   
-  title->Render();
-  waveText->Render();
+  title.Render();
+  waveText.Render();
 
   // Render the item frames only if the player still did not choose either of them 
   if(!m_hasPotion)
   {
     for(auto& item : potions)
-      item->Render();
+      item.Render();
   }
 }
 
@@ -77,44 +77,33 @@ void ShopScene::Reset()
   m_hasPotion = false;
 
   // Reset the texts
-  waveText->ChangeText("BEST WAVE: " + std::to_string(m_wave));
+  waveText.ChangeText("BEST WAVE: " + std::to_string(m_wave));
   
   // Reset the item frames 
   for(auto& item : potions)
-    item->Reset();
+    item.Reset();
 }
     
 void ShopScene::m_InitItems()
 {
-  // Adding the potions
   Vector2 ptinOff = Vector2{380.0f, 300.0f};
-  potions.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Health_Potion"), 
-                                              Anchor::TOP_LEFT, 
-                                              "HP-Potion", 
-                                              ptinOff));
-  m_ptnMD = util::LoadPotionMetadata(potions[0]->title);
-  potions[0]->SetDesc(m_GetFormatedPotionDesc(m_ptnMD));
+
+  // Adding the potions
+  potions.push_back(ItemFrame(AssetManager::Get().GetSprite("Health_Potion"), Anchor::TOP_LEFT, "HP-Potion", ptinOff));
+  m_ptnMD = util::LoadPotionMetadata(potions[0].title);
+  potions[0].SetDesc(m_GetFormatedPotionDesc(m_ptnMD));
   
-  potions.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Damage_Potion"), 
-                                              Anchor::TOP_LEFT, 
-                                              "DAM-Potion", 
-                                              Vector2{ptinOff.x + 150.0f, ptinOff.y}));
-  m_ptnMD = util::LoadPotionMetadata(potions[1]->title);
-  potions[1]->SetDesc(m_GetFormatedPotionDesc(m_ptnMD));
+  potions.push_back(ItemFrame(AssetManager::Get().GetSprite("Damage_Potion"), Anchor::TOP_LEFT, "DAM-Potion", Vector2{ptinOff.x + 150.0f, ptinOff.y}));
+  m_ptnMD = util::LoadPotionMetadata(potions[1].title);
+  potions[1].SetDesc(m_GetFormatedPotionDesc(m_ptnMD));
 
-  potions.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Defense_Potion"), 
-                                              Anchor::TOP_LEFT, 
-                                              "DEF-Potion", 
-                                              Vector2{ptinOff.x + 300, ptinOff.y}));
-  m_ptnMD = util::LoadPotionMetadata(potions[2]->title);
-  potions[2]->SetDesc(m_GetFormatedPotionDesc(m_ptnMD));
+  potions.push_back(ItemFrame(AssetManager::Get().GetSprite("Defense_Potion"), Anchor::TOP_LEFT, "DEF-Potion", Vector2{ptinOff.x + 300, ptinOff.y}));
+  m_ptnMD = util::LoadPotionMetadata(potions[2].title);
+  potions[2].SetDesc(m_GetFormatedPotionDesc(m_ptnMD));
 
-  potions.push_back(std::make_unique<ItemFrame>(AssetManager::Get().GetSprite("Dexterity_Potion"), 
-                                              Anchor::TOP_LEFT, 
-                                              "DEX-Potion", 
-                                              Vector2{ptinOff.x + 450.0f, ptinOff.y}));
-  m_ptnMD = util::LoadPotionMetadata(potions[3]->title);
-  potions[3]->SetDesc(m_GetFormatedPotionDesc(m_ptnMD));
+  potions.push_back(ItemFrame(AssetManager::Get().GetSprite("Dexterity_Potion"), Anchor::TOP_LEFT, "DEX-Potion", Vector2{ptinOff.x + 450.0f, ptinOff.y}));
+  m_ptnMD = util::LoadPotionMetadata(potions[3].title);
+  potions[3].SetDesc(m_GetFormatedPotionDesc(m_ptnMD));
 }
 
 const std::string ShopScene::m_GetFormatedPotionDesc(PotionMetadata md)
@@ -134,11 +123,11 @@ void ShopScene::m_EquipPotion()
 {
   for(auto& item : potions)
   {
-    if(item->button->OnPressed())
+    if(item.button.OnPressed())
     {
-      EventManager::Get().DispatchEvent<OnItemEquip>(item->title);
+      EventManager::Get().DispatchEvent<OnItemEquip>(item.title);
        
-      item->button->isActive = false; 
+      item.button.isActive = false; 
       m_hasPotion = true;
     }
   }

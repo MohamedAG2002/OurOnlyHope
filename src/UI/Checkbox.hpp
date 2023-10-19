@@ -9,6 +9,7 @@ namespace ooh {
 class Checkbox 
 {
   public:
+    Checkbox();
     Checkbox(Anchor anc, Color color, Vector2 offset = Vector2{0.0f, 0.0f});
     ~Checkbox();
 

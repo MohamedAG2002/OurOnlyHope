@@ -11,6 +11,20 @@
 
 namespace ooh {
 
+Text::Text()
+{
+  str = "DEFUALT_CTOR";
+  anchor = Anchor::TOP_LEFT;
+  type = TextType::LETTER;
+  color = MAGENTA;
+  offset = Vector2{0.0f, 0.0f};
+  position = Vector2{0.0f, 0.0f};
+  size = Vector2{0.0f, 0.0f};
+  origin = Vector2{0.0f, 0.0f};
+
+  m_fontSize = 0;
+}
+
 Text::Text(const std::string& str, Anchor anc, TextType type, Color color, Vector2 offset)
   :str(str), anchor(anc), type(type), color(color), offset(offset)
 {

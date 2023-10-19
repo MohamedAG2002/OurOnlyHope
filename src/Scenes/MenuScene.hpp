@@ -6,8 +6,6 @@
 
 #include <raylib.h>
 
-#include <memory>
-
 namespace ooh {
 
 class MenuScene : public Scene 
@@ -17,8 +15,8 @@ class MenuScene : public Scene
     ~MenuScene();
 
   public:
-    std::unique_ptr<Button> playButton, settingsButton, quitButton;
-    std::unique_ptr<Text> title, credits;
+    Button playButton, settingsButton, quitButton;
+    Text title, credits;
 
   public:
     void Update(float dt) override;

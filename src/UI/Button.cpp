@@ -14,10 +14,25 @@
 
 namespace ooh {
 
+Button::Button()
+{
+  hasClicked = false; 
+  isActive = false;
+  anchor = Anchor::TOP_LEFT;
+  state = ButtonState::DISABLE;
+  color = MAGENTA;
+  outlineColor = MAGENTA;
+  offset = Vector2{0.0f, 0.0f};
+  position = Vector2{0.0f, 0.0f};
+  size = Vector2{0.0f, 0.0f};
+  rect = Rectangle{0.0f, 0.0f, 0.0f, 0.0f};
+  m_text = Text();
+}
+
 Button::Button(const std::string& str, Anchor anc, TextType textType, Vector2 offset)
   :anchor(anc), offset(offset)   
 {
-  m_text = std::make_unique<Text>(str, anc, textType, WHITE, offset);
+  m_text = Text(str, anc, textType, WHITE, offset);
   
   state = ButtonState::IDLE;
   color = global::UI_BOX_COLOR;
@@ -26,8 +41,8 @@ Button::Button(const std::string& str, Anchor anc, TextType textType, Vector2 of
   hasClicked = false;
   isActive = true;
   
-  size = Vector2{m_text->size.x + 50.0f, m_text->size.y + 5.0f};
-  position = Vector2{m_text->position.x - 25.0f, m_text->position.y - 2.5f};
+  size = Vector2{m_text.size.x + 50.0f, m_text.size.y + 5.0f};
+  position = Vector2{m_text.position.x - 25.0f, m_text.position.y - 2.5f};
   rect = {position.x, position.y, size.x, size.y};
 }
 
@@ -86,15 +101,15 @@ void Button::Render()
   }
 
   // Drawing the button
-  rect.x = position.x - m_text->origin.x;
-  rect.y = position.y - m_text->origin.y;
+  rect.x = position.x - m_text.origin.x;
+  rect.y = position.y - m_text.origin.y;
   DrawRectangleRec(rect, color);
 
   // Drawing the button's outline
   DrawRectangleLinesEx(rect, 1.0f, outlineColor);
 
   // Drawing the text
-  m_text->Render();
+  m_text.Render();
 }
     
 void Button::Reset()
@@ -107,7 +122,7 @@ void Button::Reset()
 void Button::SetPosition(const Vector2 pos)
 {
   position = pos;
-  m_text->position = Vector2{(pos.x + size.x / 2.0f) - m_text->size.x / 2.0f, pos.y + 3.0f};
+  m_text.position = Vector2{(pos.x + size.x / 2.0f) - m_text.size.x / 2.0f, pos.y + 3.0f};
 }
 
 }

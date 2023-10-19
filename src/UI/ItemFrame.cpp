@@ -11,7 +11,24 @@
 #include <string>
 
 namespace ooh {
- 
+
+ItemFrame::ItemFrame()
+{
+  texture = Texture2D{};
+  anchor = Anchor::TOP_LEFT;
+  title = "DEFAULT_CTOR";
+  desc = "DEFAULT_CTOR";
+  fontSize = 0;
+  position = Vector2{0.0f, 0.0f};
+  origin = Vector2{0.0f, 0.0f};
+  outlineSize = Vector2{0.0f, 0.0f};
+  descLength = Vector2{0.0f, 0.0f};
+  titleLength = Vector2{0.0f, 0.0f};
+  outlineRec = Rectangle{0.0f, 0.0f, 0.0f, 0.0f};
+  descRec = Rectangle{0.0f, 0.0f, 0.0f, 0.0f};
+  button = Button();
+}
+
 ItemFrame::ItemFrame(Texture2D texture, Anchor anc, const std::string&& title, Vector2 offset)
   :texture(texture), anchor(anc), title(title)
 {
@@ -31,8 +48,8 @@ ItemFrame::ItemFrame(Texture2D texture, Anchor anc, const std::string&& title, V
   descRec = Rectangle{position.x, position.y, descLength.x + 20, 100.0f};
 
   Vector2 btnOffset = Vector2{offset.x + 5.0f, offset.y + 48.0f};
-  button = std::make_unique<Button>("Equip", anchor, TextType::LETTER);
-  button->SetPosition(Vector2{position.x - 25.0f, position.y + 32.0f});
+  button = Button("Equip", anchor, TextType::LETTER);
+  button.SetPosition(Vector2{position.x - 25.0f, position.y + 32.0f});
 
   m_isDescShown = false;
 }
@@ -58,7 +75,7 @@ void ItemFrame::Render()
   DrawText(title.c_str(), position.x - titleLength.x / 2.0f, position.y - 40.0f, fontSize, textColor);
 
   // Drawing the button 
-  button->Render();
+  button.Render();
 
   // Only drawing the description box and text when the mouse is hovering 
   // over the item frame.
@@ -73,7 +90,7 @@ void ItemFrame::Render()
 void ItemFrame::Reset()
 {
   m_isDescShown = false;
-  button->Reset();
+  button.Reset();
 }
     
 void ItemFrame::SetDesc(const std::string&& description)
