@@ -48,16 +48,25 @@ If you only want to play the game, however, without going through the build proc
 Thanks to all of these amazing artists for making me "borrow" their fantastic pieces of art: 
 
 Tiles: https://cainos.itch.io/
+
 Shop items: https://joecreates.co.uk
+
 Zombie: https://opengameart.org/users/cornerlord
+
 Player: Seth Koukol
+
 Spear: https://opengameart.org/users/lordneo
 
+
 Menu Hymn: https://www.marcelofernandezmusic.com/
+
 Combat Hymn: https://opengameart.org/users/cethiel
+
 Over Hymn: https://opengameart.org/users/otto-halm%C3%A9n
 
 Sword swings: https://opengameart.org/users/qubodup
+
 Spear sounds: https://www.aurelienmontero.com/
+
 Zombie killing sounds: https://www.706gaming.org/
 Player death/hurting sounds: apollo-music.de or Michel Baradari on opengameart.org

@@ -1,0 +1,29 @@
+---
+HP-Potion:
+  type: 0
+  defense: 0
+  health: 50
+  damage: 0
+  speed: 0 
+
+DAM-Potion:
+  type: 1
+  defense: 0
+  health: 0
+  damage: 30
+  speed: 0 
+
+DEF-Potion:
+  type: 2
+  defense: 0.5
+  health: 0
+  damage: 0
+  speed: 0 
+
+DEX-Potion:
+  type: 3
+  defense: 0
+  health: 0
+  damage: 0
+  speed: 150 
+---
