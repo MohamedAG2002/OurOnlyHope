@@ -20,7 +20,7 @@ bool global::isDebugDraw;
 GameManager::GameManager()
 {
   // Raylib init
-  InitWindow(1270, 720, "Our Only Hope");
+  InitWindow(1280, 720, "Our Only Hope");
   SetTargetFPS(60);
   SetExitKey(KEY_F1);
   ToggleFullscreen(); 
