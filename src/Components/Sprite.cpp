@@ -30,8 +30,8 @@ void Sprite::Render(Transform2D& transform)
 {
   m_rect = Rectangle{transform.position.x, transform.position.y, 
                      size.x * transform.scale.x, size.y * transform.scale.y};
-  
-  DrawTexturePro(m_texture, Rectangle{size.x, size.y, size.x, size.y}, m_rect, origin, transform.rotation, WHITE);
+ 
+  DrawTexturePro(m_texture, Rectangle{0, 0, size.x, size.y}, m_rect, origin, transform.rotation, WHITE);
 }
   
 }
