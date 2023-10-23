@@ -44,7 +44,7 @@ GameScene::~GameScene()
 void GameScene::Update(float dt)
 {
   // Pause/unpause game
-  if(IsKeyPressed(KEY_ESCAPE))
+  if(IsKeyPressed(KEY_P))
   {
     m_isPaused = !m_isPaused;
 
